@@ -1,0 +1,53 @@
+<div ng-hide="loading">
+
+    <div id="container" >
+
+        <!--header start-->
+           <ng-include  src="'/desktop/partials/usedpartials/header_desktop_dashboard.html'" ></ng-include>
+         <!--header end-->
+
+        <!--main content start-->
+        <div id="main-content" class="over">
+
+            <!--menu sidebar desktop-->
+            <ng-include  src="'/desktop/partials/usedpartials/menu_desktop.html'" ></ng-include>
+            <!--fin menu sidebar desktop-->
+
+            <!-- wrapper start-->
+            <div class="wrapper with-side-bar">
+
+                <div class="banner-jarrete1b desktop"><img ng-src="desktop/images/banner_jarrete1b.png" /></div>
+                <div class="container-feedback felicitation">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="text-center">
+                                <p class="description-jarrete1b">
+                                    <strong class="desktop">Vous venez de franchir un obstacle de taille :</strong>
+                                    <span class="mobile">Félicitations !</span>
+                                </p>
+                                <p class="description-jarrete1b desktop">
+                                    La tentation de céder. Ca n'a pas été facile, mais vous y êtes<br/> arrivé. Vous êtes sur la bonne voie.
+                                </p>
+                                
+                                <p class="description-jarrete1b mobile">
+                                    Vous venez de franchir un obstacle de taille : la tentation de céder. Ca n'a pas été facile, mais vous y êtes arrivé. Vous êtes sur la bonne voie.
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="ligne over">    
+                                    <input type="button" ng-click="redirectToDashbord()" class="type-bt-green" style="margin: 0 auto; font-size: 1.7em;" value="Fermer" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- wrapper end-->
+        </div>
+        <!--main content end-->  
+
+        <!--footer start-->
+        <ng-include  src="'/desktop/partials/usedpartials/footer_desktop.html'" ></ng-include>
+        <ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+        <!--footer end--> 
+    </div>
+</div>

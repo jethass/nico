@@ -1,0 +1,96 @@
+<div ng-hide="loading">
+
+    <div id="container" >
+
+        <!--header start-->
+        <ng-include  src="'/desktop/partials/usedpartials/header_desktop_dashboard.html'" ></ng-include>
+        <!--header end-->
+
+
+        <!--main content start-->
+        <div id="main-content" class="over">
+            <!--menu sidebar desktop-->
+            <ng-include  src="'/desktop/partials/usedpartials/menu_desktop.html'" ></ng-include>
+            <!--fin menu sidebar desktop-->
+
+            <!-- wrapper start-->
+            <div class="wrapper with-side-bar">
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopad-l-mobile nopad-r-mobile relative">
+                    <h3 class="pad-bottom-20 desktop">Mon calendrier</h3>
+
+                    <div class="mobile over">
+                        <a href="/calendrier-list" class="greenYear" id="greenYear"><i></i>{{yearCliked}}</a>
+                        
+                        <a id="modalInfo" href="javascript:void(0)" data-toggle="modal" class="btn-legend-mobile" data-target="#mymodalInfo">info</a>
+						<!-- Popup 1 -->
+						<div id="mymodalInfo" class="modal fade quiz-one popup-calender" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						  <div class="modal-dialog" style="height:210px;">
+						    <div class="modal-content">
+						        <div class="pad-top-5">
+					        	    <p class="mm-size" style="line-height: 1;"><span class="vide"></span>Vous avez des objectifs de réduction à respecter</p>
+						        	
+						        	<p class="mm-size" style="line-height: 2;"><span class="bleu"></span>Objectif de réduction atteint</p>
+						       
+						        	<p class="mm-size" style="line-height: 2;"><span class="vert"></span>Date d'arrêt du tabac</p>
+						        	
+						        	<p class="mm-size" style="line-height: 1;"><span class="rouge" style="margin-bottom: 25px;"></span>Vous avez fumé une cigarette ou plus</p>
+						        	
+						        </div>
+						    </div>
+						  </div>
+						</div>
+						<!-- End Popup 1 -->
+						
+                    </div>
+                    
+                    <div class="entete-calender mobile"></div>
+                    <div id="eventCalendarHumanDate"></div>
+
+                    <div class="eventListDesc">
+                       
+                        <div class="eventName over">
+                            <div class="circle-preparation left"></div>
+                            <div class="left">
+                                <span class="preparation">Vous avez des objectifs de réduction à respecter</span>
+                                <span class="ev-desc block"></span>
+                            </div>
+                        </div>
+                        <div class="eventName over">
+                            <div class="circle-objectif left"></div>
+                            <div class="left">
+                                <span class="objectif">Objectif</span>
+                                <span class="ev-desc">de réduction atteint </span>
+                            </div>
+                        </div>
+                        <div class="eventName over">
+                            <div class="circle-datearret left"></div>
+                            <div class="left">
+                                <span class="datearret">Date d'arrêt </span>
+                                <span class="ev-desc">du tabac</span>
+                            </div>
+                        </div>
+                        <div class="eventName over">
+                            <div class="circle-avezfumer left"></div>
+                            <div class="left">
+                                <span class="avezfumer">Vous avez fumé </span>
+                                <span class="ev-desc">une cigarette ou plus</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- wrapper end-->
+        </div>
+        <!--main content end-->  
+
+        <!--footer start-->
+        <ng-include  src="'/desktop/partials/usedpartials/footer_desktop.html'" ></ng-include>
+        <ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+        <!--footer end--> 
+
+    </div>
+
+</div>

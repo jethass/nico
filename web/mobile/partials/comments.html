@@ -1,0 +1,51 @@
+
+<div ng-hide="loading">
+            <a href="#/">Retour aux articles</a>
+ 
+            <ng-tabs>
+                <ng-tab title="Article">
+                    <h1>{{title}}</h1>
+                    <p>{{content}}</p>
+                    <h3>{{comments.length}} Commentaires</h3>
+                </ng-tab>
+                
+                <ng-tab title="{{comments.length}} Commentaires">
+                    <div ng-repeat="comment in comments |filter:{content:query} | orderBy:order ">
+                        <ng-comment comment="comment" ></ng-comment>
+                    </div>
+                </ng-tab>    
+            </ng-tabs> 
+            
+            <hr>
+             <!--
+             <div class="form-group">
+             <input type="text"   class="form-control datepicker" datepicker-options="{today:'Aujourdhui'}"  />
+            </div>
+             
+            <div ng-test username="newComment.username">
+                <div ng-repeat="comment in comments |filter:{content:query} | orderBy:order ">
+                    <ng-comment comment="comment" ></ng-comment>
+                </div>
+            </div>
+            -->
+            
+            
+            
+            <!--<time></time>-->
+            
+            <form ng-submit="addComment()">
+                <div class="form-group">
+                 <input type="text"  placeholder="username" ng-model="newComment.username" class="form-control"  />
+                </div>
+                <div class="form-group">
+                 <input type="text"  placeholder="city" ng-model="newComment.city" class="form-control"  />
+                </div>
+                <div class="form-group">
+                 <input type="text"  placeholder="Email" ng-model="newComment.email" class="form-control"  />
+                </div>
+ 
+                <div class="form-group"><textarea class="form-control"  ng-model="newComment.content"></textarea></div>
+               
+                <input type="submit" value="Envoye" />
+            </form>
+</div>

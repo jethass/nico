@@ -1,0 +1,304 @@
+<div ng-hide="loading">
+    <div id="container" >
+
+        <!--header start-->
+        <ng-include  src="'/desktop/partials/usedpartials/header_desktop_default.html'" ></ng-include>
+        <!--header end-->
+
+        <!--main content start-->
+        <div id="main-content" class="over">
+            <!-- wrapper start-->
+            <div class="wrapper">
+                <div class="container-contrats">
+
+                    <!-- contrat 1 -->
+                    <div ng-if="numcontrat==1">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h3 class="h3-green desktop">Mon contrat</h3>
+                                <p class="p-desc-contrat text-left">
+                                    Désormais il est temps de choisir une date pour arrêter de fumer. Privilégiez un environnement dans lequel vous vous sentirez bien avec l'esprit libre. <br/>
+                                    Si vous avez l'habitude de fumer lorsque vous sortez avec des amis, le weekend par exemple, choissisez un jour de semaine. Si au contraire,<br/> 
+                                    vous fumez plutôt durant vos pauses de travail, alors songez à arrêter durant le weekend ou les vacances.<br/>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+
+
+                            <div class="col-lg-7 col-md-8 col-sm-9">
+                                <div class="col-lg-5 col-md-5 col-sm-5 desktop">
+                                    <label class="txt-strong text-right pad-top-10">Je choisis ma date d'arrêt</label>
+                                </div>
+
+                                <div class="mobile">
+                                    <label class="txt-strong center pad-top-10 green">Je choisis ma date d'arrêt</label>
+                                </div>
+
+
+                                <div class="col-lg-5 col-md-5 col-sm-5 relative desktop">
+                                    <div class="input-group date" id='date-arret' date-time-picker-plus-mois>
+                                        <input type="text" class="input-date" value=""  data-date-format="DD/MM/YYYY" placeholder="jj/mm/aa"/>
+                                        <span class="input-group-addon calender">
+                                        </span>
+                                    </div>
+                                </div>  
+
+                                <div class="mobile">
+                                    <div class="input-group date center date-arret-m" id='date-arret' date-time-picker-plus-mois>
+                                        <input type="text" class="input-date" value=""  data-date-format="DD/MM/YYYY" placeholder="jj/mm/aa" />
+                                        <span class="input-group-addon calender">
+                                        </span>
+                                    </div>
+                                </div> 
+                            </div>
+
+
+                            <div class="col-lg-5 col-md-4 col-sm-3">
+                                <a href="javascript:void(0)"  class="right type-bt-green btn-arret" ng-click="arreteNow()">Je veux arrêter maintenant</a>
+                            </div>
+                            
+                            <div class="desktop lien-fixe-date">
+                            	<a style="margin-right: 15px;" href="javascript:void(0);" ng-click="fixLater()">Fixer ma date d'arrêt plus tard</a>
+                            </div>
+                            <div class="mobile lien-fixe-date-mobile">
+                            	<a href="javascript:void(0);" ng-click="fixLater()">Fixer ma date d'arrêt plus tard</a>
+                            </div>
+
+
+
+                        </div>
+                        <div class="desktop"><hr></div>
+
+                        <div ng-show="felicitation">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 desktop">
+                                    <p class="p-felicitation text-left">
+                                        <strong>Félicitations !</strong><br/> 
+                                        Quand cette date arrivera, cela sera difficile mais vous verrez les bénéfices immédiatement :<br/> 
+                                        <strong>- Au bout de 12 heures,</strong>  votre niveau de monoxyde de carbone dans le sang reviendra à la normal.<br/>
+                                        <strong>- Au bout de 24 heures,</strong>  le risque de crise cardiaque diminue considérablement et votre cerveau s'adapte à l'abscence de nicotine.<br/>
+                                        <strong>- Au bout de 3 jours,</strong>  cela deviendra beaucoup plus facile ! <sup>(1)</sup> 
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 mobile">
+                                    <p class="p-felicitation text-left">
+                                        Félicitations ! quand cette date arrivera, cela sera difficile mais vous verrez les bénéfices immédiatement :<br/><br/> 
+                                        - Au bout de 8 heures, la quantité de monoxyde de carbone dans le sang diminue de moitié, et l’oxygénation des cellules redevient normale.<br/><br/>
+                                        - Au bout de 24 heures, le risque d’infarctus du myocarde diminue déjà, et les poumons commencent à éliminer le mucus et les résidus de fumée. Le corps ne contient plus de nicotine.<sup>(1)</sup> <br/>
+                                    </p>
+                                </div>
+                            </div>  
+                            <div class="row">
+                                <div class="col-lg-7 col-md-7 col-sm-7">
+                                    <div class="over">
+
+                                        <div class="center-checks right">
+                                            <div class="custom-checkbox" id="ck1" style="line-height: 21px;">
+                                                <input type="checkbox" value="1" id="condition-contrat1" name="engagement" class="lightcheckbox" directive-checkbox />
+                                                <label class="label-check" for="condition-contrat1"></label>
+                                                <span class="txt-checkbox" style="vertical-align:top;">Je m'engage</span>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-md-5">
+                                    <a class="right type-bt-green light" href="javascript:void(0)" ng-click="submitData()" >Valider et voir mon plan d'action</a>
+                                    <div class="clear"></div>
+                                    <div class="right" ng-show="checkEngaged" style="margin-right:10px;margin-top:10px;color:red;font-size: 11px;">Vous devez vous engager à arreter de fumer pour continuer</div>
+                                    <div class="clear"></div>
+                                    <div class="right txt-green marg-r-signature desktop">La signature de votre contrat vous rapporte 50 points</div>
+                                    <div class="center txt-green marg-r-signature mobile mobile">(La signature de votre contrat vous rapporte 50 points)</div>
+                                    <div class="clear"></div>
+                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 desktop">
+                                    <label class="txt-gris">(1) Inpes : http://www/inpes.sante.fr consulté en septembre 2014</label>
+                                </div>
+                                
+                                <div class="col-lg-12 mobile" style="text-align: center;">
+                                    <label class="txt-gris">Sources : (1) Inpes : <a href="http://www.inpes.sante.fr/">http://www.inpes.sante.fr</a> consulté en septembre 2014</label>
+                                </div>
+                            </div>
+
+                        </div>	
+
+                        <!-- modals -->
+                        <!-- Popup 1 -->
+                        <a id="modal1"  style="display:none" href="javascript:void(0)" data-toggle="modal" data-target="#myModal1">date > date max</a>
+                        <div id="myModal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" style="height:210px;">
+                                <div class="modal-content">
+                                    <div class="pad-top-5">
+                                        <p class="text-center">Ne pensez-vous pas que vous êtes capable d'arrêter avant ?</p>
+                                    </div>
+                                    <div class="over">
+                                        <a class="right type-bt-green close cos-bg-lt" data-dismiss="modal" >OUI</a> 
+                                    </div>
+                                    <div class="over">
+                                        <a class="right type-bt-green close cos-bg-lt" data-dismiss="modal" data-toggle="modal" data-target="#myModal2" >NON</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Popup 2 -->
+                        <div id="myModal2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="pad-top-5">
+                                        <p class="text-center">Je ne peux pas accepter une date d'arrêt aussi lointaine. Revenez lorsque vous serez réellement prêt à arrêter.</p>
+                                    </div>
+                                    <div class="over">
+                                        <a class="right type-bt-green close cos-bg-lt" data-dismiss="modal" >Ok</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Popup 3 -->
+                        <a id="modal3"  style="display:none"  data-toggle="modal" data-target="#myModal3">vers plan action</a>
+                        <div id="myModal3" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body left">
+                                        <img src="desktop/images/img-popup.png" class="img-responsive">
+                                    </div>
+                                    <div class="left pad-top-5">
+                                        <p class="green">Prêt pour le jour J</p>
+                                        <p>C'est un bon début, continuez sur<br/> cette voie là !</p>
+                                    </div>
+
+                                    <a ng-click="redirectToPlan()" class="right type-bt-green close cos-bg-lt" data-dismiss="modal" >OK</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- fin modals -->
+
+                    </div>
+                    <!-- fin contrat 1 -->
+
+
+                    <!-- contrat 2 -->
+                    <div ng-if="numcontrat==2">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <h3 class="h3-green desktop">Mon contrat</h3>
+                                <p class="p-desc-contrat text-left">
+                                    Désormais il est temps de choisir une date pour arrêter de fumer. Privilégiez un environnement dans lequel vous vous sentirez bien avec l'esprit 
+                                    libre.
+                                    Si vous avez l'habitude de fumer lorsque vous sortez avec des amis, le weekend par exemple, choissisez un jour de semaine. Si au contraire,
+                                    vous fumez plutôt durant vos pauses de travail, alors songez à arrêter durant le weekend ou les vacances.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="left desktop">
+                                    <label class="txt-strong text-left">Quand avez-vous fumé<br/>votre dernière cigarette ?</label>
+                                </div>
+
+                                <div class="mobile">
+                                    <label class="txt-strong center green">Quand avez-vous fumé<br/>votre dernière cigarette ?</label>
+                                </div>
+
+                                <div class="left relative desktop" style="margin-left:30px;">
+                                    <div class="input-group date" id='date-arret-last-cigarette' date-time-picker-now>
+                                        <input type="text" class="input-date"  data-date-format="DD/MM/YYYY"/>
+                                        <span class="input-group-addon calender">
+                                        </span>
+                                    </div>
+                                </div>  
+
+                                <div class="mobile">
+                                    <div class="input-group date center" id='date-arret-last-cigarette' date-time-picker-now>
+                                        <input type="text" class="input-date"  data-date-format="DD/MM/YYYY" placeholder="jj/mm/aa"/>
+                                        <span class="input-group-addon calender">
+                                        </span>
+                                    </div>
+                                </div>   
+
+                                <div class="clear"></div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="left" style="margin-left:20%">
+                                    <div class="over pad-top-10">
+                                        <div class="custom-checkbox" id="ck1" style="line-height: 21px;">
+                                            <input type="checkbox" value="1" id="condition-contrat2" name="engagement" class="lightcheckbox" directive-checkbox />
+                                            <label class="label-check" for="condition-contrat2"></label>
+                                            <span class="txt-checkbox" style="vertical-align:top;">Je m'engage</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <a class="right type-bt-green"  href="javascript:void(0)" ng-click="submitDataLastCigarette()" >Valider et voir mon plan d'action</a> 
+
+                                <div class="clear"></div>
+                                <div class="right txt-green marg-r-signature desktop">La signature de votre contrat vous rapporte 50 points</div>
+
+                                <div class="center txt-green marg-r-signature mobile">(La signature de votre contrat vous rapporte 50 points)</div>
+                            </div>
+                        </div>
+                        
+                        <div class="desktop lien-fixe-date">
+                            	<a href="javascript:void(0);" ng-click="fixLater()">Fixer ma date d'arrêt plus tard</a>
+                            </div>
+                            <div class="mobile lien-fixe-date-mobile">
+                            	<a href="javascript:void(0);" ng-click="fixLater()">Fixer ma date d'arrêt plus tard</a>
+                            </div>
+
+                        <!-- modals -->
+                        <!-- Popup 4 -->
+                        <a id="modal4"  style="display:none" href="javascript:void(0)" data-toggle="modal" data-target="#myModal4">check engagement</a>
+                        <div id="myModal4" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="pad-top-5">
+                                        <p class="text-center">Vous devez vous engagez à poursuivre votre servage pour continuer.</p>
+                                    </div>
+                                    <div class="over">
+                                        <a class="right type-bt-green close cos-bg-lt" data-dismiss="modal" >OK</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Popup 5 -->
+                        <a id="modal5"  style="display:none" data-toggle="modal" data-target="#myModal5">vers plan action</a>
+                        <div id="myModal5" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body left">
+                                        <img src="desktop/images/img-popup.png" class="img-responsive">
+                                    </div>
+                                    <div class="left pad-top-5">
+                                        <p class="green">Prêt pour le jour J</p>
+                                        <p>C'est un bon début, continuez sur<br/> cette voie là !</p>
+                                    </div>
+                                    <a ng-click="redirectToPlan()" class="right type-bt-green close cos-bg-lt" data-dismiss="modal" >OK</a> 
+                                </div>
+                            </div>
+                        </div>
+                        <!-- fin modals -->
+
+                    </div>		
+                    <!-- fin contrat 2 -->
+
+                </div>
+            </div>    
+            <!-- wrapper end-->
+        </div>
+        <!--main content end-->  
+
+        <!--footer start-->
+        <ng-include  src="'/desktop/partials/usedpartials/footer_desktop.html'" ></ng-include>
+        <ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+        <!--footer end-->
+
+    </div>
+</div>

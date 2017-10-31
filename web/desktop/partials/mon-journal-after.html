@@ -1,0 +1,203 @@
+<div ng-hide="loading">
+
+    <div id="container" >
+
+        <!--header start-->
+        <ng-include  src="'/desktop/partials/usedpartials/header_desktop_dashboard.html'" ></ng-include>
+        <!--header end-->
+
+        <div class="objectif-du-jour text-center mobile">objectif du jour : <span>{{dayObjective}} <span ng-if='dayObjective <= 1 '>cigarette</span> <span ng-if='dayObjective > 1'>cigarettes</span></span></div>
+
+        <!--main content start-->
+        <div id="main-content" class="over">
+            <!--menu sidebar desktop-->
+            <ng-include  src="'/desktop/partials/usedpartials/menu_desktop.html'" ></ng-include>
+            <!--fin menu sidebar desktop-->
+
+            <!-- wrapper start-->
+            <div class="wrapper with-side-bar journal">
+
+                <!-- mon journal 2 -->
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 point">
+                        <h3 class="pad-bottom-20 desktop">Mon journal</h3>
+
+                        <div class="content" id="journalAfter">
+                                <div ng-repeat="question in questions">
+                                        <div ng-if="$index==0">
+                                                <p class="desktop"><span  style="font-size: 1.1em;">{{question.name}}</span></p>
+                                                <p class="mobile greenTitle text-center">{{question.name}}</p>
+                                                
+                                                <div class="gradiant-echelle" style="margin-bottom: -12px;width: 95%;">
+                                                        <span class="item-1" style="color:#03cf24">1</span>
+                                                        <span class="item-2" style="color:#4be948;">2</span>
+                                                        <span class="item-3" style="color:#85fb5b;">3</span>
+                                                        <span class="item-4" style="color:#d1ff75;width: 9%;">4</span>
+                                                        <span class="item-5" style="color:#f4ff5e;">5</span>
+                                                        <span class="item-6" style="color:#fffdaa;width:9%;">6</span>
+                                                        <span class="item-7" style="color:#ffe700;width: 8.5%;">7</span>
+                                                        <span class="item-8" style="color:#ffcd00">8</span>
+                                                        <span class="item-9" style="color:#ffc000;width:8% ;">9</span>
+                                                        <span class="item-10" style="color:#ffad00">10</span>
+                                                        <span class="item-11" style="color:#ff0400;width: 15%;position:absolute;margin-left: -23px;position: absolute;text-align: center;">J'ai fumé !</span>
+                                                </div>
+                                                <input gradiant-journal-after type="text" id="difficulte" name="difficulte"  value="" />
+                                           
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+                                                     <a id="btn-q2" class="type-data type-bt-green bt-width valide-1" ng-click="submitReponseOne()">Valider</a>
+                                            </div>
+                                        </div>
+                                  </div>
+                                  <br/><br/>
+                                  <div class="question-2" ng-repeat="question in questionsSecond">
+                                      <div ng-if="$index==0" >
+                                              <br/>
+                                              <br/>       
+                                              <br/>
+                                              <p class="desktop"><span  style="font-size: 1.1em;">{{question.name}}</span></p>
+                                              <p class="mobile greenTitle text-center">{{question.name}}</p>
+                                              <form action="" method="POST" >
+                                                 <!--
+                                                  <div  id="questionafter-{{question.id}}">
+                                                      <div class="radiobox" ng-repeat="choice in question.choices">
+                                                          <input type="radio" ng-checked="checkRadio(choice.id)" name="radio" id="radioafter{{choice.id}}" class="radio" value="{{choice.id}}" />
+                                                          <label class="custom-radio" for="radioafter{{choice.id}}"></label>
+                                                          <label class="txt-radio">{{choice.name}}</label>
+                                                      </div>
+                                                  </div>
+                                                  -->
+                                                  <div id="chek-q3">
+                                                    <div class="custom-checkbox"  ng-repeat="choice in question.choices" id="ck-{{choice.id}}">
+                                                      <input ng-checked="checkRadio(choice.id)" type="checkbox" checklist-model="$parent.$parent.answers[question.id]" checklist-value="choice" id="ck{{choice.id}}" name="check{{choice.id}}" class="lightcheckbox" ng-click="setReponseCheck(choice,question.id)" directive-checkbox />
+                                                      <label class="label-check" for="ck{{choice.id}}"></label>
+                                                      <span class="txt-checkbox">{{choice.name}}</span>
+                                                    </div>
+                                                  </div>    
+
+                                              </form> 
+                                            <br/><br/>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align: center;padding-top:15px;">
+                                                     <a id="btn-q2" class="type-data type-bt-green bt-width valide-1" ng-click="submitReponseTow()">Valider</a>
+                                            </div>        
+                                      </div>
+                                  </div>  
+                                   
+                            
+                               </div>
+                               
+                            
+                                <!-- Popup deja renseigné -->
+                                <div id="modalrenseigned" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                           <div class="pad-top-5">
+                                           <p class="text-center">Vous avez déjà renseigné ces informations aujourd'hui. Avez-vous changé d'avis ?</p>
+                                        </div>
+                                        <div class="over col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                          <a class="right type-bt-green close cos-bg-lt" data-dismiss="modal" >Oui</a> 
+                                        </div>
+                                        <div class="over col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                          <a class="right type-bt-green close cos-bg-lt" data-dismiss="modal" ng-click="redirectToDashbord()" >Non</a> 
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                                <!-- Popup bravo -->
+                                <div id="modalBravo" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="pad-top-5">
+                                                <p class="text-center">Bravo, vous gardez le cap. Continuer ainsi!</p>
+                                            </div>
+                                            <div class="over">
+                                                <a class="right type-bt-green close cos-bg-lt" ng-click="redirectToDashbord()"  data-dismiss="modal" >Ok</a> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Popup relisez les astuces -->
+                                <div id="modalLisezAstuces" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="pad-top-5">
+                                                <p class="text-center">Relisez les astuces pour vous aider dans votre sevrage et n'oubliez pas, c'est de plus en plus facile avec le temps!</p>
+                                            </div>
+                                            <div class="over">
+                                                <a class="right type-bt-green close cos-bg-lt" ng-click="redirectToAstuces()"  data-dismiss="modal" >Ok</a> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Popup parfois -->
+                                <div id="modalparfois" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="pad-top-5">
+                                                <p class="text-center">N'oubliez pas que la prise de substituts nicotiniques augmente vos chances de réussite de 50% à 70% ! Si vous voulez y arriver plus facilement, utilisez-les. </p>
+                                            </div>
+                                            <div class="over">
+                                                <a class="right type-bt-green close cos-bg-lt" ng-click="redirectToDashbord()"  data-dismiss="modal" >Ok</a> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Popup si clique sur non -->
+                                <div id="modalNon" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="pad-top-5">
+                                                <p class="text-center"> Les substituts nicotiniques augmentent vos chances de réussite de 50% à 70%. Voulez vous voir les différentes formes de produits NICORETTE<sup>®</sup> ?</p>
+                                            </div>
+                                            <div class="over col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <a class="right type-bt-green close cos-bg-lt" data-dismiss="modal" ng-click="redirectToProduits()">Oui</a> 
+                                            </div>
+                                            <div class="over col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <a class="right type-bt-green close cos-bg-lt" data-dismiss="modal" data-toggle="modal" data-target="#modalNon_non" >Non</a> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Popup si clique sur non puis encore sur non -->
+                                <div id="modalNon_non" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="pad-top-5">
+                                                <p class="text-center">OK, mais vous devriez sérieusement envisager d'utiliser des subsituts nicotiniques.</p>
+                                            </div>
+                                            <div class="over">
+                                                <a class="right type-bt-green close cos-bg-lt" data-dismiss="modal" >Ok</a> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 right_col desktop">
+	                        <div class="monjournal-img-g"><img src="../desktop/images/img-journal2.png" /></div>
+	                    </div>
+
+                    </div>
+
+                    
+                </div>
+
+
+
+            </div>
+            <!-- wrapper end-->
+        </div>
+        <!--main content end-->  
+
+        <!--footer start-->
+        <ng-include  src="'/desktop/partials/usedpartials/footer_desktop.html'" ></ng-include>
+        <ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+        <!--footer end--> 
+
+    </div>
+
+</div>

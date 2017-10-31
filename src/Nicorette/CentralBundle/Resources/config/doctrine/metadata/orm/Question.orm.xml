@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Question" table="question">
+    <indexes>
+      <index name="fk_question_quiz1_idx" columns="quiz_id"/>
+    </indexes>
+    <id name="id" type="integer" column="id"/>
+    <id name="quiz" association-key="true"/>
+    <field name="name" type="string" column="name" length="255" nullable="true"/>
+    <field name="inputType" type="string" column="input_type" length="45" nullable="true"/>
+    <field name="answerRequired" type="integer" column="answer_required" nullable="true"/>
+    <field name="answerMultiple" type="integer" column="answer_multiple" nullable="true"/>
+    <one-to-one field="quiz" target-entity="Quiz">
+      <join-columns>
+        <join-column name="quiz_id" referenced-column-name="id"/>
+      </join-columns>
+    </one-to-one>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,163 @@
+<div ng-hide="loading">
+
+    <div id="container" >
+        <!--header start-->
+        <ng-include  src="'/desktop/partials/usedpartials/header_desktop_dashboard.html'" ></ng-include>
+        <!--header end-->
+
+        <!--main content start-->
+        <div id="main-content" class="over info-mobile">
+            <!--menu sidebar desktop-->
+            <ng-include  src="'/desktop/partials/usedpartials/menu_desktop.html'" ></ng-include>
+            <!--fin menu sidebar desktop-->
+
+            <!-- wrapper start-->
+            <div class="wrapper with-side-bar panic-bouton panic3 cracked">
+                <div class="row">
+                    <div class="col-lg-12 desktop">
+                        <h2 class="pad-top-20">Zut j'ai craqué</h2>
+                    </div>
+                    
+                    <div class="col-lg-12 pad-bottom-20">
+                            <div class="content" ng-show="ShowOneTowQuestion">
+                            	    <p class="mobile m-size line-height">Souvenez-vous, arrêter de fumer est un travail de tous les jours, ne le laisser pas un craquage vous couper la route !</p>
+                                    <div ng-repeat="question in questionsFirst"> 
+                                        
+                                                <p class="desktop pad-top-20"><span>{{question.name}}</span></p>
+                                                <p class="mobile center pad-top-20"><span  class="cos-bg-md light-color mm-size">{{question.name}}</span></p>
+                                                    <div class="custom-checkbox" id="ck-{{choice.id}}" ng-repeat="choice in question.choices" >
+                                                        <input checklist-model="$parent.$parent.answersFirst[question.id]" type="checkbox" checklist-value="choice" id="squared{{choice.id}}" name="check{{choice.id}}" class="lightcheckbox" directive-checkbox />
+                                                        <label class="label-check" for="squared{{choice.id}}"></label>
+                                                        <span class="txt-checkbox">{{choice.name}}</span>
+                                                    </div>
+                                                 <div style="color:red;font-size:12px;">{{questionError[question.id]}}</div>
+                                        
+                                    </div>
+
+                                    <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 desktop">
+                                    	<div class="col-lg-6 col-sm-12 col-md-12 col-xs-12"></div>
+                                        <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
+                                        	<a style="font-size: 1.7em;margin-bottom: 10px;" class="type-bt-green bt-width right" href="javascript:void(0)" ng-click="submitOneTowReponses()">Valider</a>
+                                            <p style="width: 100%; float: left; text-align: right; padding-right: 65px;">
+                                            	<span style="color: #339933; font-weight: normal !important;">Ce questionnaire vous rapporte 4 points </span>
+                                            </p>
+                                        </div>
+                                        <br/><br/>
+                                        
+                                    </div>
+
+                                    <div class="center mobile" style="margin: 25px 1px -15px;">
+                                        <a class="type-bt-green center bt-width" href="javascript:void(0)" ng-click="submitOneTowReponses()">Valider</a>
+                                        <p class="m-size pad-top-10" style="color: #339933; font-weight: normal !important; text-align: center">(Répondez au questionnaire et gagnez 4 points)</p>
+                                    </div>
+                            </div> 
+                        
+                            <div class="content" ng-show="ShowThirdQuestion">
+                                  <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">   
+                                      <div ng-repeat="question in questionsThird"> 
+                                        <div ng-if="$index==0" >  
+                                            <p class="desktop pad-top-20"><span>{{questionsThird.name}}</span></p>
+                                            <!--
+                                            <div class="radiobox desktop" ng-repeat="choice in questionsThird.choices">
+                                               <input ng-checked="checkRadio(choice.id)" type="radio" value="{{choice.id}}" name="choices-{{questionsThird.id}}" id="r-{{choice.id}}" class="radio" directive-checkbox />
+                                               <label class="custom-radio" for="r-{{choice.id}}"></label>
+                                               <label class="txt-radio" >{{choice.name}}</label>
+
+                                           </div>  
+                                           -->
+                                            <div id="chek-q3">
+                                                        <div class="custom-checkbox"  ng-repeat="choice in question.choices" id="ck-{{choice.id}}">
+                                                          <input ng-checked="checkRadio(choice.id)" type="checkbox" checklist-model="$parent.$parent.answers[question.id]" checklist-value="choice" id="ck{{choice.id}}" name="check{{choice.id}}" class="lightcheckbox" ng-click="setReponseCheck(choice,question.id)" directive-checkbox />
+                                                          <label class="label-check" for="ck{{choice.id}}"></label>
+                                                          <span class="txt-checkbox">{{choice.name}}</span>
+                                                        </div>
+                                            </div> 
+                                        </div>   
+                                      </div> 
+                                   </div>        
+                                       
+                                   
+                                   <br/><br/>
+                                   <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 desktop">
+                                    	<div class="col-lg-6 col-sm-12 col-md-12 col-xs-12"></div>
+                                        <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
+                                        	<a style="font-size: 1.7em;margin-bottom: 10px;" class="type-bt-green bt-width right" href="javascript:void(0)" ng-click="submitThirdReponses()">Valider</a>
+                                        </div>
+                                   </div>
+
+                                   <div class="center mobile" style="margin: 25px 1px -15px;">
+                                        <a class="type-bt-green center bt-width" href="javascript:void(0)" ng-click="submitThirdReponses()">Valider</a>
+                                   </div>
+                                   
+                                   
+                                   <!-- Popup relisez les astuces -->
+                                    <div id="modalLisezAstuces" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="pad-top-5">
+                                                    <p class="text-center">Relisez les astuces pour vous aider dans votre sevrage et n'oubliez pas, c'est de plus en plus facile avec le temps!</p>
+                                                </div>
+                                                <div class="over">
+                                                    <a class="right type-bt-green close cos-bg-lt" ng-click="redirectToAstuces()"  data-dismiss="modal" >Ok</a> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Popup parfois -->
+                                    <div id="modalparfois" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="pad-top-5">
+                                                    <p class="text-center">N'oubliez pas que la prise de substituts nicotiniques augmente vos chances de réussite de 50% à 70% ! Si vous voulez y arriver plus facilement, utilisez-les. </p>
+                                                </div>
+                                                <div class="over">
+                                                    <a class="right type-bt-green close cos-bg-lt" ng-click="redirectToDashbord()"  data-dismiss="modal" >Ok</a> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Popup si clique sur non -->
+                                    <div id="modalNon" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="pad-top-5">
+                                                    <p class="text-center"> Les substituts nicotiniques augmentent vos chances de réussite de 50% à 70%. Voulez vous voir les différentes formes de produits Nicorette ?</p>
+                                                </div>
+                                                <div class="over col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                    <a class="right type-bt-green close cos-bg-lt" data-dismiss="modal" ng-click="redirectToProduits()">OUI</a> 
+                                                </div>
+                                                <div class="over col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                    <a class="right type-bt-green close cos-bg-lt" data-dismiss="modal" data-toggle="modal" data-target="#modalNon_non" >NON</a> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Popup si clique sur non puis encore sur non -->
+                                    <div id="modalNon_non" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="pad-top-5">
+                                                    <p class="text-center">OK, mais vous devriez sérieusement envisager d'utiliser des subsituts nicotiniques.</p>
+                                                </div>
+                                                <div class="over">
+                                                    <a class="right type-bt-green close cos-bg-lt" data-dismiss="modal" >Ok</a> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div> 
+                    </div>  
+                    
+                </div>
+            </div>
+            <!-- wrapper end-->
+
+            <!--footer start-->
+            <ng-include  src="'/desktop/partials/usedpartials/footer_desktop.html'" ></ng-include>
+            <ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+            <!--footer end--> 
+        </div>
+    </div>

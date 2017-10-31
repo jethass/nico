@@ -1,0 +1,1001 @@
+.custom-checkbox .txt-checkbox{position: inherit!important;}
+
+.home label.label-check.condition{margin-left: 2px;}
+
+/******** calendier *********/
+
+.calendrier .owl-controls .owl-page span{display: none !important;}
+
+/*********** Mon profil ********/
+
+.mon-profil label.custom-radio{padding:0;}
+
+.mon-profil .radiobox .txt-radio{float:left;padding:0;}
+
+.mon-profil .inp-ico-mail{top:15px;}
+
+.center-checks .custom-checkbox span.txt-checkbox{position:relative !important}
+
+.mon-profil .inp-ico-tel,.mon-profil .inp-ico-pass,
+.mon-profil .inp-ico-new,.mon-profil .inp-ico-pass{top:15px;}
+
+.mon-profil .bio-desk{padding-top:10px;}
+
+.bio-chart div.profile-picture img {height: 101px;margin-top: 9px;margin-left: 9px;border:none!important;}
+
+.petit-tiret-img-profile{left: 102px;}
+
+.mon-profil .petit-tiret-img-profile{left: 101px;}
+
+.mon-profil a.icon-cam{top: 62px;left: 35px;}
+
+.next-none{display:none;}
+
+#editProfile .inp-ico-pseudo{background: url(../images/icon-pseudo.png) no-repeat left center !important;height: 34px;top: 13px;width: 42px;}
+
+#editProfile .inp-ico-mail{background: url(../images/icon-mail.png) no-repeat left center !important;height: 34px;top: 12px;width: 42px;}
+
+#editProfile .inp-ico-tel{background: url(../images/icon-phone.png) no-repeat left center !important;height: 34px;top: 13px;width: 42px;}
+
+#editProfile h3, .alerts h3{font-family:arial;color:#007d00;font-weight:bold;font-size: 1.5em;}
+
+#editProfile{border-right: 1px solid #e5e5e5;}
+
+/*.alerts .container-col{width:auto !important;padding-left: 35px;}*/
+
+#editProfile .link-reset-psd.contact a span{display: inline-block; text-align: center; width: 96%;}
+
+#editProfile .links{position:relative;top:120px;left: -145px;font-size:1.5em;}
+
+#editProfile .links a:hover{text-decoration:none;}
+
+
+
+#capture_editProfile_form_item_displayName .capture_tip{display:none;}
+
+.mon-profil .ligne .irs-single{margin-left: 15px;}
+
+.mon-profil .alerts  label.size-txt{font-size: 1.3em; font-weight: normal;padding: 20px 0 8px;}
+
+#editProfile .link-reset-psd a{width: 95%;float: left;}
+
+#monprofile_pic  {
+background: url("../images/bg-cercle-mon-profil.png") no-repeat 0px 0px!important;
+/*background-size: 86%!important;*/
+width: 144px;
+height: 134px;
+position: inherit!important;
+top: -11px;
+left: -6px;
+}
+a.type-bt-green-submit:focus,a.type-bt-green-submit:active{text-decoration:none!important;}
+
+#capture_editProfile_form_item_displayName label{display:none;}
+
+#capture_editProfile_displayName,#capture_editProfile_emailAddress,
+#capture_editProfile_phone,#capture_editProfile_oldpassword,
+#capture_editProfile_newpassword,#capture_editProfile_newpasswordConfirm{
+padding: 0px 18px 0px 61px;
+border-radius: 35px !important;
+border:none;
+background: #f6f6f6 !important; 
+width: 90%;
+height: 47px;
+position: relative;
+color: #17211e;
+font-size: 1.37em;
+}
+
+.inp-ico-pseudo {
+    background: url("../images/ico-pseudo.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+    display: block;
+    height: 31px;
+    left: 12px;
+    position: absolute;
+    top: 15px;
+    width: 31px;
+}
+
+#editProfile .link-reset-psd {padding-right: 35px; text-align: center;}
+
+#editProfile .link-reset-psd a{font-size: 1.4em; border: 1px solid #efefef;color: #42c683; width: 97%;padding:0;margin:0px 25px 25px 0;float:left}
+
+.alerts .link-reset-psd a{width: 94% !important; /*margin-left: 30px !important; */}
+
+#editProfile .container-col{max-width: 470px !important; }
+
+.link-reset-psd a{font-size: 1.4em; border: 1px solid #efefef;color: #42c683; width: 93%;padding:0;margin:0 25px 15px 0;float:left}
+
+.link-reset-psd a:hover{text-decoration:none;}
+
+#editProfile .link-reset-psd a span{ background: url("../images/icon-down.png") no-repeat scroll center right ;width:96%; float:left}
+
+#editProfile .col-lg-6{border-right:1px solid #f6f6f6}
+
+#editProfile .link-reset-psd a span,.link-reset-psd a span{background: url("../images/icon-down.png") no-repeat scroll center right; padding: 15px 20px 15px 12px;; color: rgb(66, 198, 131); display: block;font-size: 1.3em;width: 98%;text-decoration:none;text-align:center}
+
+.link-reset-psd a:hover{ background: #efefef;}
+
+#editProfile .link-reset-psd a span:hover{background: url("../images/icon-down.png") no-repeat scroll center right #efefef }
+	
+/*.mon-profil .bgslider, .mon-profil .logout{width:90%;}
+
+.mon-profil .logout{ padding-top: 30px;}*/
+
+.mon-profil .logout a{text-decoration:underline; font-size:1.3em;}
+
+.msg-sucess-form {margin-left: 0;margin-right: 125px;font-weight: normal;color: #339933;}
+
+.msg-error-form{margin-left: 0;margin-right: 125px;font-weight: normal;color: red;}
+
+.mon-profil .capture_footer{margin-bottom:25px !important}
+
+.capture_footer input#capture_editProfile_edit_photo_submit{ color:#fff;margin: 0 7px 0 0 !important; padding: 5px;background:#339933}
+
+.janrain-capture-ui .capture_footer .capture_btn:hover{background: #42c683 !important; }
+
+form#capture_signIn_userInformationForm #ck1,form#capture_signIn_userInformationForm #ck2, form#capture_signIn_userInformationForm #ck3{margin:0; padding:3px 0;}
+
+.bloc-left-home {border-right:1px solid #e5e5e5}
+
+#signIn #ck1{ margin-top: -12px;}
+
+.col-inscrire{min-height:250px !important}
+
+.col-inscrire a{ font-size: 1.6em !important;}
+
+button#capture_signIn_traditionalSignIn_signInButton:before{content: "Valider"; font-size: 1.2em !important;}
+
+button#capture_signIn_traditionalSignIn_signInButton span{font-size:0;}
+
+/****** reset password ****/
+
+.reset-password{padding-left:20px}
+
+.reset-password a{ float:none;margin-top: 70px;display:inline-block;}
+
+.mon-profil .inp-ico-pass{left: 40px; top: 9px;}
+
+.mon-profil .inp-ico-pass.conf{left: 25px; top: 30px;}
+
+.mon-profil .inp-ico-new{left: 25px; top: 29px}
+
+#capture_editProfile_editProfileForm_defaultSavedProfileMessage .capture_save_success.capture_profileSavedMessage_container{margin-top: -50px;}
+
+#changePassword{margin-left: 200px;}
+
+#changePassword .row{margin-top: 26px;padding-left: 10px;}
+
+#changePassword h2{padding-left:20px;}
+
+#capture_changePassword_form_item_oldpassword .capture_tip_error{display:block;}
+
+.mon-profil p.p-desc-contrat{width:90%; color:#17211e;line-height:1.5}
+
+.container-quizz.one.quizz1-1 .modal-dialog p{ font-size:1.5em;}
+ 
+.container-quizz.one.quizz1-1 .modal-dialog a{float: none !important; text-align: center; width: 100%;}
+
+#changePassword .inp-ico-pass{background:url("../images/icon-confirme.png") no-repeat scroll left center !important;width: 43px;left: 25px; }
+
+#changePassword .inp-ico-new{background:url("../images/icon-new-psd.png") no-repeat scroll left center !important;width: 43px;height:32px; }
+
+
+/*********** 320 / 480 **********/
+@media only screen and (min-width: 320px) and (max-width:480px) {
+
+   /*********** Quizz 1 **********/
+   .container-quizz.one.quizz1-1 #ck-1-1 span{top: 2px;}
+  
+   .container-quizz.one.quizz1-3 #ck-3-25 span,
+   
+   .container-quizz.two-1 #ck-4-32 span{top: 10px;}
+   
+   .container-quizz.one.quizz1-3 .slide-puce{width:83% !important }
+   
+   .container-quizz.one.quizz1-3 .mobile.bar-prog .bar{width: 29%; !important }
+   
+   .container-quizz.two-2 .bar{width:43.5% !important;}
+
+   .container-quizz.three.quizz-3-2 .bar{width:11% !important }
+   
+   .container-quizz.three.quizz-3-3 .bar{width:10.7% !important }
+   
+   .container-quizz.three.quizz-3-5 .bar{width: 11%}
+
+   .container-quizz.three.quizz-3-5 .slide-puce{width:56% !important }
+        
+   .container-quizz.three.quizz-3-8 .slide-puce{width:84.2% !important }
+   
+   .container-quizz.three.quizz-3-8 .etat{, .container-quizz-contact .etat}}
+   
+    /*#resetPassword  .pad-bottom-10.col-xs-6{float: left !important; width: 100% !important;}*/
+	
+	#resetPassword  .pad-bottom-10.col-xs-6 input{width:100% !important; font-size:1.6em !important}
+	
+	#janrainModal .janrain_modal_closebutton{/*right: 40px !important;*/ top: 17px !important;}
+	
+	#capture_changePassword_oldpassword{width: 98% !important;}
+    
+    #capture_changePassword_newpassword, #capture_changePassword_newpasswordConfirm {/*padding:0 18px !important;*/ width: 98% !important;}
+
+    .inscription #capture_traditionalRegistration_birthdate_dateselectday,
+    .inscription #capture_traditionalRegistration_birthdate_dateselectmonth,
+    .inscription #capture_traditionalRegistration_birthdate_dateselectyear{width:31.6%;}
+
+}
+
+
+/*********** 481 / 640 **********/
+@media only screen and (min-width: 481px) and (max-width:640px) {
+	
+	.container-quizz.one.quizz1-1 .mobile.bar-prog .bar{width:31% !important;}
+	
+	.container-quizz.one.quizz1-1 .slide-puce{width: 31% !important;}
+	
+	.container-quizz.one.quizz1-2 #radio_15 ul.style_radio li {min-height:59px;padding-top:6px;  }
+	
+	.container-quizz.one.quizz1-2 .btn-radio{width:auto !important}
+	
+	.container-quizz.one.quizz1-2 p.custom-text-mobile {width:70% !important}
+	
+	.container-quizz.two-1 .bar,.container-quizz.two-1 .slide-puce{width:47% !important;}
+
+    .container-quizz.two-2 .bar,.container-quizz.two-2 .slide-puce{width:46% !important;}
+    
+    .container-quizz.two-2 .slide-puce{width:89% !important;}
+    
+    #feedBack2 .banner-feedback .txt{padding-top:40px !important;}
+    
+    .container-quizz.three.quizz-3-1 .bar,
+    .container-quizz.three.quizz-3-2 .bar,
+    .container-quizz.three.quizz-3-4 .bar,
+    .container-quizz.three.quizz-3-5 .bar{width:11.5% !important}
+    
+    .container-quizz.three.quizz-3-3 .bar{width:11.3% !important}
+    
+    .container-quizz.three.quizz-3-3 .slide-puce{ width: 35% !important; }
+    
+    .container-quizz.three.quizz-3-4 .slide-puce{ width: 47% !important; }
+    
+    .container-quizz.three.quizz-3-5 .slide-puce{width:58% !important }
+    
+    .container-quizz.three.quizz-3-5 .bar{width: 11.3%}
+    
+    .container-quizz.three.quizz-3-7 .bar{width: 11.5%}
+    
+    .container-quizz.three.quizz-3-7 .slide-puce{width:80% !important }
+    
+    .container-quizz.three.quizz-3-6 .slide-puce{width:67% !important }
+    
+    .container-quizz.three.quizz-3-8 .slide-puce{width:87% !important }
+ 	
+	.container-quizz.one.quizz1-2 p#yesno_8,.container-quizz.one.quizz1-2 p#yesno_9,
+	.container-quizz.one.quizz1-2 p#yesno_10,.container-quizz.one.quizz1-2 p#yesno_11,
+	.container-quizz.one.quizz1-2 p#yesno_12,.container-quizz.one.quizz1-2 p#yesno_13,
+	.container-quizz.one.quizz1-2 p#yesno_16,.container-quizz.one.quizz1-2 p#yesno_18{padding-top: 20px;}
+	
+	#resetPassword #capture_resetPassword_newpassword, #resetPassword #capture_resetPassword_newpasswordConfirm{width:100% !important}
+	
+	#resetPassword  .pad-bottom-10.col-xs-6 input{font-size:1.7em !important}
+	
+	#janrainModal .janrain_modal_closebutton{right: 65px !important; top: 17px !important;}
+	
+	#capture_changePassword_oldpassword{width: 95% !important;}
+    
+    #capture_changePassword_newpassword, #capture_changePassword_newpasswordConfirm {padding:0 18px !important; width: 98% !important;}
+
+    #container.mobile.plan.action .custom-checkbox .txt-checkbox{margin-top:2px !important;}
+    
+    
+}
+
+/*********** 320 / 640 **********/
+@media only screen and (min-width: 320px) and (max-width:640px) {
+	.modal-dialog{background: #fff;width:270px;height:200px !important;margin-top:175px !important;padding-left:20px;padding-right:20px;}
+	.journal #modalrenseigned .modal-dialog{height:135px !important;}
+	.modal-dialog .modal-content p{font-size: 1.4em; padding-top:7px}
+	.back-mobile{cursor: pointer; text-indent: -90000px; 
+				background: url("../images/icon-back.png") no-repeat 6px 11px;
+				width: 33px;
+				height: 44px;
+				background-size: 44%;
+				position:absolute;
+				left:0;
+	}
+	.wrapper.panic-bouton .txt-checkbox {font-size: 1.5em;}
+	.back-mobile.back{top: 0;}
+	
+	.mon-profil{padding:0 15px}
+	
+	.mon-profil .inp-ico-mail{top:13px !important;left:9px !important}
+	
+	.mon-profil .inp-ico-tel{top:12px !important;left:9px !important}
+	 
+	.mon-profil .inp-ico-pass{top:18px !important;left:9px !important}
+	
+	.mon-profil #changePassword .inp-ico-pass{ background-size: 50% auto !important;left: 39px !important;top: 10px !important;width:75px !important}
+    
+    .mon-profil input.new,.mon-profil input.confirme {padding-left:20px !important; }
+   
+	.mon-profil .inp-ico-pseudo{background: url("../images/icone-pseudo.png") no-repeat 0px 6px;background-size:100%;height: 29px;left: 10px;top: 12px; width: 29px;}
+	
+	.mon-profil .inp-ico-tel{background: url("../images/icon-phone.png") no-repeat 0px 6px;background-size:100%;height: 29px;left: 8%;top: 9px; width: 29px;}
+	
+	.mon-profil input{background:#f6f6f6;border-radius:45px;width:285px;padding: 0 18px 0 50px;}
+	
+	.mon-profil .panel-info-profil{background: url("../images/bg-profil-mobile.png") no-repeat; margin:0 -16px 27px -16px; background-size:100%;}
+	
+	.mon-profil .bio-desk{float:left;position: none;width:auto;padding-top: 15px;}
+	
+	.mon-profil .bio-chart{left: 8px;}
+	
+	.mon-profil .bio-desk h4{color:#fff;padding-bottom: 6px;}
+	
+	.mon-profil .bio-desk .nmbr-div{padding:0}
+	
+	.mon-profil a.ico-edit{ 
+		background: url("../images/icon-edit.png") no-repeat scroll left center;
+		background-size:85%;
+		display: block;
+        height: 31px;
+        position: relative;
+        top: -7px;
+        text-indent: -90000px;
+        left:115px;
+        width: 31px;
+	}
+	
+	.container-quizz.three.quizz-3-7 .slide-puce{width:77% !important }
+	
+	.mon-profil p.p-desc-contrat,.mon-profil .bgslider, .mon-profil .logout{width:100%}
+	
+	.mon-profil .ligne{min-height:100px;padding:0 0 10px 0; margin-top:10px;}
+	
+	.mon-profil .ligne.first{border-top:1px solid #bdbdbd; border-bottom:1px solid #bdbdbd;}
+	
+	.mon-profil #cssmenu li{border-bottom:1px solid #efefef;cursor: pointer;min-height: 55px;}
+	
+	.mon-profil #cssmenu li a{width:98%;float:left;background: url("../images/icon-down.png") no-repeat center right;padding:15px 8px;text-decoration: none;}  
+	
+	.mon-profil #cssmenu li a span{font-size:1.3em }
+	
+	.mon-profil #cssmenu{margin-top: -35px;}
+	
+	.mon-profil #cssmenu li:hover{background:#efefef;}
+	
+	.mon-profil #cssmenu li.first{border-top:1px solid #efefef;}
+	
+	.mon-profil .container-col .btn-submit{float:left;width:100%}
+	
+	.mon-profil .container-col .btn-submit a{float:none;width:70% !important; display:inline-block;margin-bottom: 25px;margin-top: 35px;}
+	
+	#cookie-bar {height:auto !important;  top: 290px;}
+	
+	#cookie-bar .btn a {font-size: 1em !important; padding: 4px 15px !important; margin-top: 20px;}
+	
+	.bloc_info_profile img{margin-top:9px !important; }
+	
+	.bio-chart div.profile-picture {position: absolute;width: 288px;height: 121px;background: url(../images/bg-cercle-profil.png) no-repeat left top; background-size: 41%;top: 17px; }
+	
+	.bloc_info_profile canvas{margin-top: 21px;}
+	
+	.bloc_info_profile .bio-desk .nmbr-div label{margin-top:0 !important;}
+	
+	.bloc_info_profile .bio-desk {padding-top: 15px;}
+	
+	#changePassword .inp-ico-pass{ left: 24px !important;height:33px;top: 8px !important;}
+	
+	#capture_changePassword_newpassword, #capture_changePassword_newpasswordConfirm {padding-left: 20px !important;}
+	
+	.capture_footer #capture_editProfile_saveButton{width: 100% !important;display:inline-block;padding-top: 0;}
+	
+	#editProfile .link-reset-psd a{border-left: 0; border-right: 0; text-align:left;width:100%;margin-top: 15px;}
+	
+	#editProfile .link-reset-psd{ padding-right: 6px;}
+	
+	.alerts .container-col{padding-left:0}
+	
+	span.js-irs-0,span.js-irs-1,span.js-irs-2,span.js-irs-3,span.js-irs-4,
+	span.js-irs-5,span.js-irs-6,span.js-irs-7{ margin-left: 13px; width: 100%;}*/
+	
+	.mon-profil .alerts {border-left:0}
+	
+	.irs-line-mid {left:10% !important;  width: 90% !important;}
+	
+	.irs-from, .irs-to, .irs-single{font-size: 9px !important;}
+	
+	.alerts ul.style_radio{margin-bottom: 0;}
+	
+	.alerts .ligne.last{margin-bottom: -60px;}
+	
+	.mon-profil .alerts, #editProfile .container-col  {margin: 0 auto; max-width: 100% !important;}
+	
+	.mon-profil .capture_footer { margin-bottom: -10px !important;}
+		
+	#editProfile .link-reset-psd a span{text-align:left;}
+	
+	.mon-profil .logout {padding-bottom: 10px;    padding-top: 20px;}
+	
+	#capture_editProfile_displayName, 
+	#capture_editProfile_emailAddress,
+	#capture_editProfile_phone,
+	#capture_editProfile_oldpassword,
+	#capture_editProfile_newpassword,
+	#capture_editProfile_newpasswordConfirm{	
+		border-radius: 45px;
+		padding: 0 18px 0 60px;
+        width: 100% !important;
+		background: #f6f6f6!important;
+		font-size: 1.6em;
+	}
+	
+	#capture_editProfile_newpassword,#capture_editProfile_newpasswordConfirm { padding-left: 20px !important;}
+	
+	#capture_editProfile_saveButton {
+		float: none;
+		width: 98% !important;
+		margin: 0 !important;
+		border-radius: 35px !important;
+		color: #fff !important;
+		font-size: 1.74em!important;
+		font-weight: bold!important;
+	}
+	
+	.mon-profil .btn-submit a.bt-width:hover{background: #42c683 !important; }
+	
+	.tabs-menu .dropdown a{font-size:1em !important;}
+	
+	#monprofile_pic{top: -5px;}
+	
+	.mon-profil	#monprofile_pic{top: 9px;left: 0px;}
+	
+	.mon-profil .bio-desk{margin-left: 34px;}
+	
+	#editProfile .links{position:relative; top:130px; left: 10px; font-size:1.5em; color:#fff;}
+	
+	#editProfile .links a{color:#fff;font-size:1em}
+	
+	#changePassword .inp-ico-pass.conf,#changePassword .inp-ico-new{background:none !important;}
+
+    #capture_changePassword_oldpassword, #capture_changePassword_newpassword, #capture_changePassword_newpasswordConfirm {font-size:1.6em !important}
+    
+    #changePassword{margin-top:15px;}
+    
+    #capture_changePassword_saveButton{width:70% !important; margin:25px 5px 110px 5px !important}
+    
+    #changePassword .row{ margin-left: -15px;padding-left: 0;}
+    
+    .container-action.head {padding: 20px 12px 9px;}
+    
+    .container-action.head a.type-bt-green.dark{padding-right: 12px !important; font-size: 1.7em !important;padding:5px 12px 5px 10px !important}
+    
+   .container-quizz.one.quizz1-2 ul.style_radio li{padding: 5px 3px 0 3px !important;}
+   
+   #editProfile.janrain-capture-ui {width: 100% !important;}
+   
+   .home .mobile-form-connexion button#capture_signIn_traditionalSignIn_signInButton{display:block !important}
+	
+   .home .reset-pass{ padding-right: 20px;}
+   
+   .mon-profil input#capture_editProfile_saveButton, .mon-profil .capture_footer .capture_btn.capture_processing{z-index: 1;left: 50%;width: 54% !important;margin-left: -27% !important;bottom: -540px;position:absolute}
+
+   /**** page verification email delais expirer ******/
+
+	#verifyEmail{min-height:500px;}
+	
+	#verifyEmail .mail-adress input#capture_verifyEmail_traditionalSignIn_emailAddress{width: 290px;background:#f6f6f6;background-position: 10px 6px;border:0;border-radius:35px;padding: 15px 0 15px 56px;font-size: 1.6em;}
+	
+	#verifyEmail .mail-adress{width:290px; display:inline-block;margin-top: -30px; }
+	
+	#verifyEmail .mail-adress .inp-ico-mail{background:url(../images/icon-mail.png) no-repeat left center;position: relative;width: 42px;height: 33px;z-index: 100;top: 39px;left:8px;} 
+	
+	#verifyEmail .mail-adress .capture_email .capture_tip_validating{display:none;}
+	
+	#verifyEmail .mail-adress .capture_email .capture_tip_error{width:100%;}
+	
+	#verifyEmail img{margin-top:25px;}
+	
+	#verifyEmail .capture_footer input#capture_verifyEmail_submitButton{background: #339933;width: 240px;border-radius: 35px;padding: 15px;margin-top: 25px;color: #fff;font-size: 1.6em;font-weight: bold;}
+	
+	#verifyEmail .capture_footer input#capture_verifyEmail_submitButton:hover{background: #247024 !important;}
+
+    .modal-dialog .modal-content p { font-size: 1.47em;padding-top:10px }
+   
+    .modal-dialog .modal-content a{font-size: 1.8em !important;}
+    
+    .popup-calender p{margin-bottom:5px;}
+    
+    .popup-calender .vide{width: 23px; height: 23px; float: left; margin-right: 13px; border-radius: 45px; background: #3ccbd3;}
+    
+    .popup-calender .bleu{width: 23px; height: 23px; float: left; margin-right: 13px; border-radius: 45px; background: #1b699a;}
+    
+    .popup-calender .vert{width: 23px; height: 23px; float: left; margin-right: 13px; border-radius: 45px; background: #42c683;}
+    
+    .popup-calender .rouge{width: 23px; height: 23px; float: left; margin-right: 13px; border-radius: 45px; background: #eb5757;}
+ 
+   /***** pages j'arrete  *****/
+   .jarette-null h3{padding-bottom:15px;}
+   
+   .jarette-null .description-incontent-profile{font-weight:normal !important; font-size:1.6em !important;}
+
+   .jarette-null{padding-top:15px;}
+   
+   .jarette-null .custom-checkbox{margin: 8px 0;}
+   
+   .jarette-null .titre-custom{font-weight:normal !important; font-size:2.1em !important;font-family:cosmos_bqmedium; color:#42c683; text-align:center}
+
+   .jarette-null .mobile .link-reset-psd.contact a{width:100%; border-left:0; border-right:0;}
+   
+   .felicitation p.description-jarrete1b  span.mobile{font-weight:normal !important; font-size:1.2em !important;font-family:cosmos_bqmedium; color:#42c683; text-align:center}
+   
+   .felicitation p.description-jarrete1b.mobile{text-align:left; font-size:1.6em}
+   
+   .felicitation .ligne input{width:50%; margin-top: 60px !important;margin-bottom: 60px !important; font-size: 2em !important;}
+
+   .inscription #capture_traditionalRegistration_form_collection_civility > label {padding: 4px 10px 0 0;}
+   
+   .civilite #capture_traditionalRegistration_form_item_civility_MR_0  .txt-radio,
+   .civilite #capture_traditionalRegistration_form_item_civility_MME_1 .txt-radio{margin:0 !important}
+   
+   .civilite{margin-bottom: -3px;}
+   
+   .inscription .custom-selectbox #capture_traditionalRegistration_form_item_city .helpers_list_result ul{padding: 8px 0;}
+   
+   .inscription .custom-selectbox #capture_traditionalRegistration_form_item_city .helpers_list_result{top:45px !important}
+		                                          
+   .mes-points .content {min-height: 280px;}
+   
+   .mon-profil #capture_editProfile_photoManager ul.options{margin-top: 0px; font-size: 1.17em; position:absolute;top:145px;margin-left: 34px;}
+   
+   .mon-profil #capture_editProfile_photoManager ul.options li a{color:#c1b7b2} 
+    
+   .mon-profil #capture_editProfile_photoManager ul.options li#capture_editProfile_upload_photo{display:none;}
+   
+   .mon-profil #capture_editProfile_photoManager ul.options li#capture_editProfile_edit_photo{border-left:none;border-right:1px solid #c1b7b2 !important}
+ 
+   .mon-profil .ligne .irs.js-irs-0 .irs-single {margin-left: 36px;}
+   
+   .mon-profil .ligne .irs.js-irs-1 .irs-single { margin-left: 17px;}
+   
+   .txt-gris a{color:#868686;text-decoration:underline}
+   
+   .txt-gris{font-size:1em;}
+
+}
+
+/*********** 640 / 767 **********/
+@media only screen and (min-width: 640px) and (max-width:767px) {
+	.bio-chart span.numberofPoint{top: 112px; left:0; background:none;}
+}
+
+/*********** 481 / 767 **********/
+@media only screen and (min-width: 481px) and (max-width:767px) {
+	
+  .plan .bg-jour.none{display:block !important;width: 105%;margin:15px 0 25px -10px}
+    
+  .plan .bg-jour .cache{display:none !important}
+  
+  .wrapper.mes-points .border-left{border: 0 !important;margin: 35px 0 25px 0;}
+  
+  .wrapper.produit .col-lg-7.brd-right {border-right: 0 !important;}
+  
+  .wrapper.statistique .border.midi{border:0 !important}
+  
+  .mon-profil .alerts { border-left: 0}
+  
+  .container-conseils{padding-bottom:15px;}
+ 
+  ul.links-dask-btns li.bt-purpple span{width:50%}
+
+}	
+
+/*********** 641 / 767 **********/
+@media only screen and (min-width: 641px) and (max-width:767px) {
+	
+	.home .owl-carousel {  display: none; height: 445px;}
+	
+	.home .mobile-form-connexion button#capture_signIn_traditionalSignIn_signInButton{margin-top: 45px !important }
+    
+    .home .mobile-bg-gris h3{float: left; margin: 0 0 15px 0; width: 100%;}
+	
+	.home .btn-demarre{margin-top: 0 !important;}
+	
+	.container-bts-conseils .container-conseils{border-left:0px !important}
+	
+	.mes-points .content {min-height: 0; }
+}
+
+/*********** 768 / 990 **********/
+@media only screen and (min-width: 768px) and (max-width:990px) {
+	
+	.wrapper.statistique .top-bloc .bloc .bd-fois{border:0 !important}
+	
+	.mon-profil .alerts{width:50%;margin:0 auto;border-left:0}
+	
+	.alerts .container-col { padding-left: 0px;}
+	
+	.alerts .link-reset-psd a { width: 95% !important; }
+	
+	#editProfile .container-col { width: 100% !important;}
+	
+	ul.links-dask-btns li a,ul.links-dask-btns li.bt-purpple p{width:100% !important}
+	
+	/*.panel-stat-cigarette{padding-left: 178px; left: -189px;}*/
+	
+	.bio-chart span.numberofPoint
+	
+	.panel-stat-cigarette .bio-chart canvas{ margin-bottom: -45px;}
+	
+	.panel-stat-cigarette .bio-desk{margin-bottom: 35px;}
+	
+	.container-conseils{padding-bottom:15px;}
+	
+	/*** page homme ***/	
+	
+	.home .mobile-bg-gris h3{float: left; margin: 0 0 15px 0; width: 100%;}
+	
+	.home .btn-demarre{margin-top: 0 !important;}
+	
+	.home .mobile-form-connexion button#capture_signIn_traditionalSignIn_signInButton{margin-top: 45px !important }
+}	
+
+/*********** 641 / 990 **********/
+@media only screen and (min-width: 641px) and (max-width:990px) {
+  .journal .monjournal-img-g{text-align:center}
+  
+  .journal .right_col{border-left:0 !important;margin:25px 0 20px 0}
+  
+  .monjournal-img-g img { width: 50%;}
+  
+  #signIn .mobile-bg-gris, #forgotPassword .mobile-bg-gris{ margin-top: 35px;}
+  
+  #forgotPassword .capture_backgroundColor .container-col{min-height:250px;}
+  
+  .panic-bouton .right-col-2 .bottom-content{min-height:120px !important}
+  
+  .pre-inscription .col-inscrire{margin: 35px 0 25px 0;min-height: 100px !important;width:100%}
+  
+  .wrapper.parrain  .form-contact-parrain{border-left:0px solid #e5e5e5}
+  
+   /*** page mon profil ***/
+   #editProfile { border-right: 0}
+	
+   .mon-profil .alerts{width:100% !important}
+	
+   .alerts .container-col{max-width:470px !important;}
+	
+   .alerts .ligne.mar label{padding-left: 0px !important;}
+	
+   .alerts .link-reset-psd a {margin-left: 0px !important;}
+	
+   .alerts .container-col { padding-left: 20px !important; }
+	
+   .wrapper.produit .col-lg-7.brd-right{border: 0 !important}
+	
+   .wrapper.produit .col-lg-7.brd-right .form{margin-left: 0 !important}
+   
+   .container-action a.type-bt-green, .container-action a.type-bt-green.dark{display:inline-block;width:80% !important;}
+	
+   .home #capture_signIn_userInformationForm .inp-ico-pass, #capture_signIn_userInformationForm .inp-ico-mail{top: 11px !important;}
+	
+   .mon-profil input#capture_editProfile_saveButton, .mon-profil .capture_footer .capture_btn.capture_processing{z-index: 1;left: 50%;width: 54% !important;margin-left: -27% !important;bottom: -577px;position:absolute}
+
+   .container-full.produit-patch .content-full .content {width: 100%; }
+     
+   .jarette-null .custom-checkbox#ck-1{float:left; width:150px;}
+	
+   .jarette-null .custom-checkbox#ck-2{float:left; width:250px;}
+   
+   .mon-profil #capture_editProfile_photoManager_parent{margin-top: -490px;}
+   
+   .mon-profil #capture_editProfile_photoManager ul.options{margin-top: 0px; font-size: 1.17em; position:absolute;top:140px;}
+}
+
+
+/*********** 990 / 1200 **********/
+@media only screen and (min-width: 990px) and (max-width:1200px) {
+
+  .plan  .custom-checkbox {margin: 0 0 12px 0;}
+  
+  .desktop.plan .container-action .planheight{min-height: 215px;}
+
+  .home .owl-carousel .owl-item{ padding-right: 35px; margin-left: 25px;}
+  
+  .jarette-null .custom-checkbox#ck-1{float:left; width:150px;}
+	
+  .jarette-null .custom-checkbox#ck-2{float:left; width:250px;}
+	
+  .mon-profil #capture_editProfile_photoManager ul.options{margin-top: 0px; font-size: 1.17em; position:absolute;top:180px;}
+
+}
+
+
+/*********** 1024 / 1200 **********/
+@media only screen and (min-width: 1024px) and (max-width:1200px) {
+	
+  .container-quizz.one.quizz1-1 .bar, .container-quizz.one.quizz1-1 .bar.active,
+  .container-quizz.one.quizz1-2 .bar, .container-quizz.one.quizz1-2 .bar.active,
+  .container-quizz.one.quizz1-3 .bar, .container-quizz.one.quizz1-3 .bar.active{width:32% !important }
+  
+  .container-quizz .bar, .container-quizz-contact .bar{margin-right: 4px !important; }
+
+  .container-quizz.two-1 .bar, .container-quizz.two-1 .bar.active,
+  .container-quizz.two-2 .bar,.container-quizz.two-2 .bar.active{width:48% !important }
+  
+  .container-quizz.three.quizz-3-6 .bar{width: 11.7%}
+  
+  .container-quizz.three.quizz-3-1 .bar,
+  .container-quizz.three.quizz-3-2 .bar,
+  .container-quizz.three.quizz-3-3 .bar,
+  .container-quizz.three.quizz-3-4 .bar,
+  .container-quizz.three.quizz-3-5 .bar{width:11.7%}
+  
+  .wrapper.produit .col-lg-7.brd-right .form{margin-left: 0 !important}
+  
+  #feedBack2 .banner-feedback .txt {margin-left: 60px; margin-top: 80px;font-size:1em;}
+  
+  .home #capture_signIn_userInformationForm .inp-ico-pass, #capture_signIn_userInformationForm .inp-ico-mail{top: 11px !important;}
+
+  .mon-profil #capture_editProfile_photoManager ul.options{margin-top: 0px; font-size: 1.17em; position:absolute;top:180px;}
+ 
+}
+
+
+/***************************** Devices *********************************/
+/*********** 1200 **********/
+@media only screen and (min-width: 1200px){
+	
+	.container-quizz.one.quizz1-1 .bar, .container-quizz.one.quizz1-1 .bar.active,
+	.container-quizz.one.quizz1-2 .bar, .container-quizz.one.quizz1-2 .bar.active,
+	.container-quizz.one.quizz1-3 .bar, .container-quizz.one.quizz1-3 .bar.active{width:32%;}
+	
+    .container-quizz.two-1 .bar, .container-quizz.two-1 .bar.active,
+    .container-quizz.two-2 .bar,.container-quizz.two-2 .bar.active{width:48.5% !important }
+    
+    #feedBack2 .banner-feedback .txt {font-size: 1em; margin-left: 100px; margin-top: 100px;}
+
+    .container-quizz.three.quizz-3-1 .bar{width:11.9%}
+    
+    .container-quizz.three.quizz-3-2 .bar{width:11.9%}
+    
+    .container-quizz.three.quizz-3-3 .bar{width:12%}
+    
+    .container-quizz.three.quizz-3-4 .bar, .container-quizz.three.quizz-3-5 .bar{width:11.8%}
+    
+    .container-quizz.three.quizz-3-6 .bar{width: 11.8%}
+    
+    .home #capture_signIn_userInformationForm .inp-ico-pass, #capture_signIn_userInformationForm .inp-ico-mail{top: 11px !important;}
+
+     .home .owl-carousel .owl-item{ padding-right: 40px; margin-left: 25px;}
+     
+     .jarette-null .custom-checkbox#ck-1{float:left; width:150px;}
+	
+	.jarette-null .custom-checkbox#ck-2{float:left; width:250px;}
+	
+	.mon-profil #capture_editProfile_photoManager ul.options{margin-top: 0px; font-size: 1.17em; position:absolute;top:180px;}
+}
+
+/*********** 990 **********/
+@media only screen and (width: 990px){
+	.home #capture_signIn_userInformationForm .inp-ico-pass,.home #capture_signIn_userInformationForm .inp-ico-mail{top: 22px !important;}
+	#verifyEmail .mail-adress .inp-ico-mail{top:50px;}
+	
+	.pre-inscription .inp-ico-pass,.pre-inscription #capture_signIn_userInformationForm  .inp-ico-mail{top: 22px !important;}
+	
+	.pre-inscription #signIn .container-col{min-height: 530px;}
+	
+	.niveau.desktop .date-point .date-10, .niveau.desktop .date-point .date-14,
+    .niveau.desktop .date-point .date-15,.niveau.desktop .date-point .date-18,.niveau.desktop .date-point .date-19{margin-top: 2px;}
+
+	
+}
+
+
+/*********** IPH 5 : 320 normal **********/
+@media only screen and (width: 320px){
+	.home .owl-carousel {height: 350px !important;}
+	
+	#capture_traditionalRegistration_form_collection_civility label{padding-top:3px !important;}
+	
+	#capture_traditionalRegistration_form_collection_civility label.txt-radio{width: 35px; padding-left: 5px; margin-top: 0; height:17px}
+	
+	.inscription input#capture_traditionalRegistration_createAccountButton{font-size: 1.8em !important;}
+	
+	.inscription .civilite{float:left; height:45px;}
+		
+	#capture_traditionalRegistration_form_collection_civility label{font-size: 1.7em !important;}
+	
+	/*.inscription label.custom-radio:before{width: 13px !important; height: 14px !important;}*/
+	
+	.inscription #capture_traditionalRegistration_form_item_civility_MR_0 .custom-radio,.inscription #capture_traditionalRegistration_form_item_civility_MME_1 .custom-radio{padding-left: 3px !important; padding-top: 3px !important;}
+   
+    .inscription .marg-customtxt-check {margin-left: 22px;}
+    
+    .inscription select.status{border:none;left: 128px;width: 293px !important;padding: 0 18px !important;}
+    
+    .mobile.jarrette-continuer.mobile a.dark{height: 40px; line-height: 1.5; vertical-align: middle; padding: 2px 0;}
+}
+
+
+/*********** IPH 6 : 375 normal **********/
+@media only screen and (width: 375px){
+		
+	.mon-profil{min-height:1200px}
+	
+	.mon-profil .logout{padding-top:70px;}
+	
+	.home .owl-carousel {height: 380px !important;}
+	
+	#capture_traditionalRegistration_form_collection_civility label{padding-top:3px !important;}
+	
+	#capture_traditionalRegistration_form_collection_civility label.txt-radio{width: 36px; padding-left: 5px; margin-top: 0; height:17px}
+	
+    .inscription input#capture_traditionalRegistration_createAccountButton{font-size: 1.8em !important;}
+    
+    #capture_traditionalRegistration_form_collection_civility label{font-size: 1.7em !important;}
+    
+   /* .inscription label.custom-radio:before{width: 13px !important; height: 14px !important;}*/
+	
+	.inscription #capture_traditionalRegistration_form_item_civility_MR_0 .custom-radio,.inscription #capture_traditionalRegistration_form_item_civility_MME_1 .custom-radio{padding-left: 3px !important; padding-top: 3px !important;}
+
+    .inscription .marg-customtxt-check {margin-left: 22px;}
+  
+    .inscription select.status{border:none;left: 153px;width: 346px !important;padding: 0 18px !important;}
+     
+     .wrapper.mes-points.mecanisme .mecanisme-point #point-17{padding-top: 9px;}
+}
+
+/*********** IPH 5 : 568 paysage **********/
+@media only screen and (width: 568px){
+
+	.mon-profil{min-height:1200px}
+	
+	.mon-profil .logout{padding-top:70px;}
+	
+	.home .owl-carousel {height: 410px !important;}
+	
+	.mon-profil #editProfile .mg-auto, .mon-profil .alerts .mg-auto{max-width: 100% !important;}
+	
+	#capture_traditionalRegistration_form_collection_civility label{font-size: 1.7em !important; padding-top: 2px !important;}
+    
+    .inscription .marg-customtxt-check {margin-left: 22px;}
+    
+   .inscription select.status{border:none;left: 240px;width: 537px !important;padding: 0 18px !important;}
+}
+
+
+/*********** IPH 6 : 667 paysage **********/
+@media only screen and (width: 667px){
+	
+	/*** icon home /pre-inscription ***/
+	.pre-inscription #capture_signIn_userInformationForm .inp-ico-mail{top: 22px !important;}
+	
+	.pre-inscription #capture_signIn_userInformationForm .inp-ico-pass{top: 5px !important;}
+	
+	.pre-inscription #capture_signIn_traditionalSignIn_password, .pre-inscription .reset-pass{margin-top:-15px;}
+	
+	.forget-password #forgotPassword{float: left; width: 100%; padding-top: 45px;}
+	
+	#verifyEmail .mail-adress .inp-ico-mail{top:50px;}
+	
+	.inscription .marg-customtxt-check {margin-left: 22px;}
+	
+	.inscription .janrain-capture-ui.janrain-capture-ui-mobile .capture_form_item{padding: 0;}
+
+}	
+
+	
+/************ Ipad 768 *************/
+@media only screen and (width: 768px){
+	
+	.capture_signin .condition{margin-left: 5px !important; margin-right: 11px !important;}
+	
+	.home #forgotPassword .container-col{min-height: 605px !important;}
+	
+	.home #forgotPassword .container-col a {position: relative;margin-top: 30px;}
+	
+	.container-quizz.three.quizz-3-6 a.type-bt-green-submit {width: 260px!important;}
+	
+	.container-quizz.three.quizz-3-7 .bar, .container-quizz.three.quizz-3-7 .bar.active{width: 11.3% !important; }
+	
+	.container-quizz.three.quizz-3-8 .bar, .container-quizz.three.quizz-3-8 .bar.active{width: 11.3% !important; }
+	
+	.home .mobile-form-connexion .forget-pass{margin-top: -12px;}
+	
+	.home .bloc-left-home .container-col { min-height: 455px !important; }	
+	
+	.home .mobile-bg-gris .container-col {min-height: 485px !important;}
+	
+     /*** icon home /pre-inscription ***/
+	.home #capture_signIn_userInformationForm .inp-ico-pass,.home #capture_signIn_userInformationForm .inp-ico-mail,
+	.pre-inscription #capture_signIn_userInformationForm .inp-ico-mail{top: 22px !important;}
+	
+	.pre-inscription #capture_signIn_userInformationForm .inp-ico-pass{top: 5px !important;}
+	
+	.pre-inscription #capture_signIn_traditionalSignIn_password, .pre-inscription .reset-pass{margin-top:-15px;}
+	
+	.home .owl-carousel {height: 485px;}
+	
+	.desktop.plan .container-action .planheight {min-height: 140px; }
+	
+	.mon-profil #editProfile .inp-ico-mail, .mon-profil #editProfile .inp-ico-pseudo, .mon-profil #editProfile .inp-ico-tel{top: 22px !important;}
+	
+	.forget-password #forgotPassword{float: left; width: 100%; padding-top: 45px;}
+	
+	#verifyEmail .mail-adress .inp-ico-mail{top:50px;}
+	
+	.container-contrats .btn-arret{width:300px !important}
+	
+	.lien-fixe-date a{padding-right: 58px;}
+	
+	.inscription .janrain-capture-ui.janrain-capture-ui-mobile .capture_form_item{padding: 0;}
+	
+	.niveau.desktop .date-point .date-10, .niveau.desktop .date-point .date-14,
+    .niveau.desktop .date-point .date-15,.niveau.desktop .date-point .date-18,.niveau.desktop .date-point .date-19{margin-top: 2px;}
+}
+
+/************ Ipad :mode paysage *************/
+@media only screen and (width: 1024px){
+	
+	.capture_signin .condition{margin-left: 5px !important; margin-right: 11px !important;}
+	
+	.home #forgotPassword .container-col{min-height: 390px !important;}
+	
+	.home #forgotPassword .container-col a {position: relative;margin-top: 30px;}
+	
+	.home #capture_signIn_form_item_traditionalSignIn_password,
+	.home #capture_signIn_form_item_traditionalSignIn_emailAddress{margin-top: -17px;}
+	
+	.home .mobile-form-connexion .forget-pass{margin-top: -12px;}
+	
+    .home #capture_signIn_userInformationForm .inp-ico-pass,.home #capture_signIn_userInformationForm .inp-ico-mail,
+	.mon-profil #editProfile .inp-ico-mail, .mon-profil #editProfile .inp-ico-pseudo, .mon-profil #editProfile .inp-ico-tel,
+	.pre-inscription #capture_signIn_userInformationForm .inp-ico-mail{top: 22px !important;}
+	
+	.bio-chart span.numberofPoint{}
+	
+	#verifyEmail .mail-adress .inp-ico-mail{top:50px;}
+	
+	.pre-inscription .inp-ico-pass{top: 22px;}
+	
+	.pre-inscription #signIn .container-col{min-height: 530px;}
+
+	.inscription .janrain-capture-ui.janrain-capture-ui-mobile .capture_form_item{padding: 0;}
+
+}	
+
+/*********** 992 / 1080 **********/
+@media only screen and (min-width: 992px) and (max-width:1080px) {
+	
+	.mon-profil input#capture_editProfile_saveButton, 
+	.mon-profil .capture_footer .capture_btn.capture_processing{bottom: 185px;}
+}	
+
+
+/*********** 1024 / 1200 **********/
+@media only screen and (min-width: 641px) and (max-width:990px) {
+	
+	.dashbord .bio-chart .ligne-point-large{display:none !important}
+	
+	.dashbord .bio-chart .ligne-point{display:block !important;float: left;width: 100%;padding-right: 66px;} 
+	
+	.dashbord .bio-chart .ligne-point span.numberofPoint{background: url(../images/curseur-mobile.png) no-repeat center right; width: 100%;background-size: 50%;margin:-41px -34px 0 0;height:auto}
+}
+
+
+#condition-ins .txt-checkbox{font-size:13.3px;}
+#capture_traditionalRegistration_form_collection_civility label{color:#17211e!important;font-size: 13px;font-weight: normal;padding-top:0;}
+#capture_traditionalRegistration_form_collection_civility .txt-radio{font-size:13.3px;}
+.none{display:none;}
+
+
+
+
+
+
+
+
+
+
+

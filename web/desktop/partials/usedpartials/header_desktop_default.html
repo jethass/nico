@@ -1,0 +1,215 @@
+<header class="header white-bg">
+	                
+	                 <div class="sidebar-toggle-box">
+	                     <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
+	                 </div>
+	                 
+	                 <div ng-if="page=='login'">
+			                 <div class="Head-text desktop">
+			                     <div class="title text-center">J’accomplis l'incroyable</div>
+			                 </div>
+			                 
+			                 <div class="Head-text mobile">
+			                 	 <!--<a href="javascript:history.back()" class="back-mobile back left"  >retour</a>-->
+		                         <div class="title-mobile text-center">Mon programme de coaching</div>
+		                     </div>
+                     </div>
+                     
+                     <div ng-if="page=='forget-password'">
+		                 <div class="Head-text desktop">
+		                     <div class="title text-center"><a href="javascript:history.back()" class="back-mobile back left plan"  >retour</a>J’accomplis l'incroyable</div>
+		                 </div>
+		                 
+		                 <div class="Head-text mobile">
+		                 	 <a href="javascript:history.back()" class="back-mobile back left"  >retour</a>
+	                         <div class="title-mobile text-center">Mot de passe oublié</div>
+	                     </div>
+                     </div>
+                     
+                     <div ng-if="page=='reset-password'">
+		                 <div class="Head-text desktop">
+		                     <div class="title text-center">J’accomplis l'incroyable</div>
+		                 </div>
+		                 
+		                 <div class="Head-text mobile">
+		                 	 <a href="javascript:history.back()" class="back-mobile back left"  >retour</a>
+	                         <div class="title-mobile text-center">Réinitialiser votre mot de passe</div>
+	                     </div>
+                     </div>
+                     
+                     
+                     
+                     <div ng-if="page=='inscription'">
+			                 <div class="Head-text desktop">
+			                     <div class="title text-center">J’accomplis l'incroyable</div>
+			                 </div>
+			                 
+			                 <div class="Head-text mobile">
+			                 	 <a href="javascript:history.back()" class="back-mobile back left"  >retour</a>
+		                         <div class="title-mobile text-center">Inscription</div>
+		                     </div>
+                     </div>
+                     
+                     <div ng-if="page=='pre-inscription'">
+			                 <div class="Head-text desktop">
+			                     <div class="title text-center">J’accomplis l'incroyable</div>
+			                 </div>
+			                 
+			                 <div class="Head-text mobile">
+			                 	 <a href="/inscription" class="back-mobile back left"  >retour</a>
+			                 	 <div class="title-mobile text-center">Connexion</div>
+		                     </div>
+                     </div>
+                     
+                     <div ng-if="page=='contrat'">
+			                 <div class="Head-text desktop">
+			                     <div class="title text-center">J’accomplis l'incroyable</div>
+			                 </div>
+			                 
+			                 <div class="Head-text mobile">
+			                 	 <a href="javascript:history.back()" class="back-mobile back left"  >retour</a>
+		                         <div class="title-mobile text-center">Contrat</div>
+		                     </div>
+                     </div>
+                     
+                     <div ng-if="page=='plan-action'">
+			                 <div class="Head-text desktop">
+			                     <div class="title text-center">J’accomplis l'incroyable</div>
+			                 </div>
+			                 
+			                 <div class="Head-text mobile">
+			                 	 <a href="javascript:history.back()" class="back-mobile back left"  >retour</a>
+		                         <div class="title-mobile text-center">Mon plan d'action</div>
+		                     </div>
+                     </div>
+                     
+                     <div ng-if="page=='quiz'">
+			                 <div class="Head-text desktop">
+			                     <div class="title text-center">J’accomplis l'incroyable</div>
+			                 </div>
+			                 
+			                 <div class="Head-text mobile">
+			                 	 <!--<a href="javascript:history.back()" class="back-mobile back left"  >retour</a>-->
+		                         <div ng-if="!feedBack" class="title-mobile text-center">Questionnaire</div>
+		                         <div ng-if="feedBack && feedBack1" class="title-mobile text-center">Vos raisons de fumer</div>
+		                         <div ng-if="feedBack && feedBack2" class="title-mobile text-center">La place de la cigarette<br/> dans votre vie</div>
+		                         <div ng-if="feedBack && feedBack3" class="title-mobile text-center">Votre niveau de dépendance</div>
+		                     </div>
+                     </div>
+                     
+                     <div ng-if="page=='fin-programme'">
+			                 <div class="Head-text desktop">
+			                     <div class="title text-center">J’accomplis l'incroyable</div>
+			                 </div>
+			                 
+			                 <div class="Head-text mobile">
+			                 	 <a href="javascript:history.back()" class="back-mobile back left"  >retour</a>
+		                         <div class="title-mobile text-center">Fin du programme</div>
+		                     </div>
+                     </div>
+                     
+                     <div ng-if="page=='reset-password-success'">
+			                 <div class="Head-text desktop">
+			                     <div class="title text-center">J’accomplis l'incroyable</div>
+			                 </div>
+			                 
+			                 <div class="Head-text mobile">
+			                 	 <a href="javascript:history.back()" class="back-mobile back left"  >retour</a>
+		                         <div class="title-mobile text-center">Réinitialiser votre mot de passe</div>
+		                     </div>
+                     </div>
+                     
+                     <div ng-if="page=='valide-mail-progress'">
+			                 <div class="Head-text desktop">
+			                     <div class="title text-center">J’accomplis l'incroyable</div>
+			                 </div>
+			                 
+			                 <div class="Head-text mobile">
+			                 	 <div class="title-mobile text-center">Confirmation d'inscription</div>
+		                     </div>
+                     </div>
+                     
+                     <div ng-if="page=='valide-mail'">
+			                 <div class="Head-text desktop">
+			                     <div class="title text-center">J’accomplis l'incroyable</div>
+			                 </div>
+			                 
+			                 <div class="Head-text mobile">
+			                 	 <div class="title-mobile text-center">Confirmation d'inscription</div>
+		                     </div>
+                     </div>
+                     
+                     <div ng-if="page=='produit-nicorette-spray'">
+			                 <div class="Head-text desktop">
+			                     <div class="title text-center">J’accomplis l'incroyable</div>
+			                 </div>
+			                 
+			                 <div class="text-center title-header mobile">
+	                            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+			                    Votre NRT
+			                 </div>
+			                 <a href="/" class="logo"></a> 
+                     </div>
+                     
+                     <div ng-if="page=='produit-nicorette-patch'">
+			                 <div class="Head-text desktop">
+			                     <div class="title text-center">J’accomplis l'incroyable</div>
+			                 </div>
+			                 
+			                 <div class="text-center title-header mobile">
+	                            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+			                    Votre NRT
+			                 </div>
+			                 <a href="/" class="logo"></a> 
+                     </div>
+                     
+                     <div ng-if="page=='produit-nicorette-inhaleur'">
+			                 <div class="Head-text desktop">
+			                     <div class="title text-center">J’accomplis l'incroyable</div>
+			                 </div>
+			                 
+			                 <div class="text-center title-header mobile">
+	                            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+			                    Votre NRT
+			                 </div>
+			                 <a href="/" class="logo"></a> 
+                     </div>
+                     
+                     <div ng-if="page=='produit-nicorette-gommes'">
+			                 <div class="Head-text desktop">
+			                     <div class="title text-center">J’accomplis l'incroyable</div>
+			                 </div>
+			                 
+			                 <div class="text-center title-header mobile">
+	                            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+			                    Votre NRT
+			                 </div>
+			                 <a href="/" class="logo"></a> 
+                     </div>
+                     
+                     <div ng-if="page=='produit-nicorette-comprimee'">
+			                 <div class="Head-text desktop">
+			                     <div class="title text-center">J’accomplis l'incroyable</div>
+			                 </div>
+			                 
+			                 <div class="text-center title-header mobile">
+	                            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+			                    Votre NRT
+			                 </div>
+			                 <a href="/" class="logo"></a> 
+                     </div>
+                     
+                      <div ng-if="page=='produit-nicorette-comprimee-sucer'">
+			                 <div class="Head-text desktop">
+			                     <div class="title text-center">J’accomplis l'incroyable</div>
+			                 </div>
+			                 
+			                 <div class="text-center title-header mobile">
+	                            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+			                    Votre NRT
+			                 </div>
+			                 <a href="/" class="logo"></a> 
+                     </div>
+                     
+                    <a href="/" class="logo"></a>
+</header>

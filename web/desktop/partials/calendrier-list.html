@@ -1,0 +1,166 @@
+<div ng-hide="loading">
+
+	<div id="container" >
+	            
+	             <!--header start-->
+		             <ng-include  src="'/desktop/partials/usedpartials/header_desktop_dashboard.html'" ></ng-include>
+	             <!--header end-->
+	          
+	             	             
+	              <!--main content start-->
+	              <div id="main-content" class="over calendrier">
+	                         <!--menu sidebar desktop-->
+		                              <ng-include  src="'/desktop/partials/usedpartials/menu_desktop.html'" ></ng-include>
+		                     <!--fin menu sidebar desktop-->
+	                         
+	                         <!-- wrapper start-->
+	                         <div class="wrapper with-side-bar">
+	                             
+	                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopad-l-mobile nopad-r-mobile relative">
+											<h3 class="pad-bottom-20 desktop">Mon calendrier</h3>
+											
+											<div id="calendrier-desktop" class="desktop over">
+													
+													<div class="customNavigation left">
+													  <a class="btn prev">Previous</a>
+													</div>
+													<wrap-owlcarousel class="owl-carousel left"  data-options="{autoPlay: false, items: 3,slideSpeed : 300}" >  
+													    
+													    	
+														
+														    <div class="item">  
+														          <div id="list-months"> 
+												                    <div id="mois-1"></div>
+												                  </div> 
+														    </div> 
+														    <div class="item">  
+														          <div id="list-months"> 
+												                    <div id="mois-2"></div>
+												                  </div> 
+														    </div> 
+														    <div class="item">  
+														          <div id="list-months"> 
+												                    <div id="mois-3"></div>
+												                  </div> 
+														    </div> 
+														    <div class="item">  
+														          <div id="list-months"> 
+												                    <div id="mois-4"></div>
+												                  </div> 
+														    </div> 
+														    <div class="item">  
+														          <div id="list-months"> 
+												                    <div id="mois-5"></div>
+												                  </div> 
+														    </div> 
+														    <div class="item">  
+														          <div id="list-months"> 
+												                    <div id="mois-6"></div>
+												                  </div> 
+														    </div> 
+														    <div class="item">  
+														          <div id="list-months"> 
+												                    <div id="mois-7"></div>
+												                  </div> 
+														    </div> 
+														    <div class="item">  
+														          <div id="list-months"> 
+												                    <div id="mois-8"></div>
+												                  </div> 
+														    </div> 
+														    <div class="item">  
+														          <div id="list-months"> 
+												                    <div id="mois-9"></div>
+												                  </div> 
+														    </div> 
+														    <div class="item">  
+														          <div id="list-months"> 
+												                    <div id="mois-10"></div>
+												                  </div> 
+														    </div> 
+														    <div class="item">  
+														          <div id="list-months"> 
+												                    <div id="mois-11"></div>
+												                  </div> 
+														    </div> 
+														    <div class="item">  
+														          <div id="list-months"> 
+												                    <div id="mois-12"></div>
+												                  </div> 
+														    </div> 
+													</wrap-owlcarousel> 
+													
+													<div class="customNavigation right">
+													  <a class="btn next">Next</a>
+													</div>
+											
+											</div>
+										 
+											
+										 	<div id="calendrier-mobile" class="mobile over">
+												
+												<div class="mobile over" style="margin-bottom:15px;">
+											       <div id="year-mobile" class="text-center"></div>
+											       <a style="margin-top:-33px;" id="modalInfo" href="javascript:void(0)" data-toggle="modal" class="btn-legend-mobile" data-target="#mymodalInfo">info</a>
+												   <!-- Popup 1 -->
+												   <div id="mymodalInfo" class="modal fade quiz-one popup-calender" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+													  <div class="modal-dialog" style="height:210px;">
+													    <div class="modal-content">
+													        <div class="pad-top-5">
+												        	    <p class="mm-size" style="line-height: 1;"><span class="vide"></span>Vous avez des objectifs de réduction à respecter</p>
+													        	
+													        	<p class="mm-size" style="line-height: 2;"><span class="bleu"></span>Objectif de réduction atteint</p>
+													       
+													        	<p class="mm-size" style="line-height: 2;"><span class="vert"></span>Date d'arrêt du tabac</p>
+													        	
+													        	<p class="mm-size" style="line-height: 1;"><span class="rouge" style="margin-bottom: 25px;"></span>Vous avez fumé une cigarette ou plus</p>
+													        	
+													        </div>
+													    </div>
+													  </div>
+													</div>
+													<!-- End Popup 1 -->
+											    </div>
+												<div id="list-months"> 
+													<div id="mois-1-m"></div>
+													<div style="display: none;color: #42c683;font-family: cosmos_bqlight;font-size: 24px;font-weight: normal;margin: 0 auto;text-align: center;width: 99%;" id="year-mobile-2-m" class="text-center"></div>
+													<div id="mois-2-m"></div>
+													<div style="display: none;color: #42c683;font-family: cosmos_bqlight;font-size: 24px;font-weight: normal;margin: 0 auto;text-align: center;width: 99%;" id="year-mobile-3-m" class="text-center"></div>
+													<div id="mois-3-m"></div>
+													<div style="display: none;color: #42c683;font-family: cosmos_bqlight;font-size: 24px;font-weight: normal;margin: 0 auto;text-align: center;width: 99%;" id="year-mobile-4-m" class="text-center"></div>
+													<div id="mois-4-m"></div>
+													<div style="display: none;color: #42c683;font-family: cosmos_bqlight;font-size: 24px;font-weight: normal;margin: 0 auto;text-align: center;width: 99%;" id="year-mobile-5-m" class="text-center"></div>
+													<div id="mois-5-m"></div>
+													<div style="display: none;color: #42c683;font-family: cosmos_bqlight;font-size: 24px;font-weight: normal;margin: 0 auto;text-align: center;width: 99%;" id="year-mobile-6-m" class="text-center"></div>
+													<div id="mois-6-m"></div>
+													<div style="display: none;color: #42c683;font-family: cosmos_bqlight;font-size: 24px;font-weight: normal;margin: 0 auto;text-align: center;width: 99%;" id="year-mobile-7-m" class="text-center"></div>
+													<div id="mois-7-m"></div>
+													<div style="display: none;color: #42c683;font-family: cosmos_bqlight;font-size: 24px;font-weight: normal;margin: 0 auto;text-align: center;width: 99%;" id="year-mobile-8-m" class="text-center"></div>
+													<div id="mois-8-m"></div>
+													<div style="display: none;color: #42c683;font-family: cosmos_bqlight;font-size: 24px;font-weight: normal;margin: 0 auto;text-align: center;width: 99%;" id="year-mobile-9-m" class="text-center"></div>
+													<div id="mois-9-m"></div>
+													<div style="display: none;color: #42c683;font-family: cosmos_bqlight;font-size: 24px;font-weight: normal;margin: 0 auto;text-align: center;width: 99%;" id="year-mobile-10-m" class="text-center"></div>
+													<div id="mois-10-m"></div>
+													<div style="display: none;color: #42c683;font-family: cosmos_bqlight;font-size: 24px;font-weight: normal;margin: 0 auto;text-align: center;width: 99%;" id="year-mobile-11-m" class="text-center"></div>
+													<div id="mois-11-m"></div>
+													<div style="display: none;color: #42c683;font-family: cosmos_bqlight;font-size: 24px;font-weight: normal;margin: 0 auto;text-align: center;width: 99%;" id="year-mobile-12-m" class="text-center"></div>
+													<div id="mois-12-m"></div>
+												</div>
+											</div>
+											
+										 
+									  </div>
+				                 
+	                         </div>
+	                        <!-- wrapper end-->
+	              </div>
+	              <!--main content end-->  
+	              
+	              <!--footer start-->
+                    <ng-include  src="'/desktop/partials/usedpartials/footer_desktop.html'" ></ng-include>
+                    <ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+                  <!--footer end--> 
+	              
+	</div>
+  
+</div>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html> 
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>NICORETTE®</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="fragment" content="!" />
+    <base href="/">  
+	<!-- Bootstrap core CSS -->
+	 <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+	<link rel="apple-touch-icon" href="{{ asset('apple.png') }}" />
+	<link href="{{ asset('desktop/css/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('desktop/css/bootstrap-reset.css') }}" rel="stylesheet">
+	<link href="{{ asset('desktop/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
+       
+	<!--external css-->
+	<link href="{{ asset('desktop/assets/font-awesome/css/font-awesome.css') }}" rel="stylesheet" />
+              
+	<!-- Custom styles for this template -->
+	<link href="{{ asset('desktop/css/normalize.css') }}" rel="stylesheet">
+	<link href="{{ asset('desktop/css/eventCalendar.css') }}"  rel="stylesheet">
+	<link href="{{ asset('desktop/css/eventCalendar_theme_responsive.css') }}"  rel="stylesheet">
+	<link href="{{ asset('desktop/css/style.css') }}" rel="stylesheet">
+	<link href="{{ asset('desktop/css/style-responsive.css') }}" rel="stylesheet" />
+		
+	<link href="{{ asset('desktop/css/custom.css') }}" rel="stylesheet" />
+	<link href="{{ asset('desktop/css/custom-responsive.css') }}" rel="stylesheet" />
+	<link href="{{ asset('desktop/css/css.css') }}" rel="stylesheet" />
+	<link href="{{ asset('desktop/css/jquery.cookiebar.css') }}" rel="stylesheet" />
+	<link href="{{ asset('desktop/css/jquery-ui-1.10.1.custom.min.css') }}" rel="stylesheet" />
+	
+	<link href="{{ asset('desktop/css/owl.carousel.css') }}" rel="stylesheet">
+	<link href="{{ asset('desktop/css/ion.rangeSlider.css') }}" rel="stylesheet">
+	<link href="{{ asset('desktop/css/ion.rangeSlider.skinNice.css') }}" rel="stylesheet">
+    <link href="{{ asset('desktop/css/owl.theme.css') }}" rel="stylesheet">
+
+	<script type="text/javascript">
+			var css_link = "desktop/css/janrain.css";
+			localStorage.setItem('device', '{{ device }}');
+	</script>
+    
+    <script src="{{ asset('common/js/plugins/angular.min.js') }}"></script>
+	<script src="{{ asset('common/js/plugins/angular-route.min.js') }}"></script>
+	<script src="{{ asset('common/js/plugins/angular-resource.min.js') }}"></script>
+	<script src="{{ asset('common/js/plugins/jquery-1.10.2.min.js') }}"></script>
+	<script src="{{ asset('desktop/js/vendor/bootstrap.min.js') }}"></script>
+	
+	<script src="{{ asset('desktop/js/vendor/bootstrap-checkbox.js') }}"></script>
+	<script src="{{ asset('desktop/js/vendor/jquery.scrollTo.min.js') }}"></script>
+	<script src="{{ asset('desktop/js/vendor/jquery.localScroll.js') }}"></script>
+      
+    <script src="{{ asset('desktop/js/vendor/moment.js') }}"></script>
+	<script src="{{ asset('desktop/js/vendor/bootstrap-datetimepicker.js') }}"></script>
+	<script src="{{ asset('desktop/js/vendor/jquery.eventCalendar.min.js') }}"></script>
+	<script src="{{ asset('desktop/js/vendor/jquery.knob.js') }}"></script>
+	<script src="{{ asset('desktop/js/vendor/janrain-init.js') }}"></script>
+	<script src="{{ asset('desktop/js/vendor/angular-check-list.js') }}"></script>
+	<script src="{{ asset('desktop/js/vendor/jquery.cookiebar.js') }}"></script>
+	<script src="{{ asset('desktop/js/vendor/jquery-ui-1.10.1.custom.min.js') }}"></script>
+	
+	<script src="{{ asset('desktop/js/vendor/owl.carousel.js') }}"></script>
+	<script src="{{ asset('desktop/js/vendor/ion.rangeSlider.js') }}"></script>
+	
+	
+    <script src="{{ asset('desktop/js/app.js') }}"></script>
+	<script src="{{ asset('desktop/js/service/authService.js') }}"></script>
+	<script src="{{ asset('desktop/js/service/httpInterceptorService.js') }}"></script>
+    <script src="{{ asset('desktop/js/service/quizService.js') }}"></script>
+    <script src="{{ asset('desktop/js/service/forgetPasswordService.js') }}"></script>
+    <script src="{{ asset('desktop/js/service/inscriptionService.js') }}"></script>
+    <script src="{{ asset('desktop/js/service/planService.js') }}"></script>
+	<script src="{{ asset('desktop/js/service/headerService.js') }}"></script>
+    <script src="{{ asset('desktop/js/service/extraPointService.js') }}"></script>
+	
+	<script src="{{ asset('desktop/js/controller/loginController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/dashboardController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/quizController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/journalafterController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/journalbeforeController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/pointsController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/infosLegalesController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/inscriptionController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/menuAstucesController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/menuStatistiquesController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/mesParrainsController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/produitsNicoretteController.js') }}"></script>	
+	<script src="{{ asset('desktop/js/controller/profileController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/contratController.js') }}"></script>	
+	<script src="{{ asset('desktop/js/controller/planActionController.js') }}"></script>	
+	<script src="{{ asset('desktop/js/controller/bontonPaniqueController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/bontonPaniqueMobileController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/bontonPaniqueHelpController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/bontonPaniqueCrackController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/bontonPaniqueZutController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/mesAlertesController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/finProgrammeController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/produitComprimeeSucerController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/produitComprimeeController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/produitGommesController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/produitInhaleurController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/produitSprayController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/produitPatchController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/calendarController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/calendarListController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/mecanismePointsController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/introductionController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/contratDateFixeController.js') }}"></script>
+	<script src="{{ asset('desktop/js/controller/forgetPasswordController.js') }}"></script>
+        
+	<script src="{{ asset('desktop/js/controller/arreterController.js') }}"></script>
+    <script src="{{ asset('desktop/js/controller/arreterContinuerController.js') }}"></script>
+    <script src="{{ asset('desktop/js/controller/arreterFelicitationController.js') }}"></script>
+    <script src="{{ asset('desktop/js/controller/arreterRepondreController.js') }}"></script>
+        
+	
+	<script src="{{ asset('desktop/js/directive/checkbox.js') }}"></script>
+	<script src="{{ asset('desktop/js/directive/radiobox.js') }}"></script>
+	<script src="{{ asset('desktop/js/directive/swiper.js') }}"></script>
+	<script src="{{ asset('desktop/js/directive/li_radio_box.js') }}"></script>
+	<script src="{{ asset('desktop/js/directive/accordion.js') }}"></script>
+	<script src="{{ asset('desktop/js/directive/knob.js') }}"></script>
+	<script src="{{ asset('desktop/js/directive/menu_dashboard.js') }}"></script>
+	<script src="{{ asset('desktop/js/directive/datetimepicker.js') }}"></script>
+	<script src="{{ asset('desktop/js/directive/validators.js') }}"></script>
+	<script src="{{ asset('desktop/js/directive/owlcarousel.js') }}"></script>
+	<script src="{{ asset('desktop/js/directive/slider.js') }}"></script>	
+	<script src="{{ asset('desktop/js/directive/gradiant.js') }}"></script>		
+	<script src="{{ asset('desktop/js/directive/packetgradiant.js') }}"></script>		
+	<script src="{{ asset('desktop/js/directive/checkboxplan.js') }}"></script>		
+	
+</head>
+
+<body ng-app="nicoretteApp" class="relative">
+
+<div ng-show="loading">
+  <div class="loaderAjax"></div>
+</div>
+
+<div ng-view></div>
+
+</body>
+</html>

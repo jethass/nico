@@ -1,0 +1,32 @@
+parameters:
+  check_point_params:      #the key is the day and the value is the point cota to add
+    1: 4                   #first_day_without_smoking
+    7: 5                   #seventh_day_without_smoking
+    10: 20                 #quit_date_add_10_days
+    14: 5                  #14th_day_without_smoking
+    20: 20                 #quit_date_add_20_days
+    21: 5                  #21th_day_without_smoking
+    28: 5                  #28th_day_without_smoking
+    30: 20                 #quit_date_add_30_days
+    50: 40                 #quit_date_add_50_days
+    70: 40                 #quit_date_add_70_days
+    90: 40                 #quit_date_add_90_days
+    160: 140               #quit_date_add_160_days
+    180: 40                #quit_date_add_180_days
+    181: 2                 #quit_date_add_181_days
+  point_per_day_after_quit_date: 2
+  points:
+    patient_create: 50
+    parrain_create: 10
+    contract_create: 50
+    action_plan_consultation: 1
+    not_cracked_form: 4
+    panic_button_want_code: 4
+    cracked_form: 4
+    goal_achieved: 4
+    statistic_consultation: 1
+    new_game_consultation: 1
+    actuality_site_consultation: 1
+    tricks_consultation: 1
+    call_parrain: 3
+    send_message: 3

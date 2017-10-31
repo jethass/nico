@@ -1,0 +1,247 @@
+<div ng-hide="loading">
+
+	<!--mobile--------------------------------------------------------------------------------------------------------------------> 
+	<div id="container" class="mobile relative" >
+	       <div class="overlay"></div> 
+	        <!--header start-->
+	               <ng-include  src="'/desktop/partials/usedpartials/header_mobile.html'" ></ng-include>
+	        <!--header end-->
+	        
+	        <!--main content start-->
+	                <div id="content-mobile" class="over">
+	                         <div class="bloc_info_profile">
+	                               <div class="panel-stat-cigarette">
+	                                        <div class="bio-chart">
+	                                            <!--<knob value="50"></knob>-->
+	                                            <div ng-if="infos.picture" class="profile-picture">
+	                                                           <img ng-src="{{infos.picture}}" />
+                                                </div>
+                                                <div ng-if="!infos.picture" class="profile-picture">
+                                                        <img ng-if="infos.sex_in_quiz=='MR'"  ng-src="desktop/images/avatar-h.png" />
+			                                            <img ng-if="infos.sex_in_quiz=='M' || infos.sex_in_quiz=='MME'"   ng-src="desktop/images/avatar-f.png" />
+                                                 </div>
+                                                 
+	                                            <span class="cursor2"></span>  
+	                                            <span class="numberofPoint"><strong>{{infos.points}}</strong>points</span>  
+	                                            <span class="name-perso-mob">{{userName}}</span>
+	                                            <div class="badges-mobile">
+	                                            	<!--<div class="img badge-1"></div>
+	                                            	<div class="img badge-2"></div>
+	                                            	<div class="img badge-3"></div>
+	                                            	<div class="img badge-4"></div>
+	                                            	<div class="img badge-5"></div>-->
+	                                            	<ul class="badges mobile">
+		                                            	<li ng-class="infos.badge1 == true ? 'active' :'' "><a href="javascript:void(0)" class="b1" ng-click="showPopUp(1, infos.badge1)">badge1</a></li>
+		                                                <li ng-class="infos.badge2 == true ? 'active' :'' "><a href="javascript:void(0)" class="b2" ng-click="showPopUp(2, infos.badge2)">badge2</a></li>
+		                                                <li ng-class="infos.badge3 == true ? 'active' :'' "><a href="javascript:void(0)" class="b3" ng-click="showPopUp(3, infos.badge3)">badge3</a></li>
+		                                                <li ng-class="infos.badge4 == true ? 'active' :'' "><a href="javascript:void(0)" class="b4" ng-click="showPopUp(4, infos.badge4)">badge4</a></li>
+		                                                <li ng-class="infos.badge5 == true ? 'active' :'' "><a href="javascript:void(0)" class="b5" ng-click="showPopUp(5, infos.badge5)">badge5</a></li>
+	                                               </ul>
+	                                            </div>
+	                                        </div>
+	                                        <div class="bio-desk">
+	                                            <div class="nmbr-div first"><i class="plus_blanc"></i><span>{{infos.amount_eco}}€</span><label>économisés</label> </div>
+	                                            <div class="nmbr-div"><i class="moins_blanc"></i><span>{{infos.cigarette_eco}}</span><label>cigarettes</label> </div>
+	                                        </div>
+	                                        <div class="clear"></div>
+	                               </div>
+	                               
+	                         </div>
+	                         <div class="objectif-du-jour text-center">Objectif du jour : <span>{{infos.day_objectif}} cigarette</span></div>
+	                          
+	                          <!--menu mobile-->
+	                            <ng-include  src="'/desktop/partials/usedpartials/menu_mobile.html'" ></ng-include>
+	                          <!--fin menu mobile-->
+	                          
+	                         <a class="bt-mobile-panique" href="/bouton-panique-mobile">
+	                             <div><span></span>bouton panique</div>
+	                         </a>
+	                </div>
+	        <!--Fin main content-->
+	        
+	        <!--footer start-->
+	                <ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+	        <!--Fin footer start-->
+	</div>    
+	<!--fin mobile--  >
+	
+	<!--Desktop--------------------------------------------------------------------------------------------------------------------> 
+	<div id="container" class="desktop" >
+	            <!--header start-->
+	             <ng-include  src="'/desktop/partials/usedpartials/header_desktop_dashboard.html'" ></ng-include>
+	            <!--header end-->
+	          
+	              <!--main content start-->
+	              <div id="main-content" class="over">
+	                          <!--menu sidebar desktop-->
+	                               <ng-include  src="'/desktop/partials/usedpartials/menu_desktop.html'" ></ng-include>
+	                          <!--fin menu sidebar desktop-->
+	                                                   
+	                         <!-- wrapper start-->
+	                         <div class="wrapper with-side-bar dashbord">
+	                             <div class="row">
+	                                  <div class="dash-info-person">
+	                                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="min-height: 70px;">
+	                                        <ul class="badges">
+	                                            <li ng-class="infos.badge1 == true ? 'active' :'' "><a href="javascript:void(0)" class="b1" ng-click="showPopUp(1, infos.badge1)">badge1</a></li>
+	                                            <li ng-class="infos.badge2 == true ? 'active' :'' "><a href="javascript:void(0)" class="b2" ng-click="showPopUp(2, infos.badge2)">badge2</a></li>
+	                                            <li ng-class="infos.badge3 == true ? 'active' :'' "><a href="javascript:void(0)" class="b3" ng-click="showPopUp(3, infos.badge3)">badge3</a></li>
+	                                            <li ng-class="infos.badge4 == true ? 'active' :'' "><a href="javascript:void(0)" class="b4" ng-click="showPopUp(4, infos.badge4)">badge4</a></li>
+	                                            <li ng-class="infos.badge5 == true ? 'active' :'' "><a href="javascript:void(0)" class="b5" ng-click="showPopUp(5, infos.badge5)">badge5</a></li>
+	                                        </ul>
+	                                     </div> 
+	                                      
+	                                     <!-- Popup bravo -->
+			                             <div id="modalBadge1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			                                    <div class="modal-dialog">
+			                                        <div class="modal-content">
+			                                        	<div class="modal-img-badge1"></div>
+			                                        	<div class="modal-content-badge">
+				                                        	<div class="pad-title"></div>
+				                                            <div class="pad-top-5">
+				                                                <p class="text-left">C'est un bon d&eacute;but, continuez sur cette voie l&agrave; !</p>
+				                                            </div>
+				                                            <div class="over">
+				                                                <a class="right type-bt-green close cos-bg-lt" ng-click="redirectToDashbord()"  data-dismiss="modal" >Ok</a> 
+				                                            </div>
+				                                        </div>
+			                                        </div>
+			                                    </div>
+			                             </div>
+			                             <div id="modalBadge2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			                                    <div class="modal-dialog">
+			                                        <div class="modal-content">
+			                                        	<div class="modal-img-badge2"></div>
+			                                        	<div class="modal-content-badge">
+				                                        	<div class="pad-title"></div>
+				                                            <div class="pad-top-5">
+				                                                <p class="text-left">Allez, vous &ecirc;tes motiv&eacute; pour r&eacute;ussir, gardez votre tenacit&eacute;.</p>
+				                                            </div>
+				                                            <div class="over">
+				                                                <a class="right type-bt-green close cos-bg-lt" ng-click="redirectToDashbord()"  data-dismiss="modal" >Ok</a> 
+				                                            </div>
+				                                        </div>
+			                                        </div>
+			                                    </div>
+			                             </div>
+			                             <div id="modalBadge3" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			                                    <div class="modal-dialog">
+			                                        <div class="modal-content">
+			                                        	<div class="modal-img-badge3"></div>
+			                                        	<div class="modal-content-badge">
+				                                        	<div class="pad-title">500 points !</div>
+				                                            <div class="pad-top-5">
+				                                                <p class="text-left">Vous avez pass&eacute; le premier cap, bravo ! Vous vous &eacute;mancipez doucement de la nicotine, continuez comme cela !</p>
+				                                            </div>
+				                                            <div class="over">
+				                                                <a class="right type-bt-green close cos-bg-lt" ng-click="redirectToDashbord()"  data-dismiss="modal" >Ok</a> 
+				                                            </div>
+				                                        </div>
+			                                        </div>
+			                                    </div>
+			                             </div>
+			                             <div id="modalBadge4" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			                                    <div class="modal-dialog">
+			                                        <div class="modal-content">
+			                                        	<div class="modal-img-badge4"></div>
+			                                        	<div class="modal-content-badge">
+				                                        	<div class="pad-title">1500 points !</div>
+				                                            <div class="pad-top-5">
+				                                                <p class="text-left">Deuxi&egrave;me palier franchi, bravo ! La derni&egrave;re ligne droite n'est pas loin, ne l&acirc;chez rien !</p>
+				                                            </div>
+				                                            <div class="over">
+				                                                <a class="right type-bt-green close cos-bg-lt" ng-click="redirectToDashbord()"  data-dismiss="modal" >Ok</a> 
+			                                            	</div>
+			                                            </div>
+			                                        </div>
+			                                    </div>
+			                             </div>
+			                             <div id="modalBadge5" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			                                    <div class="modal-dialog">
+			                                        <div class="modal-content">
+			                                        	<div class="modal-img-badge5"></div>
+			                                        	<div class="modal-content-badge">
+				                                        	<div class="pad-title">3000 points !</div>
+				                                            <div class="pad-top-5">
+				                                                <p class="text-left">F&eacute;licitations, vous avez atteint le niveau XXX ! La ligne d'arriv&eacute;e n'est plus loin, vous pouvez &ecirc;tre fier de vous.</p>
+				                                            </div>
+				                                            <div class="over">
+				                                                <a class="right type-bt-green close cos-bg-lt" ng-click="redirectToDashbord()"  data-dismiss="modal" >Ok</a> 
+				                                            </div>
+				                                        </div>
+			                                        </div>
+			                                    </div>
+			                             </div>
+		                                
+	                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">   
+	                                        <div class="panel-stat-cigarette">
+	                                                <div class="bio-chart col-lg-6 col-md-6 col-sm-6 col-xs-6" >
+	                                                    <!-- <input  class="knob" data-width="135" data-height="135" data-displayPrevious=false  data-thickness=".2" value="53" data-fgColor="#5bd08a" data-bgColor="#ecebeb"  > -->
+	                                                    <!--<knob value="68"></knob>-->
+	                                                    
+	                                                    <div ng-if="infos.picture" class="profile-picture">
+	                                                    	     
+	                                                           <img ng-src="{{infos.picture}}" />
+	                                                    </div>
+	                                                    <div ng-if="!infos.picture" class="profile-picture">
+	                                                           <img ng-if="infos.sex_in_quiz=='MR'" ng-src="desktop/images/avatar-h.png" />
+							                                   <img ng-if="infos.sex_in_quiz=='M' || infos.sex_in_quiz=='MME'"  ng-src="desktop/images/avatar-f.png" />
+	                                                    </div>
+	                                                    <div style="float:right" class="ligne-point-large"><span class="numberofPoint"><strong>{{infos.points}}</strong>points</span></div>  
+	                                                    <div style=" display:none" class="ligne-point"><span class="numberofPoint" ><strong style="padding-left: 11px;">{{infos.points}}</strong><br/><span style="padding-left: 15px;">points</span></span></div>
+	                                                </div>
+	                                                <div class="bio-desk col-lg-6 col-md-6 col-sm-6 col-xs-66">
+	                                                    <h4>Nombre de cigarettes économisées : </h4>
+	                                                    <div class="nmbr-div"><i class="plus"></i><span>{{infos.cigarette_eco}}</span><label>cigarettes</label> </div>
+
+                                                        <div style="margin-top: 10px">
+                                                            <h4>Economies réalisées : </h4>
+                                                            <div class="nmbr-div"><i class="moins"></i><span>{{infos.amount_eco}}</span><label>euros</label> </div>
+                                                        </div>
+	                                                </div>
+	                                                <div class="clear"></div>
+	                                        </div>
+	                                        <div class="clear"></div>
+	                                     </div>   
+	                                </div>
+	                               
+	                                <div class="container-bts-conseils ">
+	                                    <div class="container-bts col-lg-6 col-md-6 col-sm-6 col-xs-12">
+	                                        <h3 ng-if="infos.nbr_day_without_cigarette > 0" class="text-center h3-green">{{infos.nbr_day_without_cigarette}} jour{{infos.nbr_day_without_cigarette>1?'s':''}} sans tabac</h3>
+	                                        <p class="text-center">Objectif du jour : <span>{{infos.day_objectif}} cigarettes </span></p>
+	                                        <ul class="links-dask-btns">
+	                                            <li class="bt-purpple" id="slideToggle" ng-click="togglePanique()"><p><i class="icon-panique"></i><span>Bouton panique</span></p></li>
+	                                            <ul class="slideTogglebox">
+	                                            	<li><a class="bt-green" href="/panique-went-smoke">Help, j'ai trop envie de fumer !</a></li>
+	                                                <li><a class="bt-green" href="/panique-not-cracked">Je suis tenté(e) mais je n'ai pas craqué(e)</a></li>
+	                                                <li><a class="bt-green" href="/panique-cracked">Zut, j'ai craqué !</a></li>
+	                                            </ul>
+	                                        </ul>
+	                                    </div>
+	                                    <div class="container-conseils col-lg-6 col-md-6 col-sm-6 col-xs-12">
+	                                        <h3 class="text-center h3-green">Nos petits conseils</h3>
+	                                        <p>Durant les premières semaines d’arrêt, le manque de nicotine peut se manifester par des pics fréquents et brutaux durant lesquels le désir de reprendre la cigarette se fait très intense. Ces envies soudaines n’apparaissent pas toujours de façon inattendue. Elles correspondent à des circonstances au cours desquelles vous aviez l’habitude de fumer ou sont déclenchées par des stimuli comme les odeurs ou la vue d’une cigarette. Ce sont des réflexes conditionnés.</p>
+	                                        <p>Ces pics durent en moyenne 3 à 4 minutes et il est important de s’y préparer, pour mieux les dépasser et éviter la rechute. Lorsque l’envie irrésistible d’une cigarette se fait ressentir, faites quelque chose afin d’occuper l’instant, par exemple :</p>
+	                                        <p>Buvez un grand verre d’eau.<br/>
+	                                           Mangez un fruit.<br/>
+	                                           Respirez profondément.<br/>
+	                                           Changez d’activité, de pièce, faites autre chose pour vous occuper l’esprit.<br/>
+	                                           Téléphonez à un(e) ami(e)
+	                                        </p>
+	                                    </div>
+	                                    <div class="clear"></div>
+	                                </div>
+	                           </div>
+	                        </div>
+	                        <!-- wrapper end-->
+	              </div>
+	              <!--main content end-->  
+	              <!--footer start-->
+                    <ng-include  src="'/desktop/partials/usedpartials/footer_desktop.html'" ></ng-include>
+                    
+                  <!--footer end-->
+	              
+	</div>
+	<!--fin desktop-->
+
+</div>    

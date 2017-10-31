@@ -1,0 +1,273 @@
+<div ng-hide="loading">
+		<div id="container" >
+		
+		              <!--header start-->
+		               <ng-include  src="'/desktop/partials/usedpartials/header_desktop_dashboard.html'" ></ng-include>
+	                  <!--header end-->
+		          
+		              <!--main content start-->
+		              <div id="main-content" class="over">
+		                        
+		                        <!--menu sidebar desktop-->
+		                              <ng-include  src="'/desktop/partials/usedpartials/menu_desktop.html'" ></ng-include>
+		                        <!--fin menu sidebar desktop-->
+		                         
+		                         <!-- wrapper start-->
+		                         <div class="wrapper with-side-bar produit">
+		                             <div class="row">
+		                                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 left brd-right"> 
+		                                      <h3 class="desktop" style="font-size: 2em;">Les produits NICORETTE<sup>®</sup></h3>
+		                                      <br/></br/>
+		                                      <p class="desktop">Il existe plusieurs types de substituts, mais le principe de base reste le même : ils diffusent la nicotine de manière plus ou moins rapide et progressive, sans provoquer de shoot nicotinique comme la cigarette. Cela permet ainsi de soulager les symptômes de manque sans entretenir la dépendance.</p>
+		                                      <p class="m-size">Il existe plusieurs types de substituts, mais le principe de base reste le même : ils diffusent la nicotine de manière plus ou moins rapide et progressive, sans provoquer de shoot nicotinique comme la cigarette. Cela permet ainsi de soulager les symptômes de manque sans entretenir la dépendance.</p>
+		                                                                                                                 
+		                                      <div id="cssmenu tabs-container" class="desktop">
+													<ul class="tabs-menu">
+													   
+													   <li class="dropdown current">
+													   	  <a class="title desktop" href="#tab-1"><span>Combattre les envies irrisitibles de fumer</span></a>
+													   </li>
+											           
+											           <li class="dropdown">
+											           	  <a class="title desktop" href="#tab-4"><span>Arrêter en s'occupant la bouche</span></a>
+											           </li>
+											           
+											           <li class="dropdown">
+											           	  <a class="title desktop" href="#tab-5"><span>Arrêter en toute discrétion</span></a>
+											           </li>
+											           
+											           <li class="dropdown">
+											           	  <a class="title desktop" href="#tab-2"><span>Arrêter sans y penser</span></a>
+											           </li>
+													   
+													   <li class="dropdown">
+													   	  <a class="title desktop" href="#tab-3"><span>Arrêter en conserver le geste</span></a>
+													   </li>
+											           
+											           <li class="dropdown">
+											           	  <a class="title desktop" href="#tab-6"><span>Arrêter avec un goût de menthe intense</span></a>
+											           </li>
+													   
+		                                           </ul>
+		                                      </div>  
+		                                      
+		                                      
+		                                      <div id="cssmenu tabs-container" class="mobile  menu-mobile">
+													<ul class="">
+													   
+													   <li class=" current">
+													   	  
+													   	  <a class="title " href="/produit-nicorette-spray"><span>Combattre les envies irrisitibles de fumer</span></a>
+													   </li>
+											           
+											           <li class="">
+											           	  
+											           	  <a class="title " href="/produit-nicorette-gommes"><span>Arrêter en s'occupant la bouche</span></a>
+											           </li>
+											           
+											           <li class="">
+											           	 
+											           	  <a class="title " href="/produit-nicorette-comprimee"><span>Arrêter en toute discrétion</span></a>
+											           </li>
+											           
+											           <li class="">
+											           
+											           	  <a class="title " href="/produit-nicorette-patch"><span>Arrêter sans y penser</span></a>
+											           </li>
+													   
+													   <li class="">
+													   	  
+													   	  <a class="title " href="/produit-nicorette-inhaleur"><span>Arrêter en conserver le geste</span></a>
+													   </li>
+											           
+											           <li class="">
+											           	  
+											           	  <a class="title" href="/produit-nicorette-comprimee-sucer"><span>Arrêter avec un goût de menthe intense</span></a>
+											           </li>
+													   
+		                                           </ul>
+		                                      </div>  
+		                                                                                                                 
+		                                         
+		                                     
+		                                      <div ng-if="!doctor" class="form">
+		                                      	<p class="m-size"><span>Vous n'êtes pas satisfait du substitut qui vous a intialement été suggéré ?</span></p>
+		                                      	<p class="m-size"><span>Voulez-vous connaître un autre format qui correspond à votre profil ?</span></p>
+		                                      	<br/>
+		                                      	
+		                                      	 <form action="" method="POST" >
+		                                          										       
+											        <div class="desktop">
+			                                           <div class="radiobox">
+														  <input type="radio" name="radio" id="radio1" class="radio" checked/>
+														  <label class="custom-radio" for="radio1"></label>
+														  <label class="txt-radio">Oui</label>
+														</div>
+														
+														<div class="radiobox">
+														  <input type="radio" name="radio" id="radio2" class="radio"/>
+														  <label class="custom-radio" for="radio2"></label>
+														  <label class="txt-radio">Non</label>
+														</div>
+			                                        </div>
+			                                       
+			                                        <div class="mobile">
+													   <ul class="style_radio mg-auto">
+		                                                     <li class="yes active" directive-li-radiobox >
+		                                                        <input type="radio"  name="choice" value="1" checked="checked" class="hidden"  />
+		                                                        Oui<span class="oui"></span>
+		                                                     </li>
+		                                                     <li class="no disable" directive-li-radiobox >
+		                                                          <input type="radio"  name="choice" value="0"  class="hidden" />
+		                                                          Non<span class="non"></span>
+		                                                     </li> 
+													   </ul>
+													</div>
+												   
+												   <br/> <input type="submit" class="type-data btn-custom " value="Valider" />
+												  
+		                                        </form>  
+		                                      </div>
+		                                      
+		                                    </div>
+		                                    
+		                                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 left desktop">
+			                         	 		                                    
+			                                    <div class="tab">
+											        <div id="tab-1" class="tab-content">
+											            <div class="content">
+											            	<h3 class="mb-size" style="font-size: 2em;">Le Spray Buccal</h3>
+											            	<div class="center"><img src="desktop/images/img-produit-spray.png" /></div>	
+											            	<p class="pad-bottom-10">Solution unique et innovante, NICORETTESPRAY® s’utilise dans le cadre d’un arrêt immédiat du tabac. Il permet de soulager très rapidement les envies irrésistibles de fumer grâce à une absorption très rapide de la nicotine à travers la muqueuse buccale. Le goût du spray est fort et l’arôme menthe peut surprendre lors des premières utilisations, mais, après quelques jours, cette impression disparaît.</p>
+				             								<p>Ce traitement est indiqué pour tous types de dépendances à la cigarette et peut s’utiliser aux moments habituels de consommation du tabac ou en cas d’envie irrésistible de fumer une cigarette. Son format discret et nomade vous permet de l’emporter partout avec vous.</p>
+				             								 <p class="pad-bottom-10">
+				             								 	Ce traitement est indiqué pour tous types de dépendances à la cigarette et peut s’utiliser aux moments habituels de consommation du tabac ou en cas d’envie irrésistible de fumer une cigarette. Son format discret et nomade vous permet de l’emporter partout avec vous.<br/>
+				                                                Proposé en 2 conditionnements (1 ou 2 pulvérisateurs) goût menthe fraîche, NICORETTESPRAY® réduit très rapidement les envies irrésistibles de fumer. Sa posologie est simple, il s’utilise à chaque fois que le fumeur en ressent le besoin.
+				             								      								 	
+				             								 </p>
+				             								
+				             								 <p class="pad-bottom-10">
+				             									Proposé en 2 conditionnements (1 ou 2 pulvérisateurs) goût menthe fraîche, NICORETTESPRAY® réduit très rapidement les envies irrésistibles de fumer. Sa posologie est simple, il s’utilise à chaque fois que le fumeur en ressent le besoin.<br/>
+                                                                Ne pas dépasser 2 pulvérisations par prise. Ne pas dépasser 64 pulvérisations par jour et 4 pulvérisations par heure.
+				             								 </p>
+				             								 
+				             								 <p>
+				             								  	Comment utiliser NICORETTESPRAY®, 1mg/dose nicotine ?<br/>
+																Afin d’obtenir de meilleurs résultats, nous vous conseillons de suivre les recommandations suivantes:<br/>
+																Ouvrez la bouche et placez l’embout du pulvérisateur aussi près que possible.<br/>
+																Appuyez sur la partie supérieure du pulvérisateur pour libérer une dose dans votre bouche.<br/>
+																Évitez les lèvres.<br/>
+																Ne pas inhaler lors de la pulvérisation afin que le produit n’entre pas dans vos voies respiratoires.<br/>
+																Évitez de déglutir pendant les quelques secondes qui suivent la pulvérisation.<br/>
+																Abstenez-vous de manger et de boire lors de la pulvérisation.<br/>
+																Abstenez-vous impérativement de fumer au cours du traitement.
+				             								 </p>
+				             								
+				             							     <p><span>POSOLOGIE</span></p>
+				             								 <p>
+				             								    1 ou 2 pulvérisations aux moments habituels de consommation du tabac ou en cas d'envie irrésistible de fumer <br/>
+                                                                Ne pas dépasser 2 pulvérisations par prise. Ne pas dépasser 64 pulvérisations par jour et 4 pulvérisations par heure. 
+                                                             </p>
+											            </div>
+											        </div>
+											        
+											        <div id="tab-2" class="tab-content">
+											            <div class="content">
+					                         	 		  <h3 class="mb-size" style="font-size: 2em;">Le patch</h3>
+					                         	 		  <div class="center"><img src="desktop/images/img-produit-small.png" /></div>	
+					                         	 		  <p class="m-size">Les patchs doivent être utilisés dans le cadre d’un arrêt immédiat du tabac. Ils diffusent la nicotine de manière régulière tout au long de la journée, sans que vous ayez à y penser. Pour vous garantir un sevrage en toute discrétion, les patchs NICORETTESKIN® sont semi-transparents et offrent un effet « seconde peau ».
+				                                          <p class="m-size">Les patchs NICORETTESKIN® diffusent la nicotine pendant 16 heures. Ces derniers sont fortement recommandés pour éviter les troubles du sommeil  et réduire les envies de fumer. En effet, 87 % des fumeurs ne fument pas la nuit. Ces personnes-là n’ont donc pas besoin de nicotine pendant leur sommeil.<br/>
+                                                          Une fois le patch collé sur la peau, la nicotine traverse la barrière cutanée avant d’atteindre la circulation sanguine.</p>
+				                                          <p><span>POSOLOGIE</span></p>
+				                                          <p class="m-size">Fumeurs fortement dépendants (score au test de Fageström supérieur ou égal à 7) : Appliquer NICORETTESKIN®  25mg/16h au lever avant la douche, sur une partie saine de la peau, où la pilosité est rare (hanche, partie supérieure du bras ou poitrine) et le retirer au coucher (soit envrion 16h plus tard).</p>
+						                                  <p class="m-size">Eviter d’appliquer NICORETTESKIN® sur une zone cutanée humide ou de l’utiliser sur une peau irritée. Appliquer sur une zone où la pilosité est rare (hanches, partie supérieure du torse ou poitrine)</p>
+						                                </div>
+											        </div>
+											        
+											        <div id="tab-3" class="tab-content">
+											              <div class="content">
+											              	 <h3 class="h3-green" style="font-size: 2em;">L'inhateur</h3>
+											              	 <div class="img center"><img src="desktop/images/img-produit-inhaleur.png"></div>
+											              	 <p class="m-size">Gardez le geste de la cigarette sans les méfaits du tabac avec une solution unique ! L’inhaleur permet d’aspirer de la nicotine par petites doses calibrées de sorte à soulager le besoin de fumer. Si vous être attaché au geste de la cigarette, cette forme peut vous convenir pour arrêter de fumer. </p>
+					                                         <p class="m-size">L’inhaleur se présente sous la forme d’un embout en plastique blanc qui s’ouvre en deux pour recevoir une cartouche transparente, interchangeable et contenant un tampon imprégné de nicotine et de menthol. À chaque utilisation, vous aspirez par l’embout l’air chargé de microgouttelettes de nicotine qui sont diffusées à travers la muqueuse buccale avant d’atteindre la circulation sanguine.</p>
+					                                         <div>
+					                                            <div class="pad-bottom-10">
+																  <p><span>POSOLOGIE</span></p>
+																  <p>Quantité maximum : Ne pas dépasser 12 mois de traitement et 12 cartouches par jour.</p>
+                                                                  <p>Quand l'envie de fumer est complètement surmontée (au bout d'environ 3 mois), réduire progressivement le nombre de cartouches par jour pendant 6 à 8 semaines si nécessaire</p>
+											
+																</div>
+																                                  	
+					                                         </div>
+											              </div>
+											        </div>
+											        <div id="tab-4" class="tab-content">
+											               <div class="content">
+											               	 <h3 class="h3-green" style="font-size: 2em;">Les Gommes</h3>
+											              	 <div class="img center"><img src="desktop/images/img-produit-gommes.png"></div>
+											              	 <p>Disponibles en plusieurs goûts, les gommes (ou chewing-gums à la nicotine) sont un moyen efficace  de lutter contre les sensations de manque. En plus de diffuser progressivement de la nicotine, elles permettent de compenser l’absence du geste de fumer. En effet, le fait de mâcher occupe la bouche et détourne l’attention de l’envie de cigarette. Cela peut également atténuer le stress lié à l’arrêt du tabac.<br/> 
+                                                               Afin de couvrir vos besoins en nicotine, il est primordial de respecter les modalités d’utilisation et la posologie.</p>
+					                                         <div>
+					                                            <div class="pad-bottom-10">
+																  <p><span>POSOLOGIE</span></p>
+																  <p>Mâcher une première fois la gomme, puis la garder contre la joue envrion 10 minutes. Elles doivent ensuite être mâchées très lentement (environ 20 fois en 20 minutes) pendant 20 à 30 minutes maximum en faisant des pauses pendant lesquelles elles ne doivent pas être mâchées du tout. Au-delà de 30 min la gomme ne délivre plus de nicotine.</p>
+																  <p>En cas de dépendance forte ou très forte, optez pour les gommes de 4 mg (maximum 15 par jour).</p>
+																  <p>Réduire progressivement le nombre de gommes mâchées par jour et arrêter lorsque la consommation est réduite de 1 à 2 gommes par jour</p>
+																  
+																</div>
+																                                  	
+					                                         </div>
+											               </div>
+											        </div>
+											        <div id="tab-5" class="tab-content">
+											               <div class="content">
+											               	 <h3 class="h3-green" style="font-size: 2em;">Les Comprimés</h3>
+											              	 <div class="img center"><img src="desktop/images/img-produit-comprimes.png"></div>
+											              	 <p>Les comprimés sont à utiliser dans le cadre d’un arrêt immédiat du tabac. Les comprimés Microtab 2 mg fondent sous la langue, offrant ainsi d’avantage de discrétion. Il est important de laisser fondre le comprimé, sans le croquer ni le sucer.<br/> 
+                                                                La nicotine est diffusée à travers la muqueuse buccale avant d'atteindre la circulation sanguine. Il est recommandé aux fumeurs peu dépendants d’utiliser un seul comprimé par prise. Chez les fumeurs fortement ou très fortement dépendants de la nicotine (score au test de Fagestrom de 7 à 10), il est recommandé d’utiliser deux comprimés par prise pour soulager les envies de fumer.</p>
+					                                         <div>
+					                                              <p><span>POSOLOGIE</span></p>
+																  <p>Prenez 1 ou 2 comprimés Microtab selon votre degré de dépendance à chaque fois que l'envie de fumer se fait sentir (en moyenne toutes les 1 à 2 heures).</p>
+																  <p>Prenez en un nombre suffisant à raison de :<br/>
+																	16 à 24 comprimés par jour pour les fumeurs fortement ou très fortement dépendants.
+																	Quand l'envie de fumer est complétement surmontée, réduire progressivement le nombre de comprimés par jour et arrêter le traitement quand la consommation est réduite à 1 ou 2 comprimés par jour.
+																  </p>
+																  <p>Ne pas excéder 30 comprimés par jour. La durée moyenne du traitement est de 2 à 3 mois et il est recommandé de ne pas excéder 6 mois.</p>
+																															                                         	
+					                                         </div>
+											               </div>
+											        </div>
+											        <div id="tab-6" class="tab-content">
+											               <div class="content">
+											               	 <h3 class="h3-green" style="font-size: 2em;">Les Comprimés à sucer</h3>
+											              	 <div class="img center"><img src="desktop/images/img-produit-comprime-sucer.png"></div>
+											              	 <p class="pad-bottom-10">Nicorette 2 mg, comprimé à sucer vous aide à arrêter de fumer où que vous soyez grâce à son étui nomade et pratique.</p>
+					                         	 			 <p class="pad-bottom-10">Les comprimés à sucer sont à utiliserdans le cadre d’un arrêt immédiat du tabac.Ils occupent la bouche et vous permettent de détourner l’attention de l’envie de cigarette. Il fondent en une vingtaine de minute tout en libérant un goût agréable de menthe intense</p>
+					                         	 			 <p>La nicotine est diffusée à travers la muqueuse buccale avant d'atteindre la circulation sanguine. Ce produit est recommandé aux fumeurs peu dépendants à la nicotine (score au test de Fagerstrom de 3 à 6 ou fumant moins de 20 cigarettes par jour). Pour connaître votre degré de dépendance à la cigarette, utilisez letest NICORETTE</p>
+					                                         <div>
+					                                              <p><span>POSOLOGIE</span></p>
+																  <p>Le traitement de la dépandance se fait habituellement en 3 étapes : </p>
+																  <p>Prendre 1 comprimé à sucer dès que l'envie de fumer se fait sentir (toutes les 1 à 2h (étape 1) pour toutes les 2 à 4h (étapes 2) puis toutes les 4 à 8h (étape 3).<br/>
+																	 Laisser fondre le comprimé, sans le croquer ni le sucer en le placant d'un côté de la bouche à l'autre.</p>
+																  <p>Ne pas dépasser 15 comprimés par jour<br/> Ne pas dépasser 6 mois de traitement</p>	
+																 													                                         	
+					                                         </div>
+											               </div>
+											        </div>
+											    </div>
+			                                     
+			                                </div>   
+			                        
+			                        </div>
+		                        </div>
+		                        <!-- wrapper end-->
+		              </div>
+		              <!--main content end-->  
+		              
+		              <!--footer start-->
+	                    <ng-include  src="'/desktop/partials/usedpartials/footer_desktop.html'" ></ng-include>
+	                    <ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+	                  <!--footer end--> 
+		</div>
+</div>  
+

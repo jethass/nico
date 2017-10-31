@@ -1,0 +1,82 @@
+nicorette_front:
+    resource: "@NicoretteFrontBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+nicorette_central:
+    resource: "@NicoretteCentralBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+nicorette_import:
+    resource: "@NicoretteApiBundle/Controller/DefaultController.php"
+    type:     annotation
+    prefix:   /
+    
+quizs_api:
+    type:     rest
+    resource: "Nicorette\ApiBundle\Controller\QuizesController"
+    prefix: /api
+
+users_api:
+    type:     rest
+    resource: "Nicorette\ApiBundle\Controller\UsersController"
+    prefix: /api
+    
+answers_api:
+    type:     rest
+    resource: "Nicorette\ApiBundle\Controller\AnswersController"
+    prefix: /api
+    
+dashboard_api:
+    type:     rest
+    resource: "Nicorette\ApiBundle\Controller\DashboardController"
+    prefix: /api
+    
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc
+contract_api:
+    type:     rest
+    resource: "Nicorette\ApiBundle\Controller\ContractController"
+    prefix: /api
+sponsoring_api:
+    type:     rest
+    resource: "Nicorette\ApiBundle\Controller\SponsoringController"
+    prefix: /api
+alerts_api:
+    type:     rest
+    resource: "Nicorette\ApiBundle\Controller\AlertsController"
+    prefix: /api
+judgment_api:
+    type:     rest
+    resource: "Nicorette\ApiBundle\Controller\JudgmentController"
+    prefix: /api
+usersaction_api:
+    type:     rest
+    resource: "Nicorette\ApiBundle\Controller\UserActionController"
+    prefix: /api
+diary_api:
+    type:     rest
+    resource: "Nicorette\ApiBundle\Controller\DiaryController"
+    prefix: /api
+button_panic:
+    type:     rest
+    resource: "Nicorette\ApiBundle\Controller\ButtonPanicController"
+    prefix: /api
+my_plan:
+    type:     rest
+    resource: "Nicorette\ApiBundle\Controller\MyPlanController"
+    prefix: /api
+economy:
+    type:     rest
+    resource: "Nicorette\ApiBundle\Controller\EconomyController"
+    prefix: /api
+calendar:
+    resource: "Nicorette\ApiBundle\Controller\CalendarController"
+    type:     rest
+    prefix:   /api
+mypoints:
+    resource: "Nicorette\ApiBundle\Controller\MyPointsController"
+    type:     rest
+    prefix:   /api

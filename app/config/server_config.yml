@@ -1,0 +1,19 @@
+parameters:
+  janrain_params:
+    client_secret: 72m3bpf8qap8yawk5wtxb6nd2y69b4sa
+    client_id: 9fb82h2ajzwg9w9t4zbejd89kzxpd5j4
+    type_name: CON_EMEA_FR_Nicorette
+  janrain_uri: https://jj.eu-dev.janraincapture.com/entity
+  crm_url: https://jnj-nicorette-services-rec.cirrus-cloud.net/api/persons
+  verification_code_url: "https://jj.eu-dev.janraincapture.com/access/getVerificationCode?"
+  authorization_code_url: "https://jj.eu-dev.janraincapture.com/access/getAuthorizationCode?"
+  find_entity_code_url: "https://jj.eu-dev.janraincapture.com/entity.find"
+  update_entity_url: "https://jj.eu-dev.janraincapture.com/entity.update"
+  delete_entity_url: "https://jj.eu-dev.janraincapture.com/entity.delete"
+  find_entity_url: "https://jj.eu-dev.janraincapture.com/entity"
+  confirmation_url: "https://jnj-nicorette-services-rec.cirrus-cloud.net/api/persons/confirm"
+  forgot_url: "https://jnj-nicorette-services-rec.cirrus-cloud.net/api/persons/renewal"
+  base_url: http://nicorette.proxym-it.net
+  for_client_id: sutmyda5wmwf43fxgcs5u3chg956wjp6
+  clean_mail_url: "https://dqm-webservices.eto.fr/CleanMail/ProxySvc.svc?wsdl"
+  clean_phone_url: "https://dqm-webservices.eto.fr/CleanPhone/ProxySvc.svc?wsdl"

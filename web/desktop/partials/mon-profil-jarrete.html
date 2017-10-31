@@ -1,0 +1,86 @@
+<div ng-hide="loading">
+
+    <div id="container" >
+
+        <!--header start-->
+           <ng-include  src="'/desktop/partials/usedpartials/header_desktop_dashboard.html'" ></ng-include>
+         <!--header end-->
+
+        <!--main content start-->
+        <div id="main-content" class="over">
+
+            <!--menu sidebar desktop-->
+            <ng-include  src="'/desktop/partials/usedpartials/menu_desktop.html'" ></ng-include>
+            <!--fin menu sidebar desktop-->
+
+            <!-- wrapper start-->
+            <div class="wrapper with-side-bar">
+                <div class="container-feedback jarette-null">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <h3 class="h3-green desktop" style="padding-top: 10px;">Mon profil</h3>
+                            <p class="description-incontent-profile text-left" style="font-size: 1.3em; padding-bottom: 0; font-weight:bold">
+                                Êtes-vous sur que vous voulez arrêter votre sevrage ? Ne vous découragez pas ! Arrêter de fumer est une étape difficile de sa vie, mais cela en vaut la peine. Il est tout à fait normal de craquer parfois, mais regardez déjà le chemin parcouru. N'oubliez pas les raisons qui vous ont poussé à arrêter :
+                            </p>
+                            <p class="description-incontent-profile text-left" style="font-size: 1.3em;">
+                                Les motivations que vous avez exprimées pour vous libérer du tabac concernent votre santé et votre amour-propre (vous souhaitez mieux contrôler votre vie). Effectivement, en cessant de fumer vous allez d’abord retrouver votre souffle, vous serez moins fatigué, et le risque de cancer ou de maladies cardiovasculaire diminuera d’année en année. Par ailleurs, en réussissant à vous libérer de la dépendance, vous aurez une meilleure estime de vous. Sans parler des économies d’argent que vous ferez et qui seront visibles dès le premier mois. 
+                            </p>
+
+                            <p class="titre-custom pad-top-20" style="font-size: 1.5em; font-weight:bold">Souhaitez-vous mettre fin à votre programme d'arrêt Nicorette® "J'accomplis l'incroyable" ?</p>
+                            <form style="float: left;width: 100%;">
+
+
+                                 <div class="over" >
+                                    <div class="custom-checkbox" id="ck-1">
+                                        <input type="checkbox"  id="ck1" name="check1" value="1" class="lightcheckbox" ng-click="setReponseCheck(1)" directive-checkbox >
+                                        <label class="label-check" for="ck1"></label>
+                                        <span class="txt-checkbox ">Oui</span>
+                                    </div>
+
+                                
+                                   <div class="custom-checkbox" id="ck-2">
+                                       <input type="checkbox" ng-checked="continuerIsChecked()" id="ck2" name="check2" value="2" class="lightcheckbox" ng-click="setReponseCheck(2)" directive-checkbox >
+                                        <label class="label-check" for="ck2"></label>
+                                        <span class="txt-checkbox ">Non, je vais essayer de continuer</span>
+                                    </div>
+
+                                </div> 
+                                
+                                <!--
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 desktop">
+                                    <div class="link-reset-psd contact" style="padding-bottom:0px;margin-top:10px;margin-bottom:20px;">
+                                            <a ng-click="redirectToMesParrains()"><span>Contacter mes parrains</span></a>
+                                    </div>
+                                </div>
+                                -->
+                                <div class="mobile">
+                                    <div class="link-reset-psd contact" style="padding-bottom:0px;margin-top:10px;margin-bottom:20px;">
+                                            <a ng-click="redirectToMesParrains()"><span>Contacter mes parrains</span></a>
+                                    </div>
+                                </div>
+                                
+                                <div class="clear"></div>
+                                
+                                <div class="ligne over desktop" style="font-size: 1.3em;">    
+                                    <input type="button" ng-click="submitReponse()" class="type-bt-green right" value="Valider" />
+                                </div>
+                                
+                                <div class="ligne over mobile" style="font-size: 1.3em;text-align: center;">    
+                                    <input type="button" ng-click="submitReponse()" class="type-bt-green" value="Valider" style="display:inline-block;width: 60%;"/>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- wrapper end-->
+        </div>
+        <!--main content end-->  
+
+        <!--footer start-->
+        <ng-include  src="'/desktop/partials/usedpartials/footer_desktop.html'" ></ng-include>
+        <ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+        <!--footer end--> 
+    </div>
+</div>

@@ -1,0 +1,88 @@
+<div ng-hide="loading">
+	
+	<div id="container" >
+         <!--header start-->
+           <ng-include  src="'/desktop/partials/usedpartials/header_desktop_dashboard.html'" ></ng-include>
+         <!--header end-->
+      
+          <!--main content start-->
+          <div id="main-content" class="over info-mobile">
+                    <!--menu sidebar desktop-->
+                               <ng-include  src="'/desktop/partials/usedpartials/menu_desktop.html'" ></ng-include>
+                     <!--fin menu sidebar desktop-->
+                         
+                         <!-- wrapper start-->
+                         <div class="wrapper with-side-bar contrat-fixe-date">
+                             <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                      <h2 class="pad-top-20 desktop">Mon contrat</h2>
+                                      <br/></br/>
+                                      <p class="m-size line-height">
+                                      	Désormais il est temps de choisir une date pour arrêter de fumer. Privilégiez un environnement dans lequel vous vous sentirez bien avec l'esprit libre.<br/> 
+                                        Si vous avez l'habitude de fumer lorsque vous sortez avec des amis, le weekend par exemple, choissisez un jour de semaine. Si au contraire, vous fumez plutôt durant vos pauses de travail, alors songez à arrêter durant le weekend ou les vacances.
+                                      </p>
+                                      <br/>
+                                    </div>  
+                                    
+                                    
+                                    <div class="fixe-date desktop">
+                                    	La date d'arrêt que vous avez fixé est le : <span>{{date}}</span>
+                                    </div>
+                                    
+                                    <div class="fixe-date mobile center">
+                                    	<div>La date d'arrêt que vous avez fixé est le : <span>{{date}}</span></div>
+                                    </div>
+                                                                                                         
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  pad-top-20 desktop">
+                                    
+	                                    <h3 class="pad-bottom-10">Félicitations ! </h3>
+	                                    
+	                                    <p class="m-size">Quand cette date arrivera, cela sera difficile mais vous verrez les bénéfices immédiatement : </p>
+	
+										<p class="m-size"><span>- Au bout de 8 heures,</span> la quantité de monoxyde de carbone dans le sang diminue de moitié, et l’oxygénation des cellules redevient normale.</p>
+	
+										<p class="m-size"><span>- Au bout de 24 heures,</span> le risque d’infarctus du myocarde diminue déjà, et les poumons commencent à éliminer le mucus et les résidus de fumée. Le corps ne contient plus de nicotine.<sup>(1)</sup> </p>
+		                           
+									</div>
+									
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  pad-top-20 mobile">
+                                    	                                                                       
+	                                    <p class="m-size line-height">Félicitations !, quand cette date arrivera, cela sera difficile mais vous verrez les bénéfices immédiatement : </p>
+	
+										<p class="m-size line-height">- Au bout de 8 heures, la quantité de monoxyde de carbone dans le sang diminue de moitié, et l’oxygénation des cellules redevient normale.</p>
+	
+										<p class="m-size line-height">- Au bout de 24 heures, le risque d’infarctus du myocarde diminue déjà, et les poumons commencent à éliminer le mucus et les résidus de fumée. Le corps ne contient plus de nicotine.<sup>(1)</sup></p>
+		                           
+									</div>
+									
+									<br/></br/>
+									
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+										<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 programme desktop">
+											<p>Vous souhaitez choisir une nouvelle date d’arrêt ?<br/>
+											<a href="/arreter/null">Abandonner le programme</a></p>
+										</div>
+										
+										<div class="programme mobile center">
+											<p class="m-size line-height">Vous souhaitez choisir une nouvelle date d’arrêt ?<br/>
+											<a href="/arreter/null">Abandonner le programme</a></p>
+										</div>
+										
+										<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 center">
+											<a class="type-bt-green bt-width" href="javascript:void(0)" ng-click="reloadProfil()">Fermer</a>
+										</div>
+																				
+										
+									</div>	
+							</div>
+                        </div>
+                        <!-- wrapper end-->
+              </div>
+              <!--main content end-->  
+              
+              <!--footer start-->
+                <ng-include  src="'/desktop/partials/usedpartials/footer_desktop.html'" ></ng-include>
+                <ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+              <!--footer end-->  
+	</div>
+</div>

@@ -1,0 +1,5 @@
+<h1>Import BDD Nicorette</h1>
+<form action="{{ path('import') }}" method="post" {{ form_enctype(form) }}>
+		{{ form_widget(form.file) }}
+        <input type="submit" class="btn btn-primary" value="import"/>
+</form>

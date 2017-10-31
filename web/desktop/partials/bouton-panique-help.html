@@ -1,0 +1,104 @@
+<div ng-hide="loading">
+
+    <div id="container" >
+        <!--header start-->
+        <ng-include  src="'/desktop/partials/usedpartials/header_desktop_dashboard.html'" ></ng-include>
+        <!--header end-->
+
+        <!--main content start-->
+        <div id="main-content" class="over info-mobile">
+            <!--menu sidebar desktop-->
+            <ng-include  src="'/desktop/partials/usedpartials/menu_desktop.html'" ></ng-include>
+            <!--fin menu sidebar desktop-->
+
+            <!-- wrapper start-->
+            <div class="wrapper with-side-bar panic-bouton panic2">
+                <div class="row">
+                    <div class="col-lg-12 desktop">
+                        <h2 class="pad-top-20">Help ! J'ai trop envie de fumer</h2>
+                        <br/></br/>
+                    </div>
+
+                    <div class="col-lg-12 pad-bottom-20">
+                        <div class="content">
+                            <div ng-repeat="question in questions"> 
+
+                                <div ng-if="$index==0" class="over">
+                                    <p class="desktop"><span>{{question.name}}</span></p>
+                                    <p class="mobile center pad-bottom-10"><span class="cos-bg-md light-color mm-size">{{question.name}}</span></p>
+                                    <div class="custom-checkbox check-{{choice.id}}" id="ck-{{choice.id}}" ng-repeat="choice in question.choices">
+                                        <input type="checkbox" checklist-model="$parent.$parent.answers[question.id]" checklist-value="choice" id="squared{{choice.id}}" name="check{{choice.id}}" class="lightcheckbox" directive-checkbox />
+                                        <label class="label-check" for="squared{{choice.id}}"></label>
+                                        <span class="txt-checkbox">{{choice.name}}</span>
+                                    </div>
+                                    <div style="clear:both;color:red;font-size:12px;">{{questionError[question.id]}}</div>
+                                </div>
+
+                                <div ng-if="$index==1" class="over">
+                                    <p class="desktop pad-top-10"><span>{{question.name}}</span></p>
+                                    <p class="mobile center pad-top-10"><span class="cos-bg-md light-color mm-size">{{question.name}}</span></p>
+
+                                    <div class="radiobox desktop" ng-repeat="choice in question.choices">
+                                        <input ng-click="setYesOrNoValueR1(choice, question.id)" type="radio" name="choices-{{question.id}}" id="radio-{{choice.id}}" class="radio" directive-checkbox />
+                                        <label class="custom-radio" for="radio-{{choice.id}}"></label>
+                                        <label class="txt-radio" >{{choice.name}}</label>
+                                    </div>
+
+
+                                    <div class="mobile btn-radio">
+                                        <ul class="style_radio mg-auto">
+                                            <li ng-repeat="choice in question.choices" ng-click="setYesOrNoValueR1(choice, question.id)" ng-class="$index=0 ? 'yes active' :'yes disable' " directive-radiobox >
+                                                <input type="radio"  name="choices-m-{{question.id}}" class="hidden"  />
+                                                {{choice.name}}<span class="{{choice.name}}"></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div style="clear:both;color:red;font-size:12px;">{{questionError[question.id]}}</div>
+                                </div>
+
+                                <div ng-if="$index==2" class="over">
+                                    <p class="desktop pad-top-20 "><span>{{question.name}}</span></p>
+                                    <p class="mobile center pad-top-10"><span class="cos-bg-md light-color mm-size">{{question.name}}</span></p>
+
+                                    <div class="radiobox desktop" ng-repeat="choice in question.choices">
+                                        <input ng-click="setYesOrNoValueR2(choice, question.id)" type="radio" name="choices-{{question.id}}" id="radio-{{choice.id}}" class="radio"  />
+                                        <label class="custom-radio" for="radio-{{choice.id}}"></label>
+                                        <label class="txt-radio" >{{choice.name}}</label>
+                                    </div>
+
+                                    <div class="mobile btn-radio">
+                                        <ul class="style_radio mg-auto">
+                                            <li ng-repeat="choice in question.choices" ng-click="setYesOrNoValueR2(choice, question.id)" ng-class="$index=0 ? 'yes active' :'yes disable' " directive-radiobox >
+                                                <input type="radio"  name="choices-m-{{question.id}}" class="hidden"  />
+                                                {{choice.name}}<span class="{{choice.name}}"></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div style="clear:both;color:red;font-size:12px;">{{questionError[question.id]}}</div>
+                                </div>
+
+                            </div>
+                        </div>  
+                    </div>   
+                    <div class="col-lg-6 col-sm-6 col-md-6 right desktop" style="margin-top:30px;">
+                        <a class="type-bt-green right bt-width" ng-click="submitReponses()" style="font-size: 1.7em;">Valider</a>
+                        <p class="right desktop"><span>Ce questionnaire vous rapporte 4 points </span></p>
+                    </div>
+
+                    <div class="col-lg-6 col-sm-6 col-md-6 center mobile">
+                        <a class="type-bt-green center bt-width" ng-click="submitReponses()">Valider</a>
+                        <p class="center green pad-top-10 mobile" style="width:100%;float:left;font-size: 1.5em;margin-top: -15px;">(Ce questionnaire vous rapporte 4 points)</p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- wrapper end-->
+
+            <!--footer start-->
+            <ng-include  src="'/desktop/partials/usedpartials/footer_desktop.html'" ></ng-include>
+            <ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+            <!--footer end--> 
+        </div>
+    </div>

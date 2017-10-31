@@ -1,0 +1,60 @@
+<div ng-hide="loading">
+	
+	<div id="container" >
+          <!--header start-->
+			<ng-include  src="'/desktop/partials/usedpartials/header_desktop_default.html'" ></ng-include>
+          <!--header end-->
+              <!--main content start-->
+              <div id="main-content" class="over">
+                         <!-- wrapper start-->
+                         <div class="wrapper">
+                           <div class="container-full produit-patch">
+                             <!-- Content  -->
+                         	 <div class="row">
+                         	 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                         	 		<h3 class="text-left h3-green desktop">Le substitut nicotinique</h3>
+                         	 		<h3 class="center h3-green mobile">Les Gommes</h3><br/>	
+                         	 		<p class="desktop" style="margin-top:12px"><span>Voici le substitut nicotinique adapté à vos besoins :</span></p>  
+                         	 	</div>
+                         	 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                         	 		<div class="content-full">
+                         	 			<div ng-if="fager>5" class="img left desktop col-lg-4 col-md-12 col-sm-12 col-xs-12" ><img src="desktop/images/gomme-4mg.png"></div>
+                         	 			<div ng-if="fager>5" class="img center mobile"><img src="desktop/images/gomme-4mg.png" ></div>
+                         	 			<div ng-if="fager<=5" class="img left desktop col-lg-4 col-md-12 col-sm-12 col-xs-12" ><img src="desktop/images/gomme-2mg.png"></div>
+                         	 			<div ng-if="fager<=5" class="img center mobile"><img src="desktop/images/gomme-2mg.png" ></div>
+                         	 			<div class="content left col-lg-6 col-md-12 col-sm-12 col-xs-12" style="font-size: 1.1em;">
+	                         	 			 <p>Disponibles en plusieurs goûts, les gommes (ou chewing-gums à la nicotine) sont un moyen efficace  de lutter contre les sensations de manque. En plus de diffuser progressivement de la nicotine, elles permettent de compenser l’absence du geste de fumer. En effet, le fait de mâcher occupe la bouche et détourne l’attention de l’envie de cigarette. Cela peut également atténuer le stress lié à l’arrêt du tabac. 
+												Afin de couvrir vos besoins en nicotine, il est primordial de respecter les modalités d’utilisation et la posologie.
+             								 </p>
+	                                         <div ng-if="fager>5">
+	                                            <div class="pad-bottom-10">
+												  <h4 class="pad-top-20 pad-bottom-5 m-size" style="font-weight:bold;font-size: 1.5em;padding: 15px 0;">POSOLOGIE</h4>
+												  <p>Mâcher une première fois la gomme, puis la garder contre la joue envrion 10 minutes. Elles doivent ensuite être mâchées très lentement (environ 20 fois en 20 minutes) pendant 20 à 30 minutes maximum en faisant des pauses pendant lesquelles elles ne doivent pas être mâchées du tout. Au-delà de 30 min la gomme ne délivre plus de nicotine.<br/>
+												  <br/>En cas de dépendance forte ou très forte, optez pour les gommes de 4 mg (maximum 15 par jour).<br/>
+												  <br/>Réduire progressivement le nombre de gommes mâchées par jour et arrêter lorsque la consommation est réduite de 1 à 2 gommes par jour.</p>
+												</div>
+	                                         </div>
+	                                         <div ng-if="fager<=5">
+	                                            <div class="pad-bottom-10">
+												  <h4 class="pad-top-20 pad-bottom-5 m-size" style="font-weight:bold;font-size: 1.5em;padding: 15px 0;">POSOLOGIE</h4>
+												  <p>Mâcher une première fois la gomme, puis la garder contre la joue envrion 10 minutes. Elles doivent ensuite être mâchées très lentement (environ 20 fois en 20 minutes) pendant 20 à 30 minutes maximum en faisant des pauses pendant lesquelles elles ne doivent pas être mâchées du tout. Au-delà de 30 min la gomme ne délivre plus de nicotine.<br/>
+												  <br/>En cas de dépendance faible ou moyenne, optez pour les gommes de 2 mg (maximum 30 par jour).<br/>
+												  <br/>Réduire progressivement le nombre de gommes mâchées par jour et arrêter lorsque la consommation est réduite de 1 à 2 gommes par jour.</p>
+												</div>
+	                                         </div>
+                                       </div>
+                         	 		</div> 
+                               </div>
+                            </div>
+                         </div>
+                       </div>
+                       <!-- wrapper end-->
+              </div>
+              <!--main content end-->  
+              
+              <!--footer start-->
+				<ng-include  src="'/desktop/partials/usedpartials/footer_desktop.html'" ></ng-include>
+        		<ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+              <!--footer end-->  
+	</div>
+</div>

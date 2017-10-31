@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>NICORETTE®</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+        
+	<!-- Bootstrap core CSS -->
+	<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+	<link href="{{ asset('desktop/css/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('desktop/css/bootstrap-reset.css') }}" rel="stylesheet">
+       
+	<!--external css-->
+	<link href="{{ asset('desktop/assets/font-awesome/css/font-awesome.css') }}" rel="stylesheet" />
+              
+	<!-- Custom styles for this template -->
+	<link href="{{ asset('desktop/css/normalize.css') }}" rel="stylesheet">
+	<link href="{{ asset('desktop/css/style.css') }}" rel="stylesheet">
+	<link href="{{ asset('desktop/css/style-responsive.css') }}" rel="stylesheet" />
+	<link href="{{ asset('desktop/css/idangerous.swiper.css') }}" rel="stylesheet" />	
+	<link href="{{ asset('desktop/css/custom.css') }}" rel="stylesheet" />
+	<link href="{{ asset('desktop/css/custom-responsive.css') }}" rel="stylesheet" />
+	<link href="{{ asset('desktop/css/css.css') }}" rel="stylesheet" />
+	<link href="{{ asset('desktop/css/jquery-ui-1.10.1.custom.min.css') }}" rel="stylesheet" />
+	<script type="text/javascript">
+			var css_link = "../desktop/css/janrain.css";
+			localStorage.setItem('device', '{{ device }}');
+	</script>
+	<script src="{{ asset('desktop/js/vendor/jquery-1.11.0.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('desktop/js/vendor/janrain-init.js') }}"></script>
+    <script type="text/javascript">
+   		 var contractUrl = '/dashboard';
+        // --- page-specific settings ------------------------------------------
+        janrain.settings.capture.screenToRender = 'verifyEmail';
+
+        // --- define event handlers and start the janrain ui ------------------
+        function janrainCaptureWidgetOnLoad() {
+        	 janrain.events.onCaptureEmailVerificationSuccess.addHandler(function(result){
+            	
+            	 var uuid = result.userData.uuid;
+            	 var token = result.accessToken;
+            	 var syncUrl = "{{ path('user_synchronize',{'uuid': 'XXX' }) }}".replace('XXX',uuid);
+        	        $.ajax({
+        	          url: syncUrl+'?method=POST&token='+token,
+        	          success: function(res) {
+        	  				setTimeout(function() {
+            	  				if(res.data.contraturl){
+        	  						window.location.href = '/'+res.data.contraturl;
+        	  						contractUrl = '/'+res.data.contraturl;
+            	  				}
+        	  				}, 5000);
+        	          },
+        	          async: false
+        	        });
+        	 });
+        	 janrain.events.onCaptureEmailSent.addHandler(function(result){
+        		 var email = result.to;
+        		 var reverifUrl = "{{ path('user_resend_verification_code') }}";
+        		 $.ajax({
+       	          url: reverifUrl+'?email='+email,
+       	          success: function(res) {
+       	  				console.log(res.success);
+       	          },
+       	          async: false
+       	        });
+             });
+            	 
+            
+            janrain.events.onCaptureRenderComplete.addHandler(function(result) {
+              $('input[name$="traditionalSignIn_emailAddress"]').attr('placeholder','Votre Email');
+            
+            });
+
+         // should be the last line in janrainCaptureWidgetOnLoad()
+            janrain.capture.ui.start();
+        }
+
+        function goToContrat(){
+        	window.location.href = contractUrl;
+        }
+
+    </script>
+</head>
+<body class="relative">
+   	<div id="container" >
+   	
+	   	<header class="header white-bg">
+			<div class="sidebar-toggle-box">
+				<div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
+			</div>
+			<div ng-if="page=='valide-mail'">
+				<div class="Head-text desktop">
+					<div class="title text-center">J’accomplis l'incroyable</div>
+				</div>
+				<div class="Head-text mobile">
+					<div class="title-mobile text-center">Confirmation d'inscription</div>
+				</div>
+			</div>
+			<a href="/" class="logo"></a>
+		</header>
+          <!--main content start-->
+          <div id="main-content" class="over">
+	             <!-- wrapper start-->
+	             <div class="wrapper">
+	               <div class="row">
+	  	             <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+			             <div class="center"  style="display:none;" id="verifyEmail">
+					        <div style="text-align:center;padding-bottom:15px;">
+					            <img src="/desktop/images/icon-echec.png">
+					        </div>
+					        <p style="font-size:1.7em;color:#17211e;line-height:2;">Nous n'avons pas pu vérifier votre adresse email.<br/> Veuillez renseigner à nouveau votre adresse, nous vous enverrons un nouvel email.</p>
+					        {* #resendVerificationForm *}
+					            <div class="mail-adress"style="text-align:center;"><span class="inp-ico-mail"></span>{* traditionalSignIn_emailAddress *}</div>
+					            <div class="capture_footer">
+					                {* submitButton *}
+					            </div>
+					         {* /resendVerificationForm *}
+					     </div>
+				     </div>
+				   </div>
+				    <div class="row">
+				    	<div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+				    		<div class="center" style="display:none;" id="resendVerificationSuccess">
+						        <div class="title text-center capture_header">
+						            <h2>Email envoyé !</h2>
+						        </div>
+						        <div class="hr"></div>
+						        <br/>
+						         <p style="font-size:1.7em;color:#17211e;line-height:2;">Veuillez vérifier vos emails pour réinitialiser votre mot de passe.</p>
+						        <div class="capture_footer">
+						            <a href="index.html" class="capture_btn capture_primary">Voir mon profil</a>
+						        </div>
+						    </div>
+					    </div>
+				    </div>
+				    
+				     <div style="display:none;" id="verifyEmailSuccess">
+		                 <div class="capture_header row reset-PD-success valide-mail-2 center">
+		                 	  <!--<img src="/desktop/images/RP-success.png">-->
+		                      <h2 class="desktop">Bienvenue dans le programme J’accomplis l'incroyable</h2>
+		                      <h2 class="mobile mb-size" style="line-height: 1.2;">Bienvenue dans le programme<br/> J’accomplis l'incroyable</h2>
+		                      
+		                      <p class="desktop">Votre inscription au Club des incroyables a bien été validée</p> 
+		                      <p class="mobile ml-size" style="padding-top:20px !important;">Votre inscription au Club des<br/> incroyables a bien été validée</p> 
+		                      
+		                      <div class="row">
+		                      	 <div class="col-lg-12">
+		                      	 	<p class="col-lg-9 col-sm-12 col-md-9 col-xs-12 content-img ml-size" style="text-align:center;">Vous allez être redirigé vers votre contrat pour fixer votre date d'arrêt dans:</p>
+		                      	 	<div class="col-lg-3 col-sm-12 col-md-3 col-xs-12"><img style="margin: -5px 0 0 5px;" src="{{ asset('/desktop/images/valide-5-sec.png')}}"></div>
+		                      	    
+		                      	 </div>
+		                      </div>
+		                      <div class="mobile" style="color:#3ac781;font-size:2.2em;padding-top:20px;font-family: cosmos_bqmedium;">OU</div>
+		                      <a id="contrat" onClick = "goToContrat();" class="type-bt-green" href="javascript:void(0)">Fixer ma date d'arrêt</a>
+		                 </div>
+		                 <div class="capture_footer">
+				            <a href="index.html" class="capture_btn capture_primary">Mon profil</a>
+				        </div>
+		             </div>
+	             </div>
+	             <!-- wrapper end-->
+          </div>
+          <!--main content end-->  
+          <footer class="site-footer desktop" >
+          	<ul class="mg-auto links-footer">
+				<li><a href="/infos-legales/confidentialite">Politique de confidentialité</a></li>
+				<li><a href="/infos-legales/CGU">Conditions Générales d'Utilisation </a></li>
+				<li><a href="/infos-legales/cookies">Politique d'utilisation des cookies</a></li>
+			</ul>
+			<p class="text-center">
+				Médicament contenant de la nicotine. Patch, gomme et inhaleur : pas avant 15 ans, Microtab, nicorette comprimés à sucer et NICORETTESPRAY® : pas avant 18 ans. L’arrêt définitif de la consommation de tabac est<br/> 
+				préférable. Contient de l’alcool (NICORETTESPRAY®). Demandez conseil à votre pharmacien. En cas de difficulté, consulter votre médecin. Lire attentivement la notice.<br/>
+				 L’arrêt immédiat de la consommation est préférable. M14NI348 – 14/09/6 504 345 1/GP/002 »
+			</p>
+                       
+			 <p class="text-center">
+				 © Johnson & Johnson Santé Beauté France S.A.S. 2014<br/> 
+				 Cette application est publiée par Jonhson & Jonhson Santé Beauté France SAS. La responsabilité de son contenu lui en incombe. Cette application est destinée au public français.
+			</p>              
+			</footer>
+			<div class="footer-mobile mobile">
+				<p>
+					Médicament contenant de la nicotine. Patch, gomme et inhaleur : pas avant 15 ans, Microtab, nicorette comprimés à sucer et NICORETTESPRAY® : pas avant 18 ans. L’arrêt définitif de la consommation de tabac est préférable. Contient de l’alcool (NICORETTESPRAY®). Demandez conseil à votre pharmacien. En cas de difficulté, consulter votre médecin. Lire attentivement la notice. L’arrêt immédiat de la consommation est préférable. M14NI348 – 14/09/6 504 345 1/GP/002 »
+				</p>
+				<p>
+					© Johnson & Johnson Santé Beauté France S.A.S. 2014<br/> 
+					Cette application est publiée par Jonhson & Jonhson Santé Beauté France SAS. La responsabilité de son contenu lui en incombe. Cette application est destinée au public français.
+				</p>
+			</div>
+              
+	</div>
+	
+</body>
+</html>

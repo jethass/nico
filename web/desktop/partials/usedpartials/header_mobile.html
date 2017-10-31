@@ -1,0 +1,19 @@
+ <header class="header white-bg relative">
+<!--                      <div ng-if="infos.nbr_day_without_cigarette <= 0" class="welcomeUser mobile">Bonjour <span>{{userName}}</span></div> -->
+                     <div ng-if="infos.nbr_day_without_cigarette > 0" class="text-center title-header mobile">{{infos.nbr_day_without_cigarette}} jour{{infos.nbr_day_without_cigarette > 1?'s':''}} sans tabac</div>
+                     
+                     <!--Menu for mobile-->
+                     <ul class="menuMobile">
+                         <li>
+                             <a href="javascript:void(0)" menu-dashboard class="bt-menu-mobile">menu</a>
+                             <ul>
+                                 <li><a href="javascript:void(0)" ng-click="reloadProfil()" ><span class="ico-mobile-profile"></span>Mon profil</a></li>
+                                 <li><a href="/produits-nicorette"><span class="ico-mobile-produits"></span>Les produits NICORETTE<sup>®</sup></a></li>
+                                 <li><a href="/infos-legales/confidentialite"><span class="ico-mobile-info"></span>Informations légales</a></li>
+                                 <li><a href="javascript:void(0)"><span class="ico-mobile-aide"></span>Aide</a></li>
+                             </ul>
+                         </li>
+                     </ul>
+                     <!--End Menu for mobile-->
+                     <a href="/" class="logo"></a>
+</header>

@@ -1,0 +1,66 @@
+<div ng-hide="loading">
+
+    <div id="container" >
+
+        <!--header start-->
+           <ng-include  src="'/desktop/partials/usedpartials/header_desktop_dashboard.html'" ></ng-include>
+         <!--header end-->
+
+        <!--main content start-->
+        <div id="main-content" class="over">
+
+            <!--menu sidebar desktop-->
+            <ng-include  src="'/desktop/partials/usedpartials/menu_desktop.html'" ></ng-include>
+            <!--fin menu sidebar desktop-->
+
+            <!-- wrapper start-->
+            <div class="wrapper with-side-bar desktop" style="padding-bottom: 0px;">
+                <div class="banner-jarrete1b"><img ng-src="desktop/images/banner_jarrete1c.png" /></div>
+                <div class="container-feedback" style="padding-bottom: 0px;">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="text-left">
+                                <p style="font-weight:bold; font-size:1.4em; padding-top:30px">
+                                    <strong>Même si vous êtes surs d'abandonner le programme d'arrêt, voyez ceci comme une étape vers une libération totale du tabac. Essayer de maintenir une faible consommation jusqu'à votre prochaine tentative d'arrêt. Il sera alors plus facile d'arrêter à nouveau.</strong>
+                                </p>
+                                <p style="font-size:1.4em; padding-top:15px">
+                                    Votre tentative n'est pas concluante cette fois mais le sera la prochaine fois. Pour améliorer ce programme de sevrage, prenez quelques secondes pour remplir ce questionnaire :
+                                </p>
+
+                            </div>
+                        </div>
+                        
+                        <div >
+	                        <div class="left pad-top-20 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+	                            <a class="type-bt-green dark" style="width:100%;" href="/arreter-repondre">Répondre</a>
+	                        </div>
+                                <div class="right pad-top-20 col-lg-6 col-md-6 col-sm-12 col-xs-12 desktop">
+	                            <a class="type-bt-green " style="width:100%; " href="/arreter-felicitation">Après réflexion, je veux poursuivre mon programme d'arrêt</a>
+	                        </div>
+	                        <div class="right pad-top-20 col-lg-6 col-md-6 col-sm-12 col-xs-12 mobile">
+	                            <a class="type-bt-green " style="width:100%; " href="/arreter/oui">Après réflexion, je veux poursuivre mon programme d'arrêt</a>
+	                        </div>
+	                    </div>    
+                        <div class="clear"></div>
+
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mobile jarrette-continuer" style="padding: 15px; min-height:335px">
+            	<p style="padding-bottom: 15px; font-size: 1.5em; line-height: 1.5;">En moyenne, les fumeurs font 7 tentatives d'arrêt avant d'y arriver. Même si vous êtes surs d'abandonner le programme d'arrêt, voyez ceci comme une étape vers une libération totale du tabac. Essayer de maintenir une faible consommation jusqu'à votre prochaine tentative d'arrêt. Il sera alors plus facile d'arrêter à nouveau.</p>
+            	<a class="type-bt-green " style="width:100%; margin-bottom: 15px;" href="/arreter-repondre">Répondre</a>
+            	<a class="type-bt-green dark" style="width:100%; " href="/arreter/oui">Après réflexion, je veux poursuivre mon programme d'arrêt</a>
+            </div>
+            
+            <!-- wrapper end-->
+        </div>
+        <!--main content end-->  
+
+        <!--footer start-->
+        <ng-include  src="'/desktop/partials/usedpartials/footer_desktop.html'" ></ng-include>
+        <ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+        <!--footer end--> 
+    </div>
+</div>

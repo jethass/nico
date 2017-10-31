@@ -1,0 +1,332 @@
+<div ng-hide="loading">
+	<div id="container" >
+	    <!--header start-->
+	    <ng-include  src="'/desktop/partials/usedpartials/header_desktop_default.html'" ></ng-include>
+	    <!--header end-->
+         
+        <!--main content start-->
+        <div id="main-content" class="over">
+	        <!-- wrapper start-->
+	        <div id='quiz-container' class="wrapper" ng-show='!feedBack'>
+				<div ng-class="{'container-quizz one quizz1-1': stepNbr == 3 && questionNbr==1,
+								'container-quizz one quizz1-2': stepNbr == 3 && questionNbr==2,
+								'container-quizz one quizz1-3': stepNbr == 3 && questionNbr==3,
+								'container-quizz two two-1': stepNbr <=2 && questionNbr==1,
+							    'container-quizz two two-2': stepNbr <=2 && questionNbr>1,
+							    'container-quizz three quizz-3-1': stepNbr >3 && questionNbr==1,
+							    'container-quizz three quizz-3-2': stepNbr >3 && questionNbr==2,
+							    'container-quizz three quizz-3-3': stepNbr >3 && questionNbr==3,
+							    'container-quizz three quizz-3-4': stepNbr >3 && questionNbr==4,
+							    'container-quizz three quizz-3-5': stepNbr >3 && questionNbr==5,
+							    'container-quizz three quizz-3-6': stepNbr >3 && questionNbr==6,
+							    'container-quizz three quizz-3-7': stepNbr >3 && questionNbr==7,
+							    'container-quizz three quizz-3-8': stepNbr >3 && questionNbr==8}">
+	        	<!-- progress bar  -->
+	        	<div ng-if="quizs.questions.length > 1" class="row desktop">
+					<div class="bar" ng-repeat="i in getNumber(stepNbr) track by $index" ng-class="{'active': questionNbr > $index }"></div>
+					<div class="etat">{{questionNbr}}/{{stepNbr}}</div>
+				</div> 
+					
+	            <!-- progress bar  -->  
+	                           
+	            <!-- Content  -->
+				<div class="row">
+	           	 	<div ng-if="step == 'FEEDBACK_1' && questionNbr == 1" class="col-lg-12 header-description desktop">
+	        	 		<p class="center pad-bottom-10">Dans cette première partie du questionnaire nous allons déterminer pourquoi vous fumez,<br> afin de mieux connaître votre profil de fumeur. C’est parti pour une nouvelle vie sans tabac !</p>
+	        	 	</div>
+	        	 	<div ng-if="step == 'FEEDBACK_1' && questionNbr == 1" class="col-lg-12 mobile">
+	        	 		<p class="m-size pad-bottom-10">Dans cette première partie du questionnaire nous allons déterminer pourquoi vous fumez, afin de mieux connaître votre profil de fumeur. C’est parti pour une nouvelle vie sans tabac !</p>
+	        	 	</div>
+	        	 	<div ng-if="step == 'FEEDBACK_2' && questionNbr == 1" class="col-lg-12 header-description desktop">
+               	 		<p class="center">Nous allons à présent identifier la place qu’occupe la cigarette dans votre vie, mais aussi les raisons<br>
+               	 			 pour lesquelles vous souhaitez arrêter : votre moteur le plus puissant dans votre bataille contre le tabac !</p>
+               	 	</div>
+               	 	<div ng-if="step == 'FEEDBACK_2' && questionNbr == 1" class="col-lg-12 header-description mobile">
+               	 		<p class="m-size">Nous allons à présent identifier la place qu’occupe la cigarette dans votre vie, mais aussi les raisons<br>
+               	 			 pour lesquelles vous souhaitez arrêter : votre moteur le plus puissant dans votre bataille contre le tabac !
+               	 		</p>
+               	 	</div>	        	 	
+	        	 	<div ng-if="step == 'FEEDBACK_3' && questionNbr == 1" class="col-lg-12 header-description desktop">
+               	 		<p class="center">Cette <span>dernière phase du questionnaire</span> va nous permettre de déterminer votre niveau de dépendance
+               	 		<br> pour vous proposer un <span>substitut nicotinique</span> adapté, votre nouvelle arme dans la <span>lutte contre le tabac !</span></p>
+               	 	</div>
+               	 	<div ng-if="step == 'FEEDBACK_3' && questionNbr == 1" class="col-lg-12 header-description mobile">
+               	 		<p class="m-size">Cette dernière phase du questionnaire va nous permettre de déterminer votre niveau de dépendance
+               	 		   pour vous proposer un substitut nicotinique adapté, votre nouvelle arme dans la lutte contre le tabac !</p>
+               	 	</div>
+					<div class="col-lg-12">
+						<div class="content">
+							<!-- progress bar mobile  -->
+			            	<div ng-if="quizs.questions.length > 1" class="row mobile bar-prog">
+                            	<div class="col-lg-12">
+                            		<div class="slide-puce" style="width:{{percent}}%"></div>
+                            		<div class="bar" ng-repeat="i in getNumber(stepNbr) track by $index" ng-class="{'active': questionNbr > $index, 'first':$index == 0, 'last': $index == stepNbr-1  }"></div>
+	                             	<div class="etat">{{questionNbr}}/{{stepNbr}}</div>
+    	                        </div>
+                           </div>  
+		                               
+							<!-- progress bar mobile -->  
+		                    <div  ng-repeat='question in myQuestions' style="clear:both;">      	 		
+								<p class="desktop" ng-if='question.answer_multiple == 0 && !secondName[question.id] && question.input_type != 5 && question.input_type != 8 && question.input_type != 7 && question.input_type != 6'>
+									<span class="question-name">{{question.name}}</span> <span class="light-italic">(Une seule réponse possible)</span>
+								 	<!--  <input ng-if='question.input_type == 4'  type="text" class="desktop input-data" ng-model="answer[question.id][0]">-->
+								</p>
+								<p class="desktop Q-6-8" ng-if='question.answer_multiple == 0 && !secondName[question.id] && (question.input_type == 5 || (question.input_type == 8 && pregnant) || question.input_type == 7 || question.input_type == 6)'>
+									<span  class="question-name">{{question.name}}</span>
+								</p>
+								<p class="desktop" ng-if='question.answer_multiple == 0 && secondName[question.id] && (question.input_type == 5 || (question.input_type == 8 && pregnant) || question.input_type == 7 || question.input_type == 6)'>
+									<span  class="question-name">{{question.second_name}}</span>
+								</p>
+			                    <p ng-class="{'desktop': question.input_type != 4,'desktop quizinput':question.input_type == 4}" ng-if='question.answer_multiple == 1 && !secondName[question.id] && question.input_type != 10'>
+			                    	<span  class="question-name">{{question.name}}</span>
+			                    	<p ng-if="step == 'FEEDBACK_1' && questionNbr == 3 && !secondName[question.id]" class="desktop sub-title">Si vous n’en êtes pas à votre première tentative, pensez aux raisons qui vous ont poussé à reprendre.</p>
+			                    	<input ng-if='question.input_type == 4 && !secondName[question.id]'  type="text" class="desktop input-data" ng-model="answer[question.id][0]" />
+			                    </p>
+			                    <p class="desktop" ng-if='question.answer_multiple == 0 && secondName[question.id] && question.input_type != 5 && question.input_type != 8 && question.input_type != 7 && question.input_type != 6'>
+			                    	<span  class="question-name">{{question.second_name}}</span> <span class="light-italic">(Une seule réponse possible)</span>
+			                    	 <!-- <input ng-if='question.input_type == 4'  type="text" class="desktop input-data" ng-model="answer[question.id][0]"> -->
+			                    </p>
+			                    <p ng-class="{'desktop': question.input_type != 4,'desktop quizinput':question.input_type == 4}" ng-if='question.answer_multiple == 1 && secondName[question.id]'>
+			                    	<span  class="question-name">{{question.second_name}}</span>
+			                    </p>
+			                    <input ng-if='question.input_type == 4 && question.answer_multiple == 1 && secondName[question.id]'  type="text" class="desktop input-data" ng-model="answer[question.id][0]">
+			                    <p class="desktop" ng-if='question.input_type == 10 '>
+									<span  class="question-name">{{question.name}}</span> <span class="light-italic">(Classer vos réponse par ordre croissant)</span>
+								</p>
+
+			                    <p class="mobile center"  ng-if='!secondName[question.id] && question.input_type != 8 '>
+			                    	<span class="cos-bg-md light-color ml-size">{{question.name}}</span> <br/>  
+			                    	<span ng-if='question.answer_multiple == 0 && question.input_type != 5 && question.input_type != 8 && question.input_type != 7 && question.input_type != 6' class="font-style font-nrl m-size">(Une seule réponse possible)</span>
+			                    	<span ng-if='question.input_type == 10' class="font-style font-nrl m-size"> (Classer vos réponse par ordre croissant)</span>
+			                    </p>
+			                    <p class="mobile center"  ng-if='question.input_type == 8 && pregnant'>
+			                    	<span class="cos-bg-md light-color ml-size">{{question.name}}</span> <br/>  
+			                    	<span ng-if='question.answer_multiple == 0 && question.input_type != 5 && question.input_type != 8 && question.input_type != 7 && question.input_type != 6' class="font-style font-nrl m-size">(Une seule réponse possible)</span>
+			                    	<span ng-if='question.input_type == 10' class="font-style font-nrl m-size"> (Classer vos réponse par ordre croissant)</span>
+			                    </p>
+			                    <p class="mobile center" ng-if='secondName[question.id]'>
+			                    	<span class="cos-bg-md light-color ml-size">{{question.second_name}}</span><br/>  
+			                    	<span ng-if='question.answer_multiple == 0 && question.input_type != 5 && question.input_type != 8 && question.input_type != 7  && question.input_type != 6' class="font-style font-nrl m-size">(Une seule réponse possible)</span>
+			                    	<span ng-if='question.input_type == 10' class="font-style font-nrl m-size"> (Classer vos réponse par ordre croissant)</span>
+			                    </p>
+			                    <p class="mobile" ng-if='question.answer_multiple == 1 && !secondName[question.id]'>
+			                       <p ng-if="step == 'FEEDBACK_1' && questionNbr == 3 && !secondName[question.id]" class="mobile sub-title sous-titre">Si vous n’en êtes pas à votre<br/> première tentative, pensez aux raisons<br/> qui vous ont poussé à reprendre.</p>
+			                    </p>
+							    
+							    <input ng-if='question.input_type == 4'  type="number" class="input-data mobile input-quiz-3-2" ng-model="answer[question.id][0]">
+			                  	
+			                  	<div ng-if='question.input_type == 1 || question.input_type == 3 || question.input_type == 9' class="input-{{question.input_type}}">
+			                         <div class="over" ng-repeat='choice in question.choices'>                               	                                    	   
+			                             <div class="custom-checkbox" id="ck-{{question.id}}-{{choice.id}}" data-input="{{question.input_type}}" >
+											 <input data-choice ="{{choice.id}}" data-question="{{question.id}}" type="checkbox" id="squared{{choice.id}}" class="lightcheckbox" name='name-{{choice.id}}' checklist-model="$parent.$parent.answer[question.id]" checklist-value="choice" directive-checkbox ng-checked="isChecked({{choice.id}},{{question.id}})" ng-click="updateChecked(choice.id,question.input_type, question.id)" />
+											 <label ng-click="validateAnswer(choice.text_type)" class="label-check" for="squared{{choice.id}}"></label>
+											 <span class="txt-checkbox">{{choice.name}}</span>
+										 </div>                                       
+			                         </div>
+			                    </div>
+			                    <div ng-if="textarea" class="desktop custom-textarea" id="ck6">
+							    	<textarea placeholder="Précisez..." class="light-textarea" rows="4" cols="60" ></textarea>
+							    </div>
+							    <div ng-if="textarea" class="mobile custom-textarea" id="ck6">
+							    	<textarea placeholder="Précisez..." class="light-textarea" rows="4" cols="60" ></textarea>
+							    </div>
+			                    <div ng-if='question.input_type == 2'> 
+			                       	<div class="over" ng-repeat='choice in question.choices'>                               	                                    	   
+			                       		<div class="content">
+				                       	   <p class="left desktop" style="width: 100%;margin-top: 15px;">
+				                       	      <span class="question-name">{{choice.name}}</span>
+				                       	   </p>
+			      	                           <p class="mobile m-size custom-text-mobile" id="yesno_{{choice.id}}">
+			      	                              {{choice.name}}
+			      	                           </p>
+			                	                           
+										   <div class="radiobox desktop">
+											  <input ng-click="setYesNoValue(choice.id, question.id, 1, $index)" type="radio" name="c{{choice.id}}" id="radio-oui-{{$index}}" class="radio"  ng-checked="isRadioChecked({{choice.id}},{{question.id}},1)" />
+											  <label class="custom-radio" for="radio-oui-{{$index}}"></label>
+											  <label class="txt-radio" >Oui</label>
+										   </div>
+			
+											<div class="radiobox desktop">
+											  <input  ng-click="setYesNoValue(choice.id, question.id, 0, $index)" type="radio" name="c{{choice.id}}" id="radio-non-{{$index}}" class="radio"  ng-checked="isRadioChecked({{choice.id}},{{question.id}},0)" />
+											  <label class="custom-radio" for="radio-non-{{$index}}"></label>
+											  <label class="txt-radio" >Non</label>
+											</div>
+			
+											<div class="mobile btn-radio" id="radio_{{choice.id}}">
+			                                    <ul class="style_radio mg-auto">
+			                                      <li ng-click="setYesNoValue(choice.id, question.id, 1, $index)" ng-class="{'yes active': isRadioChecked({{choice.id}},{{question.id}},1), 'yes disable':!isRadioChecked({{choice.id}},{{question.id}},1)}" directive-radiobox>
+			                                         <input type="radio"  name="c{{choice.id}}" class="hidden"  />
+			                                         Oui<span class="oui"></span>
+			                                      </li>
+			                                      <li ng-click="setYesNoValue(choice.id, question.id, 0, $index)" ng-class="{'no disable': !isRadioChecked({{choice.id}},{{question.id}},0), 'no active':isRadioChecked({{choice.id}},{{question.id}},0)}" directive-radiobox>
+			                                           <input type="radio"  name="choice"  class="hidden" />
+			                                           Non<span  class="non"></span>
+			                                      </li> 
+			           							</ul>
+			       							</div>
+			                          		</div> 
+			                        	</div>
+			                    </div>
+			                    <div ng-if='question.input_type == 5 || question.input_type == 6 ||  question.input_type == 7 ||  (question.input_type == 8 && pregnant) '>
+                                  <div  ng-repeat='choice in question.choices'>                               	                                    	   
+                                       <div class="radiobox desktop radio-{{choice.id}}">
+											  <input ng-click="setRadioValue(choice.id, question.id, question.input_type)" id="r{{choice.id}}" type="radio" name="g{{question.id}}"  class="radio"  ng-checked="isRadioChecked({{choice.id}},{{question.id}})" />
+											  <label class="custom-radio" for="r{{choice.id}}"></label>
+											  <label class="txt-radio">{{choice.name}}</label>
+									   </div>
+								  </div>
+								  <div class="mobile" ng-class="{'radio-femme': question.input_type == 7}">
+	                                  	<ul class="style_radio mg-auto" >
+	                                      <li ng-repeat='choice in question.choices' ng-click="setRadioValue(choice.id, question.id, question.input_type)" ng-class="{'yes active': isRadioChecked({{choice.id}},{{question.id}}) && choice.name != 'non', 
+	                                         																					  'yes disable': !isRadioChecked({{choice.id}},{{question.id}}) && choice.name != 'non',
+	                                         																					  'no active': isRadioChecked({{choice.id}},{{question.id}}) && choice.name == 'non', 
+	                                         																					  'no disable': !isRadioChecked({{choice.id}},{{question.id}}) && choice.name == 'non'}" directive-li-radiobox>
+	                                            <input type="radio"  name="o{{choice.id}}" class="hidden"  />
+	                                            {{choice.name}}<span ng-class="choice.name" ></span>
+	                                         </li>
+							            </ul>
+								  </div>
+		                        </div>
+		                        <div ng-if='question.input_type == 10'>
+			                    	<div ng-repeat='choice in question.choices' class="custom-input">
+										  <input readonly ng-click="setOrderInput(choice.id, question.id)" type="text" class="light-input" ng-model="order[choice.id]" />
+										  <label class="txt-checkbox font-nrl">{{choice.name}}</label>
+									   </div>
+			                    </div>
+			                    <div ng-if='questionError[question.id]'>
+									<p class="red desktop"><span>{{questionError[question.id]}}</span></p>
+									<p class="red mobile center mm-size"><span>{{questionError[question.id]}}</span></p>
+			                    </div>
+			                    <div ng-if='question.input_type == 6' class="row" style="clear:both;">
+                             	 <div class="col-lg-12 desktop">
+                             	   	<p>Renseignez les contacts des personnes sur qui vous pouvez compter pour vous aider et que vous aimeriez contacter en cas de moments difficiles.</p>
+                     	    	 </div>
+                     	    	 <p class="mobile center"><span  class="cos-bg-lt mm-size" style="font-size: 1.8em !important;">Renseignez les contacts des<br/> personnes sur qui vous pouvez<br/> compter pour vous aider et que vous<br/> aimeriez contacter en cas de<br/> moments difficiles.</span></p>
+                     	     </div>	   
+		                    </div>
+						</div>
+	                </div>
+	  			</div>
+	  			<div  ng-repeat='question in myQuestions' style="clear:both;"> 
+	  			    <div ng-if='question.input_type == 6' >
+	  			    	
+	  			    	<div class="col-lg-12 form-contact desktop">
+	  			    		<p class="desktop">En renseignant ces contacts, vous reconnaissez avoir informé ces personnes du traitement de leurs données et obtenu leur accord préalable à l’envoi de messages dans le cadre du programme de coaching.</p>
+	  			    		<div  ng-repeat='parrain in parrains' style="clear:both;"> 
+			           	   		<form action="" method="POST" >
+			           	   			<div class="pad-bottom-10 relative">
+			                       		<input type="text" class="custom-input" name="nom" placeholder="Nom" value="{{parrain.name}}" ng-model="parrains[$index].name" />
+			                      	</div>
+			                      
+			                      	<div class="pad-bottom-10 relative">
+			                       		<input type="text" class="custom-input" name="email" placeholder="Email" value="{{parrain.mail}}" ng-model="parrains[$index].mail" />
+			                      	</div>
+			                      
+			                      	<div class="pad-bottom-10 relative">
+			                       		<input type="text" class="custom-input" name="tel" placeholder="Téléphone" value="{{parrain.tel}}" ng-model="parrains[$index].tel" ng-keyup="deleteError($index)" />
+			                       		<span class="required">champ obligatoire</span>
+			                      	</div>
+			                   </form>
+		   	    	 		</div>
+		   	    	 		<a ng-show="hideParrainBtn == false" class="type-bt-green-submit desktop bt-width" href="javascript:void(0)" ng-click="addParrain()"><span>Rajouter un contact</span></a>
+			           	    <p ng-if="parrains[$index].validator" class="red desktop mm-size"><span style="font-weight:normal">{{parrains[$index].validator}}</span></p>
+			           	</div> 
+		   	    	 	
+		   	    	 	<div class="col-lg-12 form-contact mobile">
+			                 <div  ng-repeat='parrain in parrains' style="clear:both;"> 
+				           	    <form action="" method="POST" >
+				           	   		<div class="pad-bottom-10 relative">
+				                       <input type="text" class="custom-input" name="nom" placeholder="Nom" value="{{parrain.name}}" ng-model="parrains[$index].name"/>
+				                      </div>
+				                      
+				                      <div class="pad-bottom-10 relative">
+				                       <input type="text" class="custom-input" name="email" placeholder="Email" value="{{parrain.mail}}" ng-model="parrains[$index].mail"/>
+				                      </div>
+				                      
+				                      <div class="pad-bottom-10 relative">
+				                       <input type="tel" class="custom-input" name="tel" placeholder="Téléphone" value="{{parrain.tel}}" ng-model="parrains[$index].tel" ng-keyup="deleteError($index)"/>
+				                       <span class="required">champ obligatoire</span>
+				                      </div>
+				                      <p ng-if="parrains[$index].validator"  class="red mobile center mm-size"><span style="font-weight:normal">{{parrains[$index].validator}}</span></p>
+				           	   	</form>
+				           	 </div>
+				           	 <div class="add-contact">
+				           	   <a ng-show="hideParrainBtn == false" class="type-bt-green-submit bt-width mobile" ng-click="addParrain()" href="javascript:void(0)"><span>Rajouter un contact</span></a>
+		   	    	 	     </div>
+		   	    	 	</div>
+		   	    	 	<p class="mobile center"><span  class="light-color font-nrl" style="font-size: 1.3em !important;color: #339933 !important;">( En renseignant ces contacts, vous reconnaissez<br/> avoir informé ces personnes du traitement de<br/> leurs données et obtenu leur accord préalable<br/> à l’envoi de messages dans le cadre du<br/> programme de coaching )</span></p>
+		        	</div>
+		        </div>
+		       	<!--  suivant / précedent  -->
+		       	<div class="row desktop">
+	               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="height: 100px;">
+	               	<a ng-hide='questionNbr > 1 || token' class="type-bt-green dark bt-width bt-postion-bottom before" href="{{previousStep}}"><span>Retour</span></a>
+	               	<a ng-hide='questionNbr == 1' ng-click='goBack()' class="type-bt-green dark bt-width bt-postion-bottom before" href="javascript:void(0)"><span>Question précédente</span></a>
+	               </div>
+	               
+	               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="height: 100px;">
+	                  <a ng-if='questionNbr < stepNbr' ng-click='goNextQuestion()' class="type-bt-green bt-width bt-postion-bottom after" href="javascript:void(0)"><span>Question suivante</span></a>
+	                  <a ng-if='questionNbr >= stepNbr && step!="FEEDBACK_3"' ng-click="goNextQuestion('submit')" class="type-bt-green bt-width bt-postion-bottom after" href="javascript:void(0)"><span>Question suivante</span></a>
+	                  <a ng-if='questionNbr >= stepNbr && step=="FEEDBACK_3"' ng-click="goNextQuestion('submit')" class="type-bt-green bt-width bt-postion-bottom after" href="javascript:void(0)"><span>Voir mon profil</span></a>
+	               </div> 
+	          	</div>
+	          
+	          	<div class="row mobile mobile-btn-style">
+	               <div class="col-lg-6 left">
+	               	  <div class="prev">
+	               		<a ng-hide='questionNbr > 1 || token'  href="{{previousStep}}" class="greeen mb-size"><span>Retour</span></a>
+	               		<a ng-hide='questionNbr == 1' ng-click='goBack()' class="greeen mb-size prec" href="javascript:void(0)"><span>Question<br/> précédente</span></a>
+	               	  </div>
+	               </div>
+	               
+	               <div class="col-lg-6 left" >
+	                  <div class="next">
+	                  	<a ng-if='questionNbr < stepNbr' ng-click='goNextQuestion()' class="green mb-size" href="javascript:void(0)"><span>Question<br/> suivante</span></a>
+	                  	<a ng-if='questionNbr >= stepNbr && step!="FEEDBACK_3"' ng-click="goNextQuestion('submit')" class="green mb-size" href="javascript:void(0)"><span>Question<br/> suivante</span></a>
+	                  	<a ng-if='questionNbr >= stepNbr && step=="FEEDBACK_3"' ng-click="goNextQuestion('submit')" class="green mb-size" href="javascript:void(0)"><span>Voir mon<br/> profil</span></a>
+	                  </div>
+	               </div>  
+	          	</div>
+	       		<!--  Fin suivant / précedent  -->
+	                            
+			</div>
+		</div>
+		<!--main content end-->   
+		
+ 		<!-- Popup 1 -->
+		<a id="modal1"  style="display:none"  data-toggle="modal" data-target="#myModal1">date > date max</a>
+		<div id="myModal1" class="modal fade quiz-one" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" style="height:210px;">
+		    <div class="modal-content">
+		        <div class="pad-top-5">
+		        	<p class="text-center mm-size">Pour retrouver des informations sur le sevrage tabagique, rendez-vous sur le site de Nicorette </p>
+		        </div>
+		       <div class="over col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			           <a class="type-bt-green close cos-bg-lt" data-dismiss="modal" href="javascript:void(0)" ng-click="goNicorette()">Consulter</a> 
+			       </div>
+			   <div class="over col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			           <a class="type-bt-green close cos-bg-lt" data-dismiss="modal" data-toggle="modal" data-target="#myModal2" ng-click="goNextQuestion('popup')" >Continuer le quiz</a> 
+			   </div>
+		    </div>
+		  </div>
+		</div>
+		<!-- End Popup 1 -->
+        <!--  FeedBack Start  -->
+        <div ng-show='feedBack&&feedBack1' id='feedBack1' >
+        	<ng-include  src="'/desktop/partials/feedback/feedback1.html'" ></ng-include>
+        </div>
+        <div ng-show='feedBack&&feedBack2' id='feedBack2' >
+        	<ng-include  src="'/desktop/partials/feedback/feedback2.html'" ></ng-include>
+        </div>
+        <div ng-show='feedBack&&feedBack3' id='feedBack3' >
+        	<ng-include  src="'/desktop/partials/feedback/feedback3.html'" ></ng-include>
+        </div>
+        <!--   FeedBack End  -->
+        
+        <!--footer start-->
+        <ng-include  src="'/desktop/partials/usedpartials/footer_desktop.html'" ></ng-include>
+        <ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+        <!--footer end--> 
+	</div>
+    <!-- wrapper end-->
+</div>

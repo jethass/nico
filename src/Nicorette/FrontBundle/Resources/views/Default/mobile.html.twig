@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html> 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>NICORETTE®</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" />-->
+  <link rel="stylesheet" href="{{ asset('mobile/css/classic.css') }}" />
+  <link rel="stylesheet" href="{{ asset('mobile/css/classic.date.css') }}" />
+  <link rel="stylesheet" href="{{ asset('mobile/css/idangerous.swiper.css') }}" />
+  
+</head>
+<body ng-app="MonApp">
+
+    <div ng-show="loading">mobile Loding...</div>
+    <div ng-view></div>
+
+<script src="{{ asset('common/js/plugins/angular.min.js') }}"></script>
+<script src="{{ asset('common/js/plugins/angular-route.min.js') }}"></script>
+<script src="{{ asset('common/js/plugins/angular-resource.min.js') }}"></script>
+<script src="{{ asset('common/js/plugins/jquery-1.10.2.min.js') }}"></script>
+<script src="{{ asset('common/js/plugins/idangerous.swiper.min.js') }}"></script>
+
+<script src="{{ asset('mobile/js/app.js') }}"></script>
+<script src="{{ asset('mobile/js/factory/QuizFactory.js') }}"></script>
+<!--<script src="js/service/post.js"></script>-->
+<script src="{{ asset('mobile/js/controller/comments.js') }}"></script>
+<script src="{{ asset('mobile/js/controller/posts.js') }}"></script>
+<script src="{{ asset('mobile/js/directive/directives.js') }}"></script>
+<!--
+<script src="{{ asset('mobile/js/plugins/compressed/picker.js') }}"></script>
+<script src="{{ asset('mobile/js/plugins/compressed/picker.date.js') }}"></script>-->
+
+ 
+</body>
+</html>

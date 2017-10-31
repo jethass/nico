@@ -1,0 +1,230 @@
+<div ng-hide="loading">
+
+<div id="container" >
+            
+             <!--header start-->
+	               <ng-include  src="'/desktop/partials/usedpartials/header_desktop_default.html'" ></ng-include>
+	         <!--header end-->
+          
+              <!--main content start-->
+              <div id="main-content" class="over inscription">
+                         <!-- wrapper start-->
+                         <div class="wrapper">
+  						   <button style="display:none;" type="button" id="capture_signIn_traditionalSignIn_createButton" class="capture_secondary capture_traditionalSignIn_createButton capture_btn capture_primary" name="traditionalSignIn_createButton" data-capturescreen="traditionalRegistration"><span class="janrain-icon-16 janrain-icon-plus"></span> Sign Up</button>
+                           <div id="traditionalRegistration" class="row janrain-capture-ui capture-ui-content capture_screen_container" data-capturescreenname="traditionalRegistration" data-captureventadded="true" style="display: none;">
+	                             <p class="p-bienvenu-ins text-center width-col-check-insc-mobile desktop">
+	                                En renseignant ces informations, vous acceptez qu'elles soient soumise à notre <strong>charte de confidentialité</strong> et<br/> certifiez avoir pris connaissance du <strong>règlement.</strong>  
+	                             </p>  
+	                             <p class="p-bienvenu-ins text-center width-col-check-insc-mobile mobile" style="padding:15px 15px 0 15px;width: 100%;font-size: 1.6em !important;">
+	                                En renseignant ces informations, vous acceptez qu'elles soient soumise à notre charte de confidentialité et certifiez avoir pris connaissance du règlement.  
+	                             </p>
+                                 {* #registrationForm *}
+	                                 <div class="col-lg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+		                                      <div class="mg-auto container-col">
+		                                          <h3 class="text-left h3-green desktop">Inscription au programme de coaching</h3>
+		                                          <a href="/pre-inscription" class="text-left green-question width-col-check-insc-mobile mobile" style="text-align: left;font-size: 1.55em;width:100%;">Vous avez déjà un compte J'accomplis l'incroyable ?</a>
+		                                      
+		                                          <p class="text-left txt-form-home desktop"><strong>1. Votre profil</strong></p>
+		                                          <p class="text-left title-section-insc-form width-col-check-insc-mobile mobile" style="margin:0;padding-left:2px;"><span class="profil-ico"></span>Votre profil</p>
+		                                          
+		                                          <div class="mrg-input relative">
+		                                               {* displayName *}
+		                                          </div>
+		                                          
+		                                          <div class="mrg-inputrelative janrain-capture-ui">
+		                                             <select id="selectStatus" class="capture_select custom-select-insc bg-gris-mobile-input status" name="statut" placeholder="Statut *">
+		                                                 <optgroup label="Non Fumeur">
+														    <option value="1">Je n'ai jamais fumé</option>
+														  </optgroup>
+														  <optgroup label="Fumeur">
+														    <option value="2">Je fume et je l'assume</option>
+														    <option value="3">J'aimerais arrêter de fumer</option>
+														    <option value="4">Je fume... mais moins qu'avant</option>
+														  </optgroup>
+														  <optgroup label="Ex­‐Fumeur (ou presque !)">
+														    <option value="5">Pourvu que je tienne !</option>
+														    <option value="6">J'ai arrêté de fumer pour de bon</option>
+														  </optgroup>
+		                                             </select>
+		                                          </div>
+		                                         
+		                                           <div class="mrg-input relative">
+		                                            {* displayNameStatusHidden *}
+		                                          </div>
+		                                          
+		                                          <div class="mrg-input relative" >
+		                                               {* emailAddress *}
+		                                          </div>
+		                                          
+		                                          <div class="mrg-input relative">
+		                                               {*password*}
+		                                          </div>
+		                                          
+		                                          
+		                                          <div class="mrg-input over relative">
+		                                               {* passwordConfirm *}
+		                                          </div>
+		                                          
+		                                           <p class="text-left txt-form-home desktop"><strong>2. Informations de votre compte</strong></p>
+		                                           <p class="text-left title-section-insc-form width-col-check-insc-mobile mobile" style="margin: 0 0 -10px 0; padding-top: 15px;"><span class="info-compte-ico"></span>Informations de votre compte</p>
+		                                           
+		                                           
+		                                           <div class="width-col-radio-insc-mobile civilite">
+				                                      {* civility *}
+	                                               </div>
+	                                               
+		                                           
+	                                               <div class="clear"></div>
+		                                           <div class="mrg-input relative">
+		                                              {* firstName *}
+		                                           </div>
+		                                          
+		                                           <div class="mrg-input relative">
+		                                              {* lastName *}
+		                                           </div>
+		                                           
+		                                           <div class="mrg-input width-col-radio-insc-mobile" style="width:100% !important">
+				                                      {* birthdate *}
+	                                               </div>
+		                                      
+		                                    </div>     
+	                                </div>
+	                                 
+	                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+		                                   <div class="mg-auto container-col">
+		                                          <h5 class="text-right h5-gris desktop">* Champs obligatoires</h5>
+		                                          <p class="text-left txt-form-home desktop"><strong>Renseignez votre numéro de téléphone portable afin</br>de pouvoir recevoir les SMS de coaching</strong></p>
+		                                          <p class="text-left title-section-insc-form-small width-col-check-insc-mobile mobile" style=""><span class="tel-ico"></span>Renseignez votre numéro de téléphone portable afin de pouvoir recevoir les SMS de coaching</p>
+		                                          		                                          
+		                                          <div class="mrg-input relative">
+		                                              {* phone *}
+		                                          </div>
+		                                          
+		                                          <div class="mrg-input relative">
+		                                              {* address *}
+		                                          </div>
+		                                          
+		                                          <div class="mrg-input relative custom-selectbox">
+		                                              {* city *}
+		                                          </div>
+		                                          <div class=" relative">
+		                                              {* zipcode *}
+		                                          </div>
+		                                          
+		                                          
+		                                          <h5 class="text-right h5-gris width-col-check-insc-mobile mobile" style="margin-top:5px;">* Champs obligatoires</h5>
+		                                          <div id="condition-ins">
+			                                          <div class="over pad-top-25 width-col-check-insc-mobile">
+			                                           
+					                                               {* optinBrand *}
+					                                               <div class="marg-customtxt-check">
+					                                                   <span class="txt-checkbox">Je souhaite recevoir les communications de la marque</span>
+					                                               </div>
+			                                             
+		                                              </div>
+		                                              <div class="over width-col-check-insc-mobile">
+		                                                
+			                                                    {* optinJJSBF *}
+				                                               <div class="marg-customtxt-check">
+				                                                   <span class="txt-checkbox">Je souhaite recevoir les communications du groupe JJSBF</span>
+				                                               </div>
+			                                             
+		                                              </div>
+		                                              <div class="over width-col-check-insc-mobile">
+		                                                 
+				                                               {* optinOtherMember *}
+				                                               <div class="marg-customtxt-check">
+				                                                   <span class="txt-checkbox">Je souhaite autoriser les autres membres à me contacter</span>
+				                                               </div>
+				                                           
+		                                              </div>
+		                                              
+		                                              
+		                                              <div class="over width-col-check-insc-mobile">
+			                                                  {* privacyOpt *} 
+				                                              <div class="marg-customtxt-check txt-privacy link">
+				                                                   <span class="txt-checkbox">J'accepte les <a class="text-link-black link-condition" href="/infos-legales/CGU">conditions d'utilisations</a></span>
+				                                              </div>
+			                                          </div>
+	                                              </div>
+	                                            
+					                                           <!-- <div class="custom-checkbox" id="ck1">
+																  <input id="condition1" data-capturefield="privacyOpt" value="true" type="checkbox" name="privacyOpt" class="lightcheckbox" directive-checkbox />
+																  <label class="label-check" for="condition1"></label>
+																  <span class="txt-checkbox">Rester connecté</span>
+														        </div>-->
+				                                            
+	                                               
+	                                               <!--  <input type="submit" class="type-bt-green mg-auto-mobile" value="Valider et fixer ma date d'arrêt" />-->
+	                                               <div style="text-align:center;margin-top: -10px;">{* createAccountButton *} </div>
+	                                              
+	                                               <div class="ligne over pad-top-20 desktop" style="width:95%;padding-top: 0px;">
+                                                         <label class="green text-right">
+                                                             <strong>Votre inscription vous rapporte 50 points !</strong><br/>
+                                                             Les points valorisent le comportement à travers chaque<br/>
+                                                             petite victoire afin d'encourager les membres à tenir le cap
+                                                         </label>
+                                                   </div>
+                                                   
+                                                   <div class="ligne over pad-top-20 mobile">
+                                                         <div class="txt-desc-insc green text-center" style="font-size: 1.5em;">
+                                                             (Votre inscription vous rapporte 50 points)
+                                                             <br/>
+                                                         </div>
+                                                         <div class="txt-desc-insc green pad-top-10 text-center " style="font-size: 1.5em;">
+	                                                             Les points valorisent le comportement à travers<br/> chaque
+	                                                             petite victoire afin d'encourager les<br/> membres à tenir le cap
+                                                         </div>
+                                                         
+                                                    </div>
+		                                   </div>  
+	                                </div> 
+                                 {* /registrationForm *}
+                            </div>
+							<!--== VERIFY EMAIL SCREEN ==================================================-->
+							<div style="display:none;" id="emailUnverified">
+								<div class="row reset-PD-success valide-mail center">
+				                 	  <img src="/desktop/images/RP-success.png">
+				                      <h2 class="desktop">Votre inscription à J’accomplis l'incroyable<br/> a bien été prise en compte.</h2>
+				                      <h2 class="mobile">Votre inscription à<br/> J’accomplis l'incroyable<br/> a bien été prise en compte.</h2>
+				                      <div>
+				                      	<p>Un email vient de vous être envoyé, veuillez consulter votre boîte email et cliquer sur le lien de confirmation pour valider définitivement 
+				                      	 votre compte et fixer votre date d'arrêt dès maintenant !  
+				                        </p> 
+				                      </div>
+				                 </div>
+							</div>
+							<div style="display:none;" id="resendVerification">
+								{ #resendVerificationForm }
+								<div class="capture_header">
+									<h1>Verify your email address</h1>
+								</div>
+								<p>You cannot log in until your email address is verified. Please click the email verification link in the message we have sent you, or use the form below to get another message.</p>
+								<div class="capture_signin">
+									{ traditionalSignIn_emailAddress }
+									{ submitButton }
+								</div>
+								{ /resendVerificationForm }
+							</div>
+							<div style="display:none;" id="resendVerificationSuccess">
+								<div class="capture_header">
+									<h1>We have sent a new verification code</h1>
+								</div>
+							</div>
+       						 <!--== USER TOO YOUNG =======================================================-->
+						    <div style="display:none;" id="registrationUnderage">
+						        <p>You do not meet the minimum age requirement to sign in to this site</p>
+						    </div>
+                       </div>
+                       <!-- wrapper end-->
+              </div>
+                    
+              <!--main content end-->  
+              
+              <!--footer start-->
+                    <ng-include  src="'/desktop/partials/usedpartials/footer_desktop.html'" ></ng-include>
+                    <ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+              <!--footer end-->
+            
+</div>
+</div>

@@ -1,0 +1,198 @@
+<div ng-hide="loading">
+
+    <div id="container" >
+
+        <!--header start-->
+        <ng-include  src="'/desktop/partials/usedpartials/header_desktop_dashboard.html'" ></ng-include>
+        <!--header end-->
+
+        <div class="objectif-du-jour text-center mobile">objectif du jour : <span>{{dayObjective}} <span ng-if='dayObjective <= 1 '>cigarette</span> <span ng-if='dayObjective > 1'>cigarettes</span></span></div>
+
+        <!--main content start-->
+        <div id="main-content" class="over">
+            <!--menu sidebar desktop-->
+            <ng-include  src="'/desktop/partials/usedpartials/menu_desktop.html'" ></ng-include>
+            <!--fin menu sidebar desktop-->
+
+            <!-- wrapper start-->
+            <div class="wrapper with-side-bar journal">
+                <!-- contrat 1 -->
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 point">
+                        <h3 class="pad-bottom-20 desktop">Mon journal</h3>
+                        <p class="desktop cosmos-light" style="font-size:1.6em"><span class="cosmos-medium">Objectif du jour :</span> {{dayObjective}} <span ng-if='dayObjective <= 1' style="font-weight: normal;">cigarette</span> <span ng-if='dayObjective > 1' style="font-weight: normal;">cigarettes</span></p>
+
+                        <div class="content desktop">
+
+                            <div ng-repeat="question in questions">
+
+                                    <div ng-class="$index==1 ? 'none question-2' :'' ">
+
+                                        <div ng-if="$index==0">
+                                            <p class="desktop green" style="font-size:1.4em">Si votre objectif de réduction est respecté, vous gagnez 4 points.</p>
+                                        </div>
+                                        <div ng-if="$index==1">
+                                            <p class="green desktop" style="font-size:1.4em">Votre objectif n'a pas été respecté, ne baissez pas les bras nous sommes là pour vous aider</p>
+                                        </div>
+
+                                         <p class="desktop" style="font-size:1.4em"><span>{{question.name}}</span></p>
+                                         <form action="" method="POST" >
+                                            <div class="desktop" id="question-{{question.id}}">
+                                                <div class="radiobox" ng-repeat="choice in question.choices">
+                                                    <input type="radio" name="radio" id="radio{{choice.id}}" class="radio" value="{{choice.id}}" />
+                                                    <label class="custom-radio" for="radio{{choice.id}}"></label>
+                                                    <label class="txt-radio">{{choice.name}}</label>
+                                                </div>
+                                            </div>
+
+                                            <br/>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 desktop" style="text-align: center;padding-top:25px;">
+                                                <a id="btn-{{question.id}}" class="type-data type-bt-green bt-width valide-1" ng-click="submitReponse()">Valider</a>
+                                            </div>
+                                         </form>
+
+                                         <br/>
+                                         <br/>
+                                   
+                                  </div>
+                            </div>
+
+                        </div>
+                        
+                        <div class="content mobile">
+
+                            <div ng-repeat="question in questions">
+                                    <form action="" method="POST" >
+                                            <div ng-if="$index==0" id="q1Mob">
+                                                <p class="black_txt_journal mobile" style="font-size: 13px!important;">Si votre objectif de réduction est respecté, vous gagnez 4 points.</p>
+                                                <p class="mobile greenTitle text-center pad-bottom-25" style="font-size: 17px!important;">{{question.name}}</p>
+                                                <ul class="style_radio mg-auto">
+                                                    <li  ng-repeat="choice in question.choices" id="li{{choice.id}}"  ng-class="$index=0 ? 'yes active' :'yes disable' " directive-li-radiobox ng-click="setReponseRadioR1(choice.id)">
+                                                        <input type="radio" id="liradio{{choice.id}}" name="radio" value="{{choice.id}}" checked="checked" class="hidden"  />
+                                                        {{choice.name}}<span class="{{choice.name}}"></span>
+                                                    </li>
+                                                </ul>
+                                                <br/>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mobile" style="text-align: center;padding-top:25px;">
+                                                    <a id="btn-{{question.id}}" class="type-data type-bt-green bt-width valide-1" ng-click="submitReponseMobile()">Valider</a>
+                                                </div>
+                                            </div> 
+                                            <div ng-if="$index==1" id="q2Mob" style="display:none;">
+                                                <p class="black_txt_journal mobile" style="font-size: 13px!important;">Votre objectif n'a pas été respecté, ne baissez pas les bras nous sommes là pour vous aider</p>
+                                                <p class="mobile greenTitle text-center pad-bottom-25" style="font-size: 17px!important;">{{question.name}}</p>
+                                                <div class="custom-checkbox" id="ck-{{choice.id}}" ng-repeat="choice in question.choices">
+                                                    <input type="checkbox" id="ck{{choice.id}}" name="check" value="{{choice.id}}" class="lightcheckbox" directive-checkbox ng-click="setReponseCheckR2(choice.id)" />
+                                                    <label class="label-check" for="ck{{choice.id}}"></label>
+                                                    <span class="txt-checkbox">{{choice.name}}</span>
+                                                </div>
+                                                
+                                                
+                                                <br/>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mobile" style="text-align: center;padding-top:25px;">
+                                                        <a id="btn-{{question.id}}" class="type-data type-bt-green bt-width valide-1" ng-click="submitReponseMobile()">Valider</a>
+                                                </div>
+                                            </div> 
+                                            
+
+                                    </form>
+                                    <br/>
+                                    <br/>
+                            </div>
+
+                        </div>
+
+
+                        <!-- modals -->
+
+                        <!-- Popup bravo -->
+                        <div id="modalBravo" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="pad-top-5">
+                                        <p class="text-center">Bon boulot, vous avez gagner 4 points.</p>
+                                    </div>
+                                    <div class="over">
+                                        <a class="right type-bt-green close cos-bg-lt" ng-click="redirectToDashbord()"  data-dismiss="modal" >Ok</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Popup deja renseigné -->
+
+                        <div id="modalrenseigned" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="pad-top-5">
+                                        <p class="text-center">Vous avez déjà renseigné ces informations aujourd'hui. Avez-vous changé d'avis ?</p>
+                                    </div>
+                                    <div class="over col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <a class="right type-bt-green close cos-bg-lt" data-dismiss="modal" >Oui</a> 
+                                    </div>
+                                    <div class="over col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <a class="right type-bt-green close cos-bg-lt" data-dismiss="modal" ng-click="redirectToDashbord()" >Non</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Popup 2 : question : L’idée d’arrêter -->
+
+                        <div id="myModal2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" style="height:210px;">
+                                <div class="modal-content">
+                                    <div class="pad-top-5">
+                                        <p class="text-center">Vous devriez relire vos motivations</p>
+                                    </div>
+                                    <div class="over col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <a class="right type-bt-green close cos-bg-lt" data-dismiss="modal" ng-click="redirectToProfil()">Oui</a> 
+                                    </div>
+                                    <div class="over col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <a class="right type-bt-green close cos-bg-lt" data-dismiss="modal" ng-click="redirectToDashbord()" >Non</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Popup 2 : question 2 : Réduire ma consommation -->
+
+                        <div id="myModal3" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" style="height:210px;">
+                                <div class="modal-content">
+                                    <div class="pad-top-5">
+                                        <p class="text-center">Il est difficile de réduire sa consommation en présence d'autres fumeurs, ainsi préférez la compagnie de non-fumeurs. De plus, essayez d'identifier les lieux qui vous incitent à fumer pour les éviter dans la mesure du possible. </p>
+                                    </div>
+                                    <div class="over">
+                                        <a class="right type-bt-green close cos-bg-lt" data-dismiss="modal" ng-click="redirectToDashbord()">Ok</a> 
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- fin  modals -->
+
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 right_col desktop">
+                        <div class="monjournal-img-g"><img src="desktop/images/img-journal.png" /></div>
+                    </div>
+                </div>
+
+
+                <!-- fin mon journal 1 -->
+
+            </div>
+            <!-- wrapper end-->
+        </div>
+        <!--main content end-->  
+
+        <!--footer start-->
+        <ng-include  src="'/desktop/partials/usedpartials/footer_desktop.html'" ></ng-include>
+        <ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+        <!--footer end--> 
+
+    </div>
+
+</div>

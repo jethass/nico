@@ -1,0 +1,244 @@
+<div ng-hide="loading">
+    <div id="container" >
+        <!--header start-->
+        <ng-include  src="'/desktop/partials/usedpartials/header_desktop_dashboard.html'" ></ng-include>
+        <!--header end-->
+
+        <!--main content start-->
+        <div id="main-content" class="over">
+            <!--menu sidebar desktop-->
+            <ng-include  src="'/desktop/partials/usedpartials/menu_desktop.html'" ></ng-include>
+            <!--fin menu sidebar desktop-->
+
+
+            <!-- wrapper start-->
+            <div ng-if ="stats" class="wrapper with-side-bar mon-profil">
+                <div class="row">
+                    <div  id="editProfile" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="mg-auto">
+                            <div class="panel-info-profil">
+                                <div class="bio-chart left">
+                                    <div class="profile-picture" id="monprofile_pic">
+                                        <img ng-if="profile.civility=='MR'"  id="img-prof-user" ng-src="desktop/images/avatar-h.png" />
+                                        <img ng-if="profile.civility=='M' || profile.civility=='MME'" id="img-prof-user" ng-src="desktop/images/avatar-f.png" />
+                                    </div>
+                                    <!--<a href="#" data-capture-tab-index="1" id="capture_editProfile_edit_photo_link" class="icon-cam">cam</a>-->
+                                    <input id="pic-file-profile" type="file" style="display:none;" name="file" />
+                                    <!--<span class="petit-tiret-img-profile desktop"></span> -->
+                                </div>
+                                <!--<div class="links" >
+                                    <a href="javascript:void(0)" data-capture-tab-index="1" id="capture_editProfile_edit_photo_link">modifier</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                    <a href="javascript:void(0)" data-capture-tab-index="2" id="capture_editProfile_remove_photo_link">supprimer</a>
+                                </div>-->
+                                
+                                <div class="bio-desk info left desktop ">
+                                    <h4 class="upper " id="psu">{{profile.displayName}}</h4>
+                                    <div class="nmbr-div"><label class="no-marg-left">{{profile.givenName}} <strong>{{profile.familyName}}</strong>  {{pseudo}}</label> </div>
+                                    <div class="nmbr-div no-padding"><label class="no-marg-left"> Née le {{profile.birthday}}  </label> </div>
+                                </div>
+                                <div class="bio-desk left mobile">
+                                    <h4 class="upper mb-size">{{profile.displayName}}</h4>
+                                    <div class="nmbr-div"><label class="no-marg-left">{{profile.givenName}} <strong>{{profile.familyName}}</strong></label> </div>
+                                    <div class="nmbr-div no-padding"><label class="no-marg-left"> Née le {* birthdateString*}   </label> </div>
+                                    <!--<a href="javascript:void(0)" onclick="openFile()" class="ico-edit" >edit</a>-->
+                                </div>
+                                <div class="edit left">
+
+                                </div>
+                                <div class="clear"></div>
+
+                                <div class="edit-photo-link">{* photoManager *}</div>
+                                {* photoStatusHidden *}
+                            </div>
+
+                            {* #editProfileForm *}
+
+                            <div class="pad-top-5 relative left" style="width:100%">
+                                {* displayName *}
+                                <span class="inp-ico-pseudo left"></span>
+                            </div>
+
+                            <div class="pad-top-5 relative left" style="width:100%">
+                                {* emailAddress *}
+                                <span class="inp-ico-mail"></span>
+                            </div>
+
+                            <div class="pad-top-5 relative left pad-bottom-5" style="width:100%">
+                                {* phone *}
+                                <span class="inp-ico-tel"></span>
+                            </div>
+
+                            <div class="center capture_footer">
+                                {* saveButton *}
+                            </div>
+
+                            {* /editProfileForm *}
+
+                            <div class="link-reset-psd">
+                                <a href="javascript:void(0)" data-capturescreen="changePassword" ><span>Modifier mon mot de passe</span></a>
+                            </div>
+
+                            <h3 class="text-left h3-green pad-top-25 mb-size">Mes motivations</h3>
+                            <p class="p-desc-contrat mm-size">
+                                Les motivations que vous avez exprimées pour vous libérer du tabac concernent votre santé et votre amour-propre (vous souhaitez mieux contrôler votre vie). Effectivement, en cessant de fumer vous allez d’abord retrouver votre souffle, vous serez moins fatigué, et le risque de cancer ou de maladies cardiovasculaire diminuera d’année en année. Par ailleurs, en réussissant à vous libérer de la dépendance, vous aurez une meilleure estime de vous. Sans parler des économies d’argent que vous ferez et qui seront visibles dès le premier mois.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!--  <form name="myform" class="center" novalidate id="formAddSp">-->
+                    <div ng-if ="stats" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 alerts">
+                        <div class="mg-auto">
+                            <h3 class="text-left h3-green mb-size">Mes économies</h3>
+                            <div class="ligne first">
+                                <label class="mb-size">Mon paquet contient : </label>
+                                <input gradiant-packet-cigarette type="text" id="packet" name="packet"  value="" />
+                            </div>
+                            <div class="ligne last">
+                                <label class="desktop">Le paquet coûte : </label>
+                                <label class="mobile mb-size">Mon paquet coûte : </label>
+                                <input gradiant-cigarette type="text" id="amount" name="amount"  value="" />
+                            </div>
+                            <h3 class="text-left h3-green pad-top-25 desktop">Mes alertes</h3>
+                            <label class="size-txt m-size desktop">Recevoir les communications de la marque </label>
+                            <div class="desktop">
+                                <div class="desktop" ng-repeat='choice in optins'>
+                                    <div class="radiobox" >
+                                        <input type="radio" name ="club_alerts" id="club_alerts{{choice.id}}" class="radio" ng-click="setBrandOptin(choice.id)" ng-checked="isBrandChecked({{choice.id}})" />
+                                        <label  class="custom-radio" for="club_alerts{{choice.id}}"></label>
+                                        <label  class="txt-radio">{{choice.name}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="mobile">
+                                    <ul class="style_radio mg-auto">
+                    <li ng-repeat='choice in optins' ng-click="setBrandOptin(choice.id)" ng-class="{'yes active': isBrandChecked({{choice.id}}) && choice.name != 'non',
+                                                                                            'yes disable': !isBrandChecked({{choice.id}}) && choice.name != 'non',
+                                                                                            'no active': isBrandChecked({{choice.id}}) && choice.name == 'non',
+                                                                                            'no disable': !isBrandChecked({{choice.id}}) && choice.name == 'non'}" directive-li-radiobox >
+                       <input type="radio"  name="club_alerts" class="hidden"  />
+                       {{choice.name}}<span class="{{choice.name}}"></span>
+                    </li>
+                                    </ul>
+                    </div>-->
+                            <div class="clear"></div>
+
+                            <label class="size-txt m-size desktop">Recevoir les communications du groupe JJSBF </label>
+
+                            <div class="desktop">
+                                <div class="radiobox" ng-repeat='choice in optins'>
+                                    <input type="radio" name ="johnson_alerts" id="johnson_alerts{{choice.id}}" class="radio" ng-click="setJohnsonOptin(choice.id)" ng-checked="isJohnsonChecked({{choice.id}})" />
+                                    <label  class="custom-radio" for="johnson_alerts{{choice.id}}"></label>
+                                    <label  class="txt-radio">{{choice.name}}</label>
+                                </div>
+                            </div>
+
+                            <!--<div class="mobile">
+                               <ul class="style_radio mg-auto">
+                                            <li ng-repeat='choice in optins' ng-click="setJohnsonOptin(choice.id)" ng-class="{'yes active': isJohnsonChecked({{choice.id}}) && choice.name != 'non',
+                                                                                            'yes disable': !isJohnsonChecked({{choice.id}}) && choice.name != 'non',
+                                                                                            'no active': isJohnsonChecked({{choice.id}}) && choice.name == 'non',
+                                                                                            'no disable': !isJohnsonChecked({{choice.id}}) && choice.name == 'non'}" directive-li-radiobox >
+                       <input type="radio"  name="johnson_alerts" class="hidden"  />
+                       {{choice.name}}<span class="{{choice.name}}"></span>
+                    </li>
+                               </ul>
+                    </div>-->
+                            <div class="clear"></div>
+
+                            <label class="size-txt m-size desktop">Je souhaite autoriser les autres membres à me contacter </label>
+
+                            <div class="desktop">
+                                <div class="radiobox" ng-repeat='choice in optins'>
+                                    <input type="radio" name ="other_alerts" id="other_alerts{{choice.id}}" class="radio" ng-click="setOtherOptin(choice.id)" ng-checked="isOtherChecked({{choice.id}})" />
+                                    <label  class="custom-radio" for="other_alerts{{choice.id}}"></label>
+                                    <label  class="txt-radio">{{choice.name}}</label>
+                                </div>
+                            </div>
+
+                            <!--<div class="mobile">
+                               <ul class="style_radio mg-auto">
+                                            <li ng-repeat='choice in optins' ng-click="setOtherOptin(choice.id)" ng-class="{'yes active': isOtherChecked({{choice.id}}) && choice.name != 'non',
+                                                                                            'yes disable': !isOtherChecked({{choice.id}}) && choice.name != 'non',
+                                                                                            'no active': isOtherChecked({{choice.id}}) && choice.name == 'non',
+                                                                                            'no disable': !isOtherChecked({{choice.id}}) && choice.name == 'non'}" directive-li-radiobox >
+                       <input type="radio"  name="other_alerts" class="hidden"  />
+                       {{choice.name}}<span class="{{choice.name}}"></span>
+                    </li>
+                               </ul>
+                   </div>-->
+                            <div class="clear"></div>
+                            <br/><br/><br/><br/><br/><br/>
+                            <div class="logout text-center desktop"><a  href="#" id="captureSignOutLink" class="capture_end_session" >Déconnexion</a></div>
+
+                            <div class="ligne mar desktop">
+                                <label class="green">
+                                    Pour ne plus recevoir de SMS de coaching, je vais
+                                    dans mon profil<br/> "j'arrête le programme"
+                                </label>
+                            </div>
+
+                            <div class="link-reset-psd contact desktop" style="margin-top:10px;">
+                                <a href="/contrat-date-fixe"><span>Mon contrat</span></a>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+
+                        <div class="mobile">
+                            <div id='cssmenu'>
+                                <ul>
+                                    <li class="first"><a class="title light-color m-size" href="/mes-parrains"><span>Mes parrains</span></a></li>
+                                    <li><a class="title light-color m-size" href="/contrat-date-fixe"><span>Mon contrat</span></a></li>
+                                    <li><a class="title light-color m-size" href="/mes-alertes"><span>Mes alertes</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="logout text-center mobile left m-size"><br/><br/><br/><br/><br/><a href="#" id="captureSignOutLink" class="capture_end_session" >Déconnexion</a></div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div  id="changePassword" style="display:none;" class="wrapper with-side-bar mon-profil">
+                <div class="row " style="overflow:hidden;">
+                    <h2 class="pad-bottom-20 desktop">Modification de votre mot de passe :</h2>
+                    <br/>
+                    {* #newPasswordFormProfile *}
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 "  style="float: left;">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            {* oldpassword *}
+                            <span class="inp-ico-pass"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pad-top-20" style="float: left;">
+                            {* newpassword *}
+                            <span class="inp-ico-new"></span>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pad-top-20" style="float: left;">
+                            {* newpasswordConfirm *}
+                            <span class="inp-ico-pass conf"></span>
+                        </div>
+                    </div>
+                    <div class="center col-lg-12 col-md-12 col-sm-12 col-xs-12 btn-submit" style="float: left;">
+                        {* saveButton *}
+                    </div>
+                    {* /newPasswordFormProfile *}
+                </div>
+            </div>
+        </div>
+        <!-- wrapper end-->
+    </div>
+    <!--main content end-->
+
+    <!--footer start-->
+    <ng-include  src="'/desktop/partials/usedpartials/footer_desktop.html'" ></ng-include>
+    <ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+    <!--footer end-->
+</div>
+</div>
+

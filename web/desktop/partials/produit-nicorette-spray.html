@@ -1,0 +1,71 @@
+<div ng-hide="loading">
+	
+	<div id="container" >
+          <!--header start-->
+             <ng-include  src="'/desktop/partials/usedpartials/header_desktop_default.html'" ></ng-include>
+          <!--header end-->
+          
+              <!--main content start-->
+              <div id="main-content" class="over">
+                         <!-- wrapper start-->
+                         <div class="wrapper">
+                           <div class="container-full produit-patch">
+                         	 <div class="row">
+                         	 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                         	 		<h3 class="text-left h3-green desktop">Le substitut nicotinique</h3>
+                         	 		<h3 class="center h3-green mobile">Le Spray</h3><br/>	
+                                    <p class="desktop" style="margin-top:12px"><span style="font-size: 1.1em;">Voici le substitut nicotinique adapté à vos besoins :</span></p>  
+                         	 	</div>
+                         	 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">	
+                         	 		<div class="content-full">
+                         	 			<div class="img left desktop col-lg-4 col-md-12 col-sm-12 col-xs-12" ><img src="desktop/images/spray.png"></div>
+                         	 			<div class="img center mobile"><img src="desktop//images/spray.png"></div>
+                         	 			<div class="content left col-lg-6 col-md-12 col-sm-12 col-xs-12" style="font-size: 1.1em;">
+	                         	 			<p>Solution unique et innovante, NICORETTESPRAY® s’utilise dans le cadre d’un arrêt immédiat du tabac. Il permet de soulager très rapidement les envies irrésistibles de fumer grâce à une absorption très rapide de la nicotine à travers la muqueuse buccale. Le goût du spray est fort et l’arôme menthe peut surprendre lors des premières utilisations, mais, après quelques jours, cette impression disparaît.</p>
+											<p>Ce traitement est indiqué pour tous types de dépendances à la cigarette et peut s’utiliser aux moments habituels de consommation du tabac ou en cas d’envie irrésistible de fumer une cigarette. Son format discret et nomade vous permet de l’emporter partout avec vous.</p>
+											<p>Proposé en 2 conditionnements (1 ou 2 pulvérisateurs) goût menthe fraîche, NICORETTESPRAY® réduit très rapidement les envies irrésistibles de fumer. Sa posologie est simple, il s’utilise à chaque fois que le fumeur en ressent le besoin.
+											<br/>Ne pas dépasser 2 pulvérisations par prise. Ne pas dépasser 64 pulvérisations par jour et 4 pulvérisations par heure.
+											<p>Comment utiliser NICORETTESPRAY®, 1mg/dose nicotine ?<br/>
+											Afin d’obtenir de meilleurs résultats, nous vous conseillons de suivre les recommandations suivantes:<br/>
+											<ul style="font-size: 1.2em;">
+												<li>Ouvrez la bouche et placez l’embout du pulvérisateur aussi près que possible.</li>
+												<li>Appuyez sur la partie supérieure du pulvérisateur pour libérer une dose dans votre bouche.</li>
+												<li>Évitez les lèvres.</li>
+												<li>Ne pas inhaler lors de la pulvérisation afin que le produit n’entre pas dans vos voies respiratoires.</li>
+												<li>Évitez de déglutir pendant les quelques secondes qui suivent la pulvérisation.</li>
+												<li>Abstenez-vous de manger et de boire lors de la pulvérisation.</li>
+												<li>Abstenez-vous impérativement de fumer au cours du traitement.</li>
+											</ul>
+	                                         <div ng-if="fager>5">
+	                                            <div class="pad-bottom-10">
+												  <h4 class="pad-top-20 pad-bottom-5" style="font-weight:bold;font-size: 1.2em;">POSOLOGIE</h4><br/>
+												    1 ou 2 pulvérisations aux moments habituels de consommation du tabac ou en cas d'envie irrésistible de fumer 
+												    <br/>
+												 	Ne pas dépasser 2 pulvérisations par prise. Ne pas dépasser 64 pulvérisations par jour et 4 pulvérisations par heure.
+												</div>
+	                                         </div>
+	                                         <div ng-if="fager<=5">
+	                                            <div class="pad-bottom-10" style="font-size: 1.2em;">
+												  <h4 class="pad-top-20 pad-bottom-5" style="font-weight:bold;font-size: 1.2em;">POSOLOGIE</h4><br/>
+												    1 ou 2 pulvérisations aux moments habituels de consommation du tabac ou en cas d'envie irrésistible de fumer.<br/>
+												    Ne pas dépasser 2 pulvérisations par prise. Ne pas dépasser 64 pulvérisations par jour et 4 pulvérisations par heure. 
+												</div>
+												
+	                                         </div>
+                                       </div>
+                         	 		</div> 
+                               </div>
+                            </div>
+                            
+                            <!--------------------------------->
+                         </div>
+                       </div>
+                       <!-- wrapper end-->
+              </div>
+              <!--main content end-->  
+              
+              <!--footer start-->
+                <ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+              <!--footer end-->  
+	</div>
+</div>

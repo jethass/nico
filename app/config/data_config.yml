@@ -1,0 +1,95 @@
+imports:
+    - { resource: @NicoretteCentralBundle/Resources/config/export_params.yml }
+    - { resource: @NicoretteCentralBundle/Resources/config/check_point_params.yml }
+parameters:
+  feedback_1:
+    profil:
+      "text1": "Vous avez le sentiment que fumer peut vous aider à résoudre des problèmes du quotidien, certaines cigarettes représentent une forme de béquille psychologique : elles vous aident à juguler vos émotions, comme la colère, l’impatience, la surprise ou la déception. La cigarette constitue un élément important de votre personnalité."
+      "text2": "Vous avez le sentiment que fumer peut vous aider à résoudre des problèmes du quotidien, certaines cigarettes représentent une forme de béquille psychologique : elles vous aident à juguler vos émotions, comme la colère, l’impatience, la surprise ou la déception. Mais la cigarette n’occupe pas pour autant une place importante dans votre personnalité."
+      "text3": "Contrairement à d’autres fumeurs, vous ne considérez pas la cigarette comme une béquille psychologique qui vous aide à juguler certaines émotions (colère, impatience, surprise, déception...). Le fait de fumer constitue néanmoins un élément important de votre personnalité."
+      "text4": "Contrairement à d’autres fumeurs, vous n’accordez pas à la cigarette le rôle d’une « béquille psychologique » qui vous aiderait à juguler certaines émotions (colère, impatience, surprise, déception...), de même que vous semblez n’éprouver aucun plaisir à vous identifier comme un fumeur. Vous subissez votre addiction tabagique."
+  feedback_2:
+    profil:
+      "text1": "Vous avez l’habitude de fumer à des moments bien précis (parfois sans même en ressentir le besoin), la gestuelle associée à la cigarette semble beaucoup compter pour vous et vous associez la cigarette à des moments de détente, de plaisir et de récompense. Vous avez le sentiment que le tabac provoque chez vous une satisfaction immédiate et soulage rapidement des tensions désagréables."
+      "text2": "Vous avez l’habitude de fumer à des moments bien précis (parfois sans même en ressentir le besoin) et la gestuelle du fumeur semble beaucoup compter pour vous, mais vous n’associez pas forcément la cigarette à des moments de détente, de plaisir ou de récompense. "
+      "text3": "Vous n’avez pas acquis d’habitudes ancrées avec la cigarette. Vous préférez associer vos pauses cigarettes à des moments de détente, de plaisir ou de récompense. Vous avez le sentiment que le tabac provoque chez vous une satisfaction immédiate et soulage rapidement des tensions désagréables."
+      "text4": "Vous n’avez pas acquis d’habitudes ancrées avec la cigarette et vous n’associez pas le fait de fumer à des moments de détente, de plaisir ou même de récompense."
+    profil_2:  
+      "text1": "La cigarette fait partie de votre vie sociale et du personnage que vous souhaitez montrer en société"
+      "text2": "La cigarette ne joue pas un rôle important dans votre vie sociale, vous ne ressentez pas spécialement le besoin de fumer davantage quand vous êtes en société."
+    motivation:
+      "text1": "Les motivations que vous avez exprimées pour vous libérer du tabac concernent votre santé et votre volonté de faire des économies d’argent. Effectivement, en cessant de fumer vous allez d’abord retrouver votre souffle, vous serez moins fatigué, et le risque de cancer ou de maladies cardiovasculaire diminuera d’année en année. Sans parler des économies d’argent que vous ferez et qui seront visibles dès le premier mois."
+      "text2": "Les motivations que vous avez exprimées pour vous libérer du tabac concernent votre santé et le désir d’en finir avec une addiction qui a des conséquences sur votre vie sociale. Effectivement, en cessant de fumer vous allez d’abord retrouver votre souffle, vous serez moins fatigué, et le risque de cancer ou de maladies cardiovasculaire diminuera d’année en année. Par ailleurs, vous ne dérangerez plus les non-fumeurs autour de vous. Sans parler des économies d’argent que vous ferrez et qui seront visibles dès le premier mois."
+      "text3": "Les motivations que vous avez exprimées pour vous libérer du tabac concernent votre santé et votre amour-propre (vous souhaitez mieux contrôler votre vie). Effectivement, en cessant de fumer vous allez d’abord retrouver votre souffle, vous serez moins fatigué, et le risque de cancer ou de maladies cardiovasculaire diminuera d’année en année. Par ailleurs, en réussissant à vous libérer de la dépendance, vous aurez une meilleure estime de vous. Sans parler des économies d’argent que vous ferez et qui seront visibles dès le premier mois."
+      "text4": "Les motivations que vous avez exprimées pour vous libérer du tabac concernent votre volonté de faire des économies d’argent et le désir d’en finir avec une addiction qui a des conséquences sur votre vie sociale. Effectivement, vous ne dérangerez plus les non-fumeurs autour de vous et vous vous déplacerez plus librement sans avoir à penser à vos provisions de cigarettes ou aux espaces fumeurs. Votre santé va s’améliorer rapidement. Vous allez retrouver votre souffle, vous serez moins fatigué, et le risque de cancer ou de maladies cardiovasculaire diminuera d’année en année. Sans parler des économies d’argent que vous ferez et qui seront visibles dès le premier mois."
+      "text5": "Les motivations que vous avez exprimées pour vous libérer du tabac concernent votre volonté de faire des économies d’argent et votre amour propre. Effectivement, en réussissant à vous libérer de la dépendance, vous aurez une meilleure estime de vous. Sans parler des économies d’argent que vous ferez et qui seront visibles dès le premier mois, ou de votre santé qui s’améliorera."
+      "text6": "Les motivations que vous avez exprimées pour vous libérer du tabac concernent le désir d’en finir avec une addiction qui a des conséquences sur votre vie sociale et votre amour-propre (vous souhaitez mieux contrôler votre vie). Effectivement, vous ne dérangerez plus les non-fumeurs autour de vous et vous vous déplacerez plus librement sans avoir à penser à vos provisions de cigarettes ou aux espaces fumeurs. Par ailleurs, en réussissant à vous libérer de la dépendance, vous aurez une meilleure estime de vous. Sans parler de votre santé qui s’améliorera progressivement et des économies d’argent que vous ferez et qui seront visibles dès le premier mois."
+      "text7": "Vous souhaitez arrêter de fumer pour plusieurs raisons. Vous avez compris que vous avez tout à gagner à arrêter la cigarette, pour votre santé, votre vie sociale, votre amour propre et… votre porte-monnaie !"
+  feedback_3:
+    profil:
+      "text1": "Votre dépendance physique à la nicotine est importante, mais les substituts nicotiniques proposés par NICORETTE"
+      "text1_2": " vous aideront à vaincre cette dépendance. Ce qui nous permettra de nous focaliser sur l’aspect psychologique de votre addiction au tabac."
+      "text2": "Bonne nouvelle, votre dépendance à la nicotine est relativement faible.  Cela ne veut pas forcément dire que votre sevrage sera facile, car il faut également considérer l'aspect psychologique de votre addiction. Pour pouvoir vous focaliser sur cet aspect psychologique du sevrage, Nicorette peut vous conseiller des substituts nicotiniques adaptés à votre profil."
+  contract2: [6,7]
+  first_question_my_diary_after_id: 22
+  second_question_my_diary_after_id: 23       #Avez-vous pris un substitut nicotinique?
+  first_question_my_diary_before_id: 20
+  second_question_my_diary_before_id: 21
+  other_room_mate_smoke_question_id: 14       #Il y a-t-il d'autres fumeurs dans votre foyer ?
+  estimated_stop_delay_question_id: 1         #Quand envisagez-vous d'arrêter de fumer ?
+  smoking_reason_question_id: 2               #Êtes-vous d'accord avec les propositions suivantes ?
+  stop_obstacle_question_id: 3                #Quel sera pour vous l'obstacle le plus difficile pour arrêter ?
+  stop_reason_question_id: 4                  #Pourquoi voulez-vous arrêter ?
+  has_already_tried_question_id: 5            #Avez-vous déjà essayé d'arrêter de fumer dans le passé ?
+  first_period_cigarette_question_id: 7       #Combien de temps après votre réveil fumez-vous votre première cigarette ?
+  cigarette_most_difficult_abort_question_id: 10       #A quelle cigarette de la journée vous serait-il le plus difficile de renoncer ?
+  know_how_question_id: 19       #Comment avez-vous connu cette application ?
+  room_mate_smoke_yes_choice: 60              #Oui
+  third_question_zut_i_cracked_id: 44         #Avez-vous pris un substitut nicotinique?
+  seventh_question_feedback_2: 13
+  text_field_nb_cigarette_id: 44
+  known_by_doctor_ids: [66,67]
+  quit_smoking_ids: [6,7]
+  first_question_feedback_1: 1
+  want_quit_smoking_now_id: 5
+  my_diary_before_quit_code: MYDIARY_BEFOREQUIT
+  my_diary_after_quit_code: MYDIARY_AFTERQUIT
+  panic_button_want_code: PANIC_BUTTON_WANT
+  panic_button_cracked_code: PANIC_BUTTON_CRACKED
+  panic_button_not_cracked_code: PANIC_BUTTON_TEMPTED_NOT_CRACKED
+  feedback_3_quiz_code: FEEDBACK_3
+  feedback_2_quiz_code: FEEDBACK_2
+  feedback_1_quiz_code: FEEDBACK_1
+  action_plan_code: ACTION_PLAN
+  quit_program_code: EXIT
+  nicotinic_product_code: NICOTINIC_PRODUCT  #Avez-vous pris un substitut nicotinique?
+  first_question_nicotinic_product_id: 44
+  reduction_percentage: 0.2
+  product_for_answer_fager_gt_5:
+    54: 'Patch'
+    55: 'Inhaleur'
+    56: 'Gommes'
+    57: 'Tab'
+    58: 'Spray'
+    59: 'Comprimé'
+  product_for_answer_fager_lt_5:
+    54: 'Patch'
+    55: 'Inhaleur'
+    56: 'Gommes'
+    57: 'Tab'
+    58: 'Spray'
+    59: 'Comprimé'
+  question_id_for_quit_date_sup_forteen_days: [38,39,40,41] #ce tableau contient les ids des questions à traiter quand la date d'arrèt est superieur a j-14
+  question_id_for_quit_date_sup_seven_days: [39,40,41] #ce tableau contient les ids des questions à traiter quand la date d'arrèt est superieur a j-7
+  question_id_for_quit_date_sup_one_day: [40,41] #ce tableau contient les ids des questions à traiter quand la date d'arrèt est superieur a j-1
+  question_id_for_quit_date_equal_current_day: [41] #ce tableau contient les ids des questions à traiter quand la date d'arrèt est égale au jour j
+  question_id_for_quit_date_immediate: [42] #ce tableau contient les ids des questions à traiter quand la date d'arrèt est immédiate
+  question_id_for_quit_date_passed: [43] #ce tableau contient les ids des questions à traiter quand la date d'arrèt est passé
+  sur_une_echelle_de_1_a_10_comment_evaluez: 22
+  avez_vous_atteint_votre_objectif_de_reduction: 20
+  a_quel_moment_avez_vous_craque: 31
+  quel_a_ete_le_declenchement_de_votre_envie: 25
+  combien_de_cigarettes_fumez_vous_par_jour: 9
+  avez_vous_pris_un_substitut_nicotinique: 23
+  amount_cigarette: 7
+  packet_cigarette: 20

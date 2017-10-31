@@ -1,0 +1,322 @@
+<header class="header white-bg">
+
+    <div ng-if="page=='dashboard'">
+        <div class="Head-text desktop">
+            <div class="welcomeUser">Bonjour <span>{{userName}}</span></div>
+            <div ng-if="infosHeader.nbr_day_without_cigarette > 0" class="infoTabac">{{infosHeader.nbr_day_without_cigarette}} jour{{infosHeader.nbr_day_without_cigarette > 1?'s':''}} sans tabac</div>
+        </div>
+    </div>
+
+    <div ng-if="page=='mon-profil'">
+        <div class="Head-text desktop">
+            <div class="welcomeUser">Bonjour <span>{{userName}}</span></div>
+            <div ng-if="infosHeader.nbr_day_without_cigarette > 0" class="infoTabac">{{infosHeader.nbr_day_without_cigarette}} jour{{infosHeader.nbr_day_without_cigarette > 1?'s':''}} sans tabac</div>
+            <a href="/arreter/null" class="no-cigarette"></a>
+        </div>
+
+        <div ng-if="!stats" class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            Modifier mon mot de passe
+        </div>
+        <div ng-if="stats" class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            Votre profil
+        </div>
+        <a href="/" class="logo desktop"></a> 
+       <!-- <span class="no-cigarette mobile"></span> -->
+    </div>
+
+    <div ng-if="page=='mon-journal'">
+        <div class="Head-text desktop">
+            <div class="welcomeUser">Bonjour <span>{{userName}}</span></div>
+            <div ng-if="infosHeader.nbr_day_without_cigarette > 0" class="infoTabac">{{infosHeader.nbr_day_without_cigarette}} jour{{infosHeader.nbr_day_without_cigarette > 1?'s':''}} sans tabac</div>
+        </div>
+
+        <div class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            Mon journal
+        </div>
+        <a href="/" class="logo"></a>  
+    </div>
+
+    <div ng-if="page=='calendrier'">
+        <div class="Head-text desktop">
+            <div class="welcomeUser">Bonjour <span>{{userName}}</span></div>
+            <div ng-if="infosHeader.nbr_day_without_cigarette > 0" class="infoTabac">{{infosHeader.nbr_day_without_cigarette}} jour{{infosHeader.nbr_day_without_cigarette > 1?'s':''}} sans tabac</div>
+        </div>
+
+        <div class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            Mon calendrier
+        </div>
+        <a href="/" class="logo"></a> 
+    </div>
+
+    <div ng-if="page=='mes-points'">
+        <div class="Head-text desktop">
+            <div class="welcomeUser">Bonjour <span>{{userName}}</span></div>
+            <div ng-if="infosHeader.nbr_day_without_cigarette > 0" class="infoTabac">{{infosHeader.nbr_day_without_cigarette}} jour{{infosHeader.nbr_day_without_cigarette > 1?'s':''}} sans tabac</div>
+        </div>
+
+        <div class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            Mes points
+        </div>
+        <a href="/" class="logo"></a> 
+    </div>
+
+
+    <div ng-if="page=='infos-legales'">
+        <div ng-if="connect == 1" >
+            <div class="Head-text desktop">
+                <div class="welcomeUser">Bonjour <span>{{userName}}</span></div>
+                <div ng-if="infosHeader.nbr_day_without_cigarette > 0" class="infoTabac">{{infosHeader.nbr_day_without_cigarette}} jour{{infosHeader.nbr_day_without_cigarette > 1?'s':''}} sans tabac</div>
+            </div>
+            <div class="text-center title-header mobile">
+                <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+                Informations légales
+            </div>
+            <a href="/" class="logo"></a> 
+        </div> 
+
+        <div ng-if="connect == 0" >
+            <div class="Head-text desktop">
+                <div class="title text-center">J’accomplis l'incroyable</div>
+            </div>
+            <div class="text-center title-header mobile">
+                <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+                Informations légales
+            </div>
+            <a href="/" class="logo"></a> 
+        </div>     
+    </div>
+
+    <div ng-if="page=='menu-astuces'">
+        <div class="Head-text desktop">
+            <div class="welcomeUser">Bonjour <span>{{userName}}</span></div>
+            <div ng-if="infosHeader.nbr_day_without_cigarette > 0" class="infoTabac">{{infosHeader.nbr_day_without_cigarette}} jour{{infosHeader.nbr_day_without_cigarette > 1?'s':''}} sans tabac</div>
+        </div>
+        <div class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            Astuces
+        </div>
+        <a href="/" class="logo"></a> 
+    </div>
+
+    <div ng-if="page=='menu-statistiques'">
+        <div class="Head-text desktop">
+            <div class="welcomeUser">Bonjour <span>{{userName}}</span></div>
+            <div ng-if="infosHeader.nbr_day_without_cigarette > 0" class="infoTabac">{{infosHeader.nbr_day_without_cigarette}} jour{{infosHeader.nbr_day_without_cigarette > 1?'s':''}} sans tabac</div>
+        </div>
+        <div class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            Statistiques
+        </div>
+        <a href="/" class="logo"></a> 
+    </div>
+
+    <div ng-if="page=='mes-parrains'">
+        <div class="Head-text desktop">
+            <div class="welcomeUser">Bonjour <span>{{userName}}</span></div>
+            <div ng-if="infosHeader.nbr_day_without_cigarette > 0" class="infoTabac">{{infosHeader.nbr_day_without_cigarette}} jour{{infosHeader.nbr_day_without_cigarette > 1?'s':''}} sans tabac</div>
+        </div>
+        <div class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            Mes parrains
+        </div>
+        <a href="/" class="logo"></a> 
+    </div>
+
+    <div ng-if="page=='produits-nicorette'">
+        <div class="Head-text desktop">
+            <div class="welcomeUser">Bonjour <span>{{userName}}</span></div>
+            <div ng-if="infosHeader.nbr_day_without_cigarette > 0" class="infoTabac">{{infosHeader.nbr_day_without_cigarette}} jour{{infosHeader.nbr_day_without_cigarette > 1?'s':''}} sans tabac</div>
+        </div>
+        <div class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            Les produits NICORETTE<sup>®</sup>
+        </div>
+        <a href="/" class="logo"></a> 
+    </div>
+
+    <div ng-if="page=='bouton-panique'">
+        <div class="Head-text desktop">
+            <div class="welcomeUser">Bonjour <span>{{userName}}</span></div>
+            <div ng-if="infosHeader.nbr_day_without_cigarette > 0" class="infoTabac">{{infosHeader.nbr_day_without_cigarette}} jour{{infosHeader.nbr_day_without_cigarette > 1?'s':''}} sans tabac</div>
+        </div>
+        <div class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            J'ai trop envie de fumer
+        </div>
+        <a href="/" class="logo"></a> 
+    </div>
+
+    <div ng-if="page=='bouton-panique-help'">
+        <div class="Head-text desktop">
+            <div class="welcomeUser">Bonjour <span>{{userName}}</span></div>
+            <div ng-if="infosHeader.nbr_day_without_cigarette > 0" class="infoTabac">{{infosHeader.nbr_day_without_cigarette}} jour{{infosHeader.nbr_day_without_cigarette > 1?'s':''}} sans tabac</div>
+        </div>
+        <div class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            J'ai trop envie de fumer
+        </div>
+        <a href="/" class="logo"></a> 
+    </div>
+
+    <div ng-if="page=='bouton-panique-crack'">
+        <div class="Head-text desktop">
+            <div class="welcomeUser">Bonjour <span>{{userName}}</span></div>
+            <div ng-if="infosHeader.nbr_day_without_cigarette > 0" class="infoTabac">{{infosHeader.nbr_day_without_cigarette}} jour{{infosHeader.nbr_day_without_cigarette > 1?'s':''}} sans tabac</div>
+        </div>
+        <div class="text-center title-header line-height mobile crack">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            J'ai été tenté(e) mais<br/> je n'ai pas craqué(e) 
+        </div>
+        <a href="/" class="logo"></a> 
+    </div>
+
+    <div ng-if="page=='bouton-panique-zut'">
+        <div class="Head-text desktop">
+            <div class="welcomeUser">Bonjour <span>{{userName}}</span></div>
+            <div ng-if="infosHeader.nbr_day_without_cigarette > 0" class="infoTabac">{{infosHeader.nbr_day_without_cigarette}} jour{{infosHeader.nbr_day_without_cigarette > 1?'s':''}} sans tabac</div>
+        </div>
+        <div class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            Zut, j’ai craqué 
+        </div>
+        <a href="/" class="logo"></a> 
+    </div>
+
+    <div ng-if="page=='contrat-date-fixe'">
+        <div class="Head-text desktop">
+            <div class="welcomeUser">Bonjour <span>{{userName}}</span></div>
+            <div ng-if="infosHeader.nbr_day_without_cigarette > 0" class="infoTabac">{{infosHeader.nbr_day_without_cigarette}} jour{{infosHeader.nbr_day_without_cigarette > 1?'s':''}} sans tabac</div>
+        </div>
+        <div class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            Mon contrat
+        </div>
+        <a href="/" class="logo"></a> 
+    </div>
+
+    <!--
+    <div ng-if="page=='reset-password'">
+                   <div class="Head-text desktop">
+                       <div class="welcomeUser">Bonjour <span>{{userName}}</span></div>
+                       <div ng-if="infosHeader.nbr_day_without_cigarette > 0" class="infoTabac">{{infosHeader.nbr_day_without_cigarette}} jour{{infosHeader.nbr_day_without_cigarette > 1?'s':''}} sans tabac</div>
+                       <span class="no-cigarette"></span>
+                   </div>
+                    <div class="text-center title-header mobile">
+              <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+                      Modifier mon mot de passe 
+                   </div>
+    </div>-->
+
+    <div ng-if="page=='mes-alertes'">
+        <div class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            Mes alertes
+        </div>
+        <a href="/" class="logo"></a> 
+    </div>
+
+    <div ng-if="page=='bouton-panique-mobile'">
+        <div class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            Bouton panique
+        </div>
+    </div>
+
+    <div ng-if="page=='produit-nicorette-comprimee-sucer'">
+        <div class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            Votre NRT
+        </div>
+        <a href="/" class="logo"></a> 
+    </div>
+
+    <div ng-if="page=='produit-nicorette-comprimee'">
+        <div class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            Votre NRT
+        </div>
+        <a href="/" class="logo"></a> 
+    </div>
+
+    <div ng-if="page=='produit-nicorette-gommes'">
+        <div class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            Votre NRT
+        </div>
+        <a href="/" class="logo"></a> 
+    </div>
+
+    <div ng-if="page=='produit-nicorette-inhaleur'">
+        <div class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            Votre NRT
+        </div>
+        <a href="/" class="logo"></a> 
+    </div>
+
+    <div ng-if="page=='produit-nicorette-patch'">
+        <div class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            Votre NRT
+        </div>
+        <a href="/" class="logo"></a> 
+    </div>
+
+    <div ng-if="page=='produit-nicorette-spray'">
+        <div class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            Votre NRT
+        </div>
+        <a href="/" class="logo"></a> 
+    </div>
+
+    <div ng-if="page=='mecanisme-points'">
+        <div class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            Mécanismes de points
+        </div>
+        <a href="/" class="logo"></a> 
+    </div>
+
+    <div ng-if="page=='arreter'">
+        <div class="Head-text desktop">
+            <div class="welcomeUser">Bonjour <span>{{userName}}</span></div>
+            <div ng-if="infosHeader.nbr_day_without_cigarette > 0" class="infoTabac">{{infosHeader.nbr_day_without_cigarette}} jour sans tabac</div>
+        </div>
+        <div class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            J'arrête le programme 
+        </div>
+        <a href="/" class="logo"></a> 
+    </div>
+
+    <div ng-if="page=='arreter-continuer'">
+        <div class="Head-text desktop">
+            <div class="welcomeUser">Bonjour <span>{{userName}}</span></div>
+            <div ng-if="infosHeader.nbr_day_without_cigarette > 0" class="infoTabac">{{infosHeader.nbr_day_without_cigarette}} jour sans tabac</div>
+        </div>
+        <div class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            J'arrête le programme 
+        </div>
+        <a href="/" class="logo"></a> 
+    </div>
+
+    <div ng-if="page=='arreter-felicitation'">
+        <div class="Head-text desktop">
+            <div class="welcomeUser">Bonjour <span>{{userName}}</span></div>
+            <div ng-if="infosHeader.nbr_day_without_cigarette > 0" class="infoTabac">{{infosHeader.nbr_day_without_cigarette}} jour sans tabac</div>
+        </div>
+        <div class="text-center title-header mobile">
+            <a href="javascript:history.back()" class="back-mobile left"  >retour</a>		                    
+            J'arrête le programme 
+        </div>
+        <a href="/" class="logo"></a> 
+    </div>
+
+</header>

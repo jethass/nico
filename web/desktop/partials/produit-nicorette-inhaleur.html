@@ -1,0 +1,58 @@
+<div ng-hide="loading">
+	
+	<div id="container" >
+          <!--header start-->
+            <ng-include  src="'/desktop/partials/usedpartials/header_desktop_default.html'" ></ng-include>
+          <!--header end-->
+          
+              <!--main content start-->
+              <div id="main-content" class="over">
+                         <!-- wrapper start-->
+                         <div class="wrapper">
+                           <div class="container-full produit-patch">
+                             <!-- Content  -->
+                         	 <div class="row">
+                         	 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                         	 		  <h3 class="text-left h3-green desktop">Le substitut nicotinique</h3>
+                         	 	   	  <h3 class="center h3-green mobile">L'inhaleur</h3><br/>	
+                         	 	   	  <p class="desktop" style="margin-top:12px"><span>Voici le substitut nicotinique adapté à vos besoins :</span></p> 
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">      
+                                      <div class="content-full">
+                                      	<div class="img left desktop col-lg-4 col-md-12 col-sm-12 col-xs-12"><img src="desktop/images/inhaleur.png"></div>
+                         	 			<div class="img center mobile"><img src="desktop/images/inhaleur.png"></div>
+                         	 			<div class="content left col-lg-6 col-md-12 col-sm-12 col-xs-12" style="font-size: 1.1em;">
+	                         	 			 <p>Gardez le geste de la cigarette sans les méfaits du tabac avec une solution unique ! L’inhaleur permet d’aspirer de la nicotine par petites doses calibrées de sorte à soulager le besoin de fumer. Si vous être attaché au geste de la cigarette, cette forme peut vous convenir pour arrêter de fumer. 
+												<br/><br/>
+												L’inhaleur se présente sous la forme d’un embout en plastique blanc qui s’ouvre en deux pour recevoir une cartouche transparente, interchangeable et contenant un tampon imprégné de nicotine et de menthol. À chaque utilisation, vous aspirez par l’embout l’air chargé de microgouttelettes de nicotine qui sont diffusées à travers la muqueuse buccale avant d’atteindre la circulation sanguine. 
+											 </p>
+	                                         <div ng-if="fager>5">
+	                                            <div class="pad-bottom-10">
+												  <h4 class="pad-top-20 pad-bottom-5 m-size" style="font-weight:bold;font-size: 1.5em;padding: 15px 0;">POSOLOGIE</h4>
+												  <p><strong>Quantité maximum:</strong> Ne pas dépasser 12 mois de traitement et 12 cartouches par jour.<br/><br/>
+												     Quand l'envie de fumer est complètement surmontée (au bout d'environ 3 mois), réduire progressivement le nombre de cartouches par jour pendant 6 à 8 semaines si nécessaire.</p>
+												</div>
+	                                         </div>
+	                                         <div ng-if="fager<=5">
+	                                            <div class="pad-bottom-10">
+												  <h4 class="pad-top-20 pad-bottom-5 m-size" style="font-weight:bold;font-size: 1.5em;padding: 15px 0;">POSOLOGIE</h4>
+												  <p><strong>Quantité maximum:</strong> Ne pas dépasser 12 mois de traitement et 12 cartouches par jour.<br/><br/>
+												     Quand l'envie de fumer est complètement surmontée (au bout d'environ 3 mois), réduire progressivement le nombre de cartouches par jour pendant 6 à 8 semaines si nécessaire.</p>
+												</div>
+	                                         </div>
+                                       </div>
+                         	 		</div> 
+                               </div>
+                            </div>
+                         </div>
+                       </div>
+                       <!-- wrapper end-->
+              </div>
+              <!--main content end-->  
+              
+              <!--footer start-->
+				<ng-include  src="'/desktop/partials/usedpartials/footer_desktop.html'" ></ng-include>
+        		<ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+              <!--footer end-->  
+	</div>
+</div>

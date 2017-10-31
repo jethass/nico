@@ -1,0 +1,72 @@
+ <div id="sidebar"  class="left nav-collapse desktop">
+                                    <!-- sidebar menu start-->
+                                    <ul class="sidebar-menu" id="nav-accordion">
+                                        <li ng-class="(page == 'dashboard' || page == 'bouton-panique' || page == 'bouton-panique-help' || page == 'bouton-panique-crack' || page == 'bouton-panique-zut') ? 'active' :'' ">
+                                            <a href="/dashboard"  >
+                                                <i class="icon-tableau-debord"></i>
+                                                <span>Tableau de bord</span>
+                                            </a>
+                                        </li>
+                                        <li ng-class="page == 'mon-journal' ? 'active' :'' ">
+                                            <a href="javascript:void(0)" ng-click="switchJournal()" >
+                                                <i class="icon-mon-journal"></i>
+                                                <span>Mon journal</span>
+                                            </a>
+                                        </li>
+                                        <li ng-class="page == 'calendrier' ? 'active' :'' ">
+                                            <a href="/calendrier-list" >
+                                                <i class="icon-calendrier-dashboard"></i>
+                                                <span>Mon calendrier</span>
+                                            </a>
+                                        </li>
+                                        <li ng-class="(page == 'arreter-continuer' || page == 'arreter-felicitation' || page == 'arreter' || page == 'mon-profil' || page == 'contrat-date-fixe' ) ? 'active' :'' ">
+                                            <a  href="javascript:void(0)" ng-click="reloadProfil()" >
+                                                <i class="icon-profile"></i>
+                                                <span>Mon profil</span>
+                                            </a>
+                                        </li>
+                                        <li ng-class="page == 'mes-parrains' ? 'active' :'' ">
+                                            <a href="/mes-parrains" >
+                                                <i class="icon-mesparrains"></i>
+                                                <span>Mes parrains</span>
+                                            </a>
+                                        </li>
+                                        <li ng-class="page == 'menu-statistiques' ? 'active' :'' ">
+                                            <a href="/menu-statistiques" >
+                                                <i class="icon-messtatistiques"></i>
+                                                <span>Mes statistiques</span>
+                                            </a>
+                                        </li>
+                                        <li ng-class="page == 'plan-action' ? 'active' :'' ">
+                                            <a href="javascript:void(0);" ng-click="accessPlan();" >
+                                                <i class="icon-plan-action"></i>
+                                                <span>Mon plan d'action</span>
+                                            </a>
+                                        </li>
+                                        <li ng-class="page == 'mes-points' ? 'active' :'' ">
+                                            <a href="/mes-points" >
+                                                <i class="icon-mes-points"></i>
+                                                <span>Mes points</span>
+                                            </a>
+                                        </li>
+                                        <li ng-class="page == 'menu-astuces' ? 'active' :'' ">
+                                            <a href="/menu-astuces" >
+                                                <i class="icon-astuces"></i>
+                                                <span>Astuces</span>
+                                            </a>
+                                        </li>
+                                        <li ng-class="page == 'produits-nicorette' ? 'active' :'' ">
+                                            <a href="/produits-nicorette" >
+                                                <i class="icon-produit-nicorette"></i>
+                                                <span>Produits NICORETTE<sup>®</sup></span>
+                                            </a>
+                                        </li>
+                                        <li ng-class="page == 'infos-legales' ? 'active' :'' ">
+                                            <a href="/infos-legales/confidentialite" >
+                                                <i class="icon-mentionslegales"></i>
+                                                <span>Mentions légales</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                   <!-- sidebar menu end-->
+</div>

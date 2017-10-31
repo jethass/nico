@@ -1,0 +1,76 @@
+<div ng-hide="loading">
+	
+	<div id="container" >
+          <!--header start-->
+			  <ng-include  src="'/desktop/partials/usedpartials/header_desktop_dashboard.html'" ></ng-include>
+		  <!--header end-->     
+               
+          <!--main content start-->
+              <div id="main-content" class="over">
+                         <!-- wrapper start-->
+                         <div class="wrapper">
+                           <div class="container-full alert mobile">
+                         	
+                             <!-- Content  -->
+                         	 <div class="row">
+                         	 	<div class="col-lg-12 col-xs-12 col-md-12">
+                         	 	    <div class="content-full">
+                     	 			    <h3 class="center mb-size mobile">Sélectionnez les alertes que<br/> vous souhaitez recevoir</h3><br/>	
+                                        <p class="center m-size">Je souhaite recevoir des alertes du<br/> Club des Incroyables</p>
+                     	 		        <div class="mobile pad-top-10">
+                                          <ul class="style_radio mg-auto">
+                                           	 <li ng-repeat='choice in optins' ng-click="setBrandOptin(choice.id)" ng-class="{'yes active': isBrandChecked({{choice.id}}) && choice.name != 'non', 
+	                                         						'yes disable': !isBrandChecked({{choice.id}}) && choice.name != 'non',
+	                                         						'no active': isBrandChecked({{choice.id}}) && choice.name == 'non', 
+	                                         						'no disable': !isBrandChecked({{choice.id}}) && choice.name == 'non'}" directive-li-radiobox >
+					                             <input type="radio"  name="club_alerts" class="hidden"  />
+					                             {{choice.name}}<span class="{{choice.name}}"></span>
+					                         </li>
+							              </ul>
+							            </div>
+							            
+							            <p class="center m-size pad-top-20">Je souhaites recevoir les informations du groupe<br/> Johnson & Johnson Santé Beauté France</p>
+                     	 		        <div class="mobile pad-top-10">
+                                          <ul class="style_radio mg-auto">
+                                             <li ng-repeat='choice in optins' ng-click="setJohnsonOptin(choice.id)" ng-class="{'yes active': isJohnsonChecked({{choice.id}}) && choice.name != 'non', 
+	                                         						'yes disable': !isJohnsonChecked({{choice.id}}) && choice.name != 'non',
+	                                         						'no active': isJohnsonChecked({{choice.id}}) && choice.name == 'non', 
+	                                         						'no disable': !isJohnsonChecked({{choice.id}}) && choice.name == 'non'}" directive-li-radiobox >
+					                           <input type="radio"  name="johnson_alerts" class="hidden"  />
+					                           {{choice.name}}<span class="{{choice.name}}"></span>
+					                        </li>
+							              </ul>
+							            </div>
+							            
+							            <p class="center m-size pad-top-20">Je souhaite autoriser les autres membres <br/>à me contacter</p>
+                     	 		        <div class="mobile pad-top-10">
+                                          <ul class="style_radio mg-auto">
+                                             <li ng-repeat='choice in optins' ng-click="setOtherOptin(choice.id)" ng-class="{'yes active': isOtherChecked({{choice.id}}) && choice.name != 'non', 
+	                                         						'yes disable': !isOtherChecked({{choice.id}}) && choice.name != 'non',
+	                                         						'no active': isOtherChecked({{choice.id}}) && choice.name == 'non', 
+	                                         						'no disable': !isOtherChecked({{choice.id}}) && choice.name == 'non'}" directive-li-radiobox >
+					                           <input type="radio"  name="other_alerts" class="hidden"  />
+					                           {{choice.name}}<span class="{{choice.name}}"></span>
+					                         </li>
+							              </ul>
+							            </div>
+							            
+							            <p class="center m-size">Pour ne plus recevoir de SMS de coaching, je<br/> vais dans mon profil "j'arrête le programme"</p>
+                         	 		    <div class="center mobile btn-submit">
+										   <a class="type-bt-green-submit bt-width dark" ng-click="submitAlerts()" href="javascript:void(0)">Enregistrer</a>	
+										 </div> 
+                         	 		</div> 
+                               </div>
+                            </div>
+                         </div>
+                       </div>
+                       <!-- wrapper end-->
+              </div>
+              <!--main content end-->  
+              
+              <!--footer start-->
+               
+                <ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+              <!--footer end-->  
+	</div>
+</div>

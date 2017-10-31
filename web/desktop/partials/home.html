@@ -1,0 +1,170 @@
+<div ng-hide="loading">
+    <!--main content start-->
+    <div ng-show="intro" id="main-content" class="over info-mobile">
+
+        <!-- wrapper start-->
+        <div class="wrapper mobile introduction">
+            <div class="row">
+                <img src="../desktop/images/img-introduction.png"  />	
+                <div class="center"><img class="logo-nicorette" src="../desktop/images/icon-intro-nicorette.png"  /></div>		                    
+                <div class="col-lg-12">
+                    <div class="content">
+
+                        <p class="center" style="padding-top:10px;"><span class="light-color mb-size">J’accomplis l'incroyable !</span></p>
+                        <p class="mm-size line-height pad-top-10">Bienvenue dans le programme de coaching de NICORETTE<sup>®</sup> j'accomplis l'incroyable. Nous l’avons conçu pour vous accompagner dans l'accomplissement de votre plus grande réussite : vous libérer enfin de votre dépendance !</p>
+
+                        <div class="btn">
+                            <a class="type-bt-green bt-width" ng-click="hideIntro();" href="javascript:void(0)">Continuer</a>
+                        </div>
+
+                    </div>  
+                </div>   
+
+            </div>
+        </div>
+        <!-- wrapper end-->
+    </div>
+    <div  id="container" class="home">
+
+        <!--header start-->
+        <ng-include ng-show="!intro" src="'/desktop/partials/usedpartials/header_desktop_default.html'" ></ng-include>
+        <!--header end-->
+
+        <!--main content start-->
+        <div ng-show="!intro" id="main-content" class="over">
+            <!-- wrapper start-->
+            <div class="wrapper">
+                <p class="p-bienvenu text-center" style="font-size: 1.5em; padding-bottom: 22px;width: 80%;margin: 0 auto;text-align: center;">
+                    Bienvenue dans le programme de <strong>coaching de NICORETTE<sup>®</sup>.</strong> Nous l’avons conçu pour vous accompagner dans
+                    l'accomplissement de votre plus grande réussite : vous libérer enfin de votre <strong>dépendance !</strong>
+                </p>
+                <div class="row">
+                    <div id="leftblock" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 bloc-left-home" style="padding-left:0px;padding-right:0px;">
+                        <div  style="padding-left: 0px;padding-right: 0px;margin-left: 0px;margin-right: 0px;" >  
+                            <wrap-owlcarousel class="owl-carousel left"  data-options="{autoPlay: false, items: 1,slideSpeed : 300,itemsDesktop : [1000,1], itemsDesktopSmall : [900,1], itemsTablet: [600,1],itemsMobile : [320,1],responsive:true, responsiveRefreshRate : 200}" >  
+                                <div class="item">  
+                                    <img ng-src='desktop/images/slide1.png'>
+                                    <div style="margin-top:50px;">
+                                        <h3 class="text-center h3-green">J'accomplis l'incroyable !</h3>
+                                        <p class="text-center description">
+                                            Vous souhaitez en finir avec la cigarette ? Répondez à notre questionnaire en moins de 10 minutes pour obtenir votre profil personnalisé de fumeur avec des conseils individualisés.
+                                        </p>
+                                    </div>
+                                </div> 
+                                <div class="item">  
+                                    <img ng-src='desktop/images/slide2.png'>
+                                    <div style="margin-top:50px;">
+                                        <h3 class="text-center h3-green">Un profil ciblé pour des conseils concrets</h3>
+                                        <p class="text-center description">
+                                            Pour vous aider à relever ce défi, nous avons besoin de mieux vous connaître. Grâce à ce quiz nous pourrons vous proposer un programme 100% personnalisé et des conseils adaptés à votre profil.   
+                                        </p>
+                                    </div>
+                                </div> 
+                                <div class="item">  
+                                    <img ng-src='desktop/images/slide3.png'>
+                                    <div style="margin-top:50px;">
+                                        <h3 class="text-center h3-green">Des points pour mesurer vos progrès</h3>
+                                        <p class="text-center description">
+                                            Pour vous accompagner et vous encourager tout au long de cette bataille contre la cigarette, vous recevrez des points pour marquer vos succès. Chaque pas compte pour vaincre votre dépendance !
+                                        </p>
+                                    </div>
+                                </div>  
+                            </wrap-owlcarousel> 		    
+                       </div>
+                       <div class="btn-demarre" style="float: left; width: 100%; text-align: center; margin-top: -45px;position: relative; z-index: 1;">
+
+                       	 <a style="display: inline-block;" class="type-bt-green mg-auto-mobile mobile-bt-wi btn-demarre" href="/quiz/FEEDBACK_1">Je démarre mon programme</a>
+                       </div>       
+                    </div>
+
+
+                    <!-- connexion -->
+                    <div  style="display:none;" id="signIn" >
+                        <div class="capture_backgroundColor">
+                            <div class="capture_signin">
+                                {* #userInformationForm *}  
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mobile-bg-gris" style="float:left">
+
+
+                                    <div class="mg-auto container-col">
+                                        <h3 class="text-center h3-green desktop">J'ai déjà démarré mon programme</h3>
+                                        <a class="type-bt-green bt-postion-bottom mg-auto-mobile greenfonce mobile" href="javascript:void(0)" onclick=" $('.mobile-form-connexion').show();$('html, body').animate({ scrollTop:  $('.mobile-form-connexion').offset().top -220}, 'slow');">J'ai déjà démarré mon programme</a>
+
+                                        <div class="mobile-form-connexion">
+                                            <p class="text-left txt-form-home">Pour vous connecter, renseignez vos identifiants du Club des incroyables :</p>
+                                            <form action="" method="POST" >
+                                                <div class="pad-bottom-10 relative">
+                                                    {* traditionalSignIn_emailAddress *}
+                                                    <span class="inp-ico-mail"></span>
+                                                </div>
+                                                <div class="pad-bottom-10 relative">
+                                                    {* traditionalSignIn_password *}
+                                                    <span class="inp-ico-pass"></span>
+                                                </div>
+                                                <div class="text-right reset-pass">
+                                                    <!--  <a href="javascript:void(0)" data-capturescreen="forgotPassword" class="text-link-green margin-left-txt-pass" >Mot de passe oublié ?</a>-->
+                                                    <a href="/mot-de-passe-oublie" class="text-link-green margin-left-txt-pass m-size" style="padding-right: 10px;">Mot de passe oublié ?</a>
+                                                </div>
+
+
+                                                <div class="center-checks">
+                                                    <div class="custom-checkbox" id="ck1">
+                                                        <input type="checkbox" value="1" id="condition1" name="condition1" class="lightcheckbox" directive-checkbox />
+                                                        <label class="label-check" for="condition1"></label>
+                                                        <span class="txt-checkbox">Rester connecté</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="center-checks">
+                                                    <div class="custom-checkbox" id="ck2">
+                                                        <input type="checkbox" value="2" id="condition2" name="condition2" class="lightcheckbox" directive-checkbox />
+                                                        <label class="label-check" for="condition2"></label>
+                                                        <span class="txt-checkbox">J'accepte </span>
+                                                        <a href="/infos-legales/CGU" class="text-link-black">les conditions d'utilisations</a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="pad-bottom-25 center-checks">
+                                                    <div class="custom-checkbox" id="ck3">
+                                                        <input type="checkbox" value="3" id="condition3" name="condition3" class="lightcheckbox" directive-checkbox />
+                                                        <label class="label-check left condition" for="condition3"></label>
+                                                        <div class="left confident-mob">
+                                                            <span class=" txt-checkbox">J’ai pris connaissance de</span>
+                                                            <a href="/infos-legales/confidentialite" class=" text-link-black desktop">la politique de confidentialité de J&J</a>
+                                                            <span class=" txt-checkbox desktop">et accepte la collecte et le traitement de mes<br> données de santé dans le cadre du programme de coaching.<br/> Ces données ne seront pas accessibles par JJSBF.</span>
+
+                                                            <a href="/infos-legales/confidentialite" class=" text-link-black mobile">la politique de confidentialité de J&J</a>
+                                                            <span class=" txt-checkbox mobile">et accepte la collecte et le traitement de mes données de santé dans le cadre du programme de coaching. Ces données ne seront pas accessibles par JJSBF.</span>
+
+                                                            <!-- <div id="condition-error">Vérifier que vous acceptez la politique de confidentialité.</div>-->
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                {* traditionalSignIn_signInButton *}
+                                                <!-- <input type="submit" class="type-bt-green bt-postion-bottom mg-auto-mobile" value="Valider" /> -->
+                                            </form>
+                                        </div> 
+                                    </div>  
+                                </div> 
+                                {* /userInformationForm *}
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <!-- wrapper end-->
+        </div>
+        <!--main content end-->  
+
+        <!--footer start-->
+        <ng-include  src="'/desktop/partials/usedpartials/footer_desktop.html'" ></ng-include>
+        <ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+        <!--footer end-->
+
+
+
+    </div>
+
+
+</div>

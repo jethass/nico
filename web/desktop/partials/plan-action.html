@@ -1,0 +1,94 @@
+<div ng-hide="loading">
+
+		<div id="container" >
+		            
+		              <!--header start-->
+			               <ng-include  src="'/desktop/partials/usedpartials/header_desktop_default.html'" ></ng-include>
+			          <!--header end-->
+			                      
+		              <!--main content start-->
+		              <div id="main-content" class="over">
+		              	         <!--menu sidebar desktop-->
+					             <ng-include  src="'/desktop/partials/usedpartials/menu_desktop.html'" ></ng-include>
+					             <!--fin menu sidebar desktop-->
+		              	
+		                         <!-- wrapper start-->
+		                         <div class="wrapper with-side-bar">
+		                           <div class="container-action head">
+		                         	 <div ng-if="!isKnownByDoctor" class="col-lg-12 col-xs-12 col-md-12 mobile left sub">
+		                               <a class="type-bt-green left dark bt-width" href="javascript:void(0)" ng-click="goToProduct()"><span>Voir le substitut nicotinique adapté<br/> à mes besoins</span></a>
+		                             </div>
+		                         	
+		                         	
+		                         	<!-- Content  -->
+		                         	 <div class="row">
+		                         	 	<div class="col-lg-12">
+		                         	 		<h3 class="text-left h3-green desktop">Mon plan d'action</h3>	
+		                                    <p class="left pad-top-20 desktop"><span>Voici votre plan d'action pour accomplir l'incroyable! Cochez les propositions suivantes lorsque c'est fait.</span></p>  
+		                                    <p class="left pad-top-10 size mobile" style="margin-bottom:0"><span>Voici votre plan d'action pour accomplir l'incroyable! Cochez les propositions suivantes lorsque c'est fait:</span></p>  
+		                         	 	</div>
+		                         	 </div>	
+		                           </div> 
+		                           
+		                           <!----------- mobile  ---------------------------->
+		                           <div id="container" class="mobile plan action" >
+				                        <div ng-repeat="question in questions" class="bloc-mobile-{{question.id}}">
+					                         	<div class="bg-jour green"><span class="mm-size">{{question.name}}</span></div>
+					                         	<p ng-show="question.name == 'J - 14'" class="txt m-size">Désormais observez votre consommation en réduisant le nombre de cigarettes fumées quotidiennement</p>	
+					                             <div  ng-repeat='choice in question.choices' class="custom-checkbox" id="ck-{{question.id}}-{{choice.id}}" >
+													 <input data-choice ="{{choice.id}}" data-question="{{question.id}}" type="checkbox" id="squared{{choice.id}}" class="lightcheckbox" name='name-{{choice.id}}' checklist-model="$parent.$parent.answers[question.id]" checklist-value="choice"  ng-checked="isChecked({{choice.id}},{{question.id}})" checkbox-plan />
+													 <label ng-click="addAnswer(question.id, choice.id)" class="label-check" for="squared{{choice.id}}"></label>
+													 <span class="txt-checkbox">{{choice.name}}</span>
+												 </div>                                       
+			                     	    </div>	
+			                     	    <div class="col-lg-6 col-xs-12 col-md-12 mobile center">
+		                                    <a style="margin-top: 25px;font-size: 2em !important;" class="type-bt-green bt-width mb-size" href="javascript:void(0)" ng-click="submitReponses()">Valider</a>
+		                                </div> 	    
+		                      		</div>		
+		               	
+			                        <!----------- desktop  ------------------------------>
+	                                      <div id="container" class="desktop plan" >	   
+                                                <div class="container-action"> 
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 left planheight planheight-{{question.id}}" ng-repeat="question in questions">
+                                                            <div class="bg-jour">
+                                                                <div>{{question.name}}</div>
+                                                            </div> 
+                                                            <div class="customPlan">
+	                                                            <p ng-show="question.name == 'J - 14'"><span>Désormais observez votre consommation en réduisant<br/> le nombre de cigarettes fumées quotidiennement</span></p>	
+	
+	                                                            <div class="custom-checkbox" id="ck-{{question.id}}-{{choice.id}}"  ng-repeat="choice in question.choices">
+	                                                                <input data-choice ="{{choice.id}}" data-question="{{question.id}}" type="checkbox" checklist-model="$parent.$parent.answers[question.id]" checklist-value="choice" id="squared{{choice.id}}" ng-checked="isChecked({{choice.id}})" name="check{{choice.id}}" class="lightcheckbox" checkbox-plan/>
+	                                                                <label class="label-check" for="squared{{choice.id}}"></label>
+	                                                                <span class="txt-checkbox">{{choice.name}}</span>
+	                                                            </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                         </div> 	 
+                                         <div class="container-action" style="float:left; width:100%">
+                                            <div class="row">
+                                                <div ng-if="!isKnownByDoctor" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 desktop center">
+                                                    <a class="type-bt-green dark bt-width" href="javascript:void(0)" ng-click="goToProduct()">Voir le substitut nicotinique adapté à mes besoins</a>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 desktop center">
+                                                    <a style="display: inline-block; text-align: center; " class="type-bt-green bt-width " href="javascript:void(0)" ng-click="submitReponses()">Valider</a>
+                                                </div> 
+
+                                            </div>
+                                         </div>
+						            </div>
+						            <!-- wrapper end-->
+				        </div>
+				        <!--main content end-->  
+
+        <!--footer start-->
+        <ng-include  src="'/desktop/partials/usedpartials/footer_desktop.html'" ></ng-include>
+        <ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+        <!--footer end-->
+    </div>
+</div>		
+

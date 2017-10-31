@@ -1,0 +1,115 @@
+<div ng-hide="loading">
+
+   <div id="container" >
+              
+              <!--header start-->
+			       <ng-include  src="'/desktop/partials/usedpartials/header_desktop_dashboard.html'" ></ng-include>
+		      <!--header end-->
+          
+              <!--main content start-->
+              <div id="main-content" class="over">
+                         
+                         <!--menu sidebar desktop-->
+			                   <ng-include  src="'/desktop/partials/usedpartials/menu_desktop.html'" ></ng-include>
+			             <!--fin menu sidebar desktop-->
+                         
+                         <!-- wrapper start-->
+                         <div class="wrapper with-side-bar statistique">
+                             <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                      <h2 class="desktop">Mes statistiques</h2>
+                                      <!-- <div class="top-bloc">
+                                       	<div class="ligne-1">
+                                       	 <div class="left profil center col-lg-6 col-md-6 col-sm-6 col-xs-6"><span>41%</span><br/><p>des fumeurs ont le<br/> même profil<br/> que vous</p></div>
+                                      	 <div class="left niveau center col-lg-6 col-md-6 col-sm-6 col-xs-6"><span>22%</span><br/><p>des fumeurs ont<br/> le même niveau de<br/> dépendance que vous</p></div>
+                                      	</div> 
+                                      	<div class="ligne-2 center">
+                                      		<div class="center">
+                                      			<span>63%</span>
+                                      			<p>des personnes ont le même<br/> niveau d'abstinence que vous</p>
+                                      		</div>
+                                      	</div>
+                                      </div>-->
+                                    </div>
+                                    
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                      <div class="top-bloc" style="float: left; width: 100%;margin-bottom:20px;margin-top: 20px;">
+                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mobile">
+                                      	 	<div class="bloc track center ">	
+                                       	 	  <p style="margin-bottom:0"><span class="mb-size" style="font-size: 1.7em ! important;">Tracker d’envies</span></p>
+                                       	 	  <p><span  class="black" style="font-size: 1.2em;">Depuis le début du programme :</span></p>
+                                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 border">
+                                              	<p style="margin-bottom:0;font-size: 1.2em;">Vous avez utilisé le<br/> bouton de tentation :</p>
+                                                <div class="fois center">{{infos.temptation}} fois</div>	
+                                              </div>
+                                            
+                                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
+                                               <p class="pad-top-20" style="margin-bottom:0;font-size: 1.2em;">Vous avez craqué :</p>
+                                               <div class="fois center">{{infos.cracked}} fois</div>	
+                                              </div>
+                                             
+                                       	    </div>
+                                      	 </div>
+                                       	                             	 
+                                       	 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 border midi">
+                                       	   <div class="bloc center ">	
+                                       	 	<p><span class="mb-size" style="font-size: 1.7em ! important;">Les moments les plus<br/> dangereux pour vous</span></p>
+                                             <div ng-if="infos.dangerous.length > 0" ng-repeat="danger in infos.dangerous"> 
+                                             	<div ng-if="$index % 2 == 0" class="col-lg-6 col-md-6 col-sm-6 col-xs-6 border">{{danger}}</div>
+                                             	<div ng-if="$index % 2 != 0" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">{{danger}}</div>
+                                             	<div ng-if="$index % 2 != 0" class="clear"></div>
+                                             </div>
+                                             <div ng-if="infos.dangerous.length == 0"> 
+                                             	Nous n'avons pas encore d'informations à ce sujet. Si vous avez déjà craqué et refumé, veuillez répondre aux questions depuis votre tableau de bord
+                                             </div>
+                                       	   </div>	 
+                                       	   <div class="clear"></div>                                        	   
+                                       	   <div class="bloc center ">	
+                                       	 	<p><span class="mb-size" style="font-size: 1.7em ! important;">Les situations les plus<br/> risquées pour vous</span></p>
+                                             <div ng-repeat="risk in infos.risky"> 
+                                             	<div ng-if="$index % 2 == 0" class="col-lg-6 col-md-6 col-sm-6 col-xs-6 border">{{risk}}</div>
+                                             	<div ng-if="$index % 2 != 0" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">{{risk}}</div>
+                                             	<div ng-if="$index % 2 != 0" class="clear"></div>
+                                             </div>
+                                             <div ng-if="infos.risky.length == 0"> 
+                                             	Nous n'avons pas encore d'informations à ce sujet. Si vous avez déjà craqué et refumé, veuillez répondre aux questions depuis votre tableau de bord
+                                             </div>
+                                       	   </div>
+                                       	   
+                                       	 </div>
+                                      	                                      	 
+                                      	 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 desktop">
+                                      	 	<div class="bloc track center ">	
+                                       	 	  <p style="margin-bottom:0"><span>Tracker d’envies</span></p>
+                                       	 	  <p class="color">Depuis le début du programme :</p>
+                                              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-6 border bd-fois">
+                                              	<p style="margin-bottom:0">Vous avez utilisé le<br/> bouton de tentation :</p>
+                                                <div class="fois center">{{infos.temptation}} fois</div>	
+                                              </div>
+                                            
+                                              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-6 bd-fois">
+                                               <p class="pad-top-20" style="margin-bottom:0">Vous avez craqué :</p>
+                                               <div class="fois center">{{infos.cracked}} fois</div>	
+                                              </div>
+                                             
+                                       	    </div>
+                                      	</div>
+                                       </div> 
+                                       <div class="col-lg-12">
+                                        <p class="mobile m-size float" style="margin-top: -25px;">Essayez au maximum d'éviter ces situations. Si vous vous retrouvez dans cette position, contactez un proche ou utilisez le bouton panique.</p>
+                                       </div>
+                                      </div>
+                                    </div>
+ 			                </div>
+                       <!-- wrapper end-->
+              </div>
+              <!--main content end-->  
+              
+              <!--footer start-->
+                <ng-include  src="'/desktop/partials/usedpartials/footer_desktop.html'" ></ng-include>
+                <ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+              <!--footer end-->
+      </div>      
+</div>
+     
+

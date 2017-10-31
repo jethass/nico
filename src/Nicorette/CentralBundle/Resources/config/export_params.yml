@@ -1,0 +1,87 @@
+parameters:
+  rep_export: %kernel.root_dir%/../web/export
+  MobileConnectionHistory:
+    JanrainId: getJanrainId
+    JaccomplisLastConnectionDate: getJaccomplisLastConnectionDate
+  ClubConnectionHistory:
+    JanrainId: getJanrainId
+    ClubLastConnectionDate: getClubLastConnectionDate
+    ForumLastConnectionDate: getForumLastConnectionDate
+  CoachingSummary:
+    JanrainId: getJanrainId
+    PointBalance: getPointBalance
+    LastFailedDate: getLastFailedDate
+    LastTemptationDate: getLastTemptationDate
+    NbFailed: getNbFailed
+    NbTemptation: getNbTemptation
+    NbOfCigarettesBeforeProgram: getNbOfCigarettesBeforeProgram
+    PacketPrice: getPacketPrice
+    RegisterDate: getRegisterDate
+  CoachingQuiz:
+    JanrainId: getJanrainId
+    QuizDate: getQuizDate
+    EstimatedStopDelay: getEstimatedStopDelay
+    SmokingReason: getSmokingReason
+    StopObstacle: getStopObstacle
+    StopReason: getStopReason
+    HasAlreadyTried: getHasAlreadyTried
+    FirstPeriodCigarette: getFirstPeriodCigarette
+    CigaretMostDiffcultAbort: getCigaretMostDiffcultAbort
+    KnowHow: getKnowHow
+  #coresspondance dans le fichier d'export entre la réponce désiré et son Id dans la Base
+  EstimatedStopDelay:
+    0: 1    #Je n'ai pas prévu d'arrêter pour le moment, je recherche juste des informations
+    1: 2    #Je veux arrêter d'ici un an
+    2: 4    #Je veux arrêter d'ici un mois
+    3: 5    #Je veux arrêter maintenant
+    4: 6    #J'ai arrêté le mois dernier
+    5: 7    #J'ai arrêté il y a plus d'un mois
+  SmokingReason:
+    1: 8    #Je fume machinalement, sans y penser
+    2: 9    #Je fume pour être comme les autres
+    3: 10   #Je me sens plus confiant(e) quand je fume
+    4: 11   #Je fume quand je me sens anxieus(e) ou préoccupé(e)
+    5: 12   #Je fume quand je me sens triste ou déprimé(e).
+    6: 13   #Je fume quand je me sens seul(e).
+    7: 14   #Fumer me détend
+    8: 15   #Le plaisir de fumer commence avec les gestes que je fais pour allumer ma cigarette
+    9: 16   #Je fume pour m’offrir un petit plaisir
+    10: 17  #J'aime manipuler les cigarettes
+    11: 18  #J’aime regarder la fumée de la cigarette
+  StopObstacle:
+    1: 19   #La peur de pas y arriver
+    2: 20   #La nervosité ou la déprime liée à l'arrêt
+    3: 21   #Le risque de prendre du poids
+    4: 22   #L'impact négatif sur ma vie sociale
+    5: 23   #La perte de mon statut de fumeur
+    6: 24   #Le manque du plaisir de fumer
+    7: 25   #L'absence de cigarette dans les bons moments de ma journée
+  StopReason:
+    1: 26   #Ma famille et/ou mes amis m'y encouragent
+    2: 27   #Je veux éviter de futurs problèmes de santé
+    3: 28   #Je veux améliorer mon état de santé actuel
+    4: 29   #J'ai honte de fumer
+    5: 30   #Je veux économiser de l'argent
+    6: 31   #Mon médecin m'a conseillé d'arrêter
+    7: 32   #Je pense que fumer n'est plus socialement acceptable
+    8: 33   #Je n'aime pas l'idée d'être un fumeur
+  HasAlreadyTried:
+    1: 34   #Non
+    2: 35   #Oui, une fois
+    3: 36   #Oui, de deux à quatre fois
+    4: 37   #Oui, plus de quatre fois
+  FirstPeriodCigarette:
+    1: 38   #Dans les 5 minutes
+    2: 39   #Entre 6 et 30 minutes
+    3: 40   #Entre 31 et 60 minutes
+    4: 41   #Après 60 minutes
+  CigaretMostDiffcultAbort:
+    1: 48   #La première cigarette de la journée
+    2: 49   #Une autre
+  KnowHow:
+    1: 66   #Mon médecin
+    2: 67   #Mon pharmacien
+    3: 68   #Un ami / membre de ma famille
+    4: 69   #Internet
+    5: 70   #TV, magazines…
+    6: 71   #Autre

@@ -1,0 +1,134 @@
+<div ng-hide="loading">
+
+    <div id="container" >
+        <!--header start-->
+        <ng-include  src="'/desktop/partials/usedpartials/header_desktop_dashboard.html'" ></ng-include>
+        <!--header end-->
+
+        <!--main content start-->
+        <div id="main-content" class="over">
+
+            <!--menu sidebar desktop-->
+            <ng-include  src="'/desktop/partials/usedpartials/menu_desktop.html'" ></ng-include>
+            <!--fin menu sidebar desktop-->
+
+            <!-- wrapper start-->
+            <div class="wrapper with-side-bar parrain">
+                <div class="row">
+                    <h2 class="pad-bottom-20 desktop" style="margin-left: 17px;">Mes parrains</h2>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+                        <div class="info-user" ng-repeat="sp in sponsors">
+                            <span ng-click="deleteSponsor(sp.id)" class="close">X</span>
+                            <div class="top">
+                                <img  class="left"  ng-src="desktop/images/avatar-h.png" />
+                                <!-- <img class="left" src="desktop/images/img-user.png"/> -->
+                                <div class="content">
+                                    <div class="name">{{sp.name}} <span></span></div>
+                                    <div class="tel">{{sp.phone}}</div>
+                                    <div class="mail"><span>{{sp.email}}</span></div>
+                                </div>
+                            </div>
+                            <div class="bottom desktop">
+                                <div class="col-lg-6 col-md-6 col-xs-6 edit center">
+                                    <div class="link border"><p class="center"><a href="javascript:void(0)" ng-click="editSponsor(sp.id)"><img src="desktop/images/edit.png"/><br/><span style="display: block;margin-top: 2px;">Éditer</span></a></div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-xs-6 msg center">
+                                    <div class="link desktop" ng-hide="EmailVide"><p class="center"><a ng-click="ajoutPoint('send_message')" href="mailto:{{sp.email}}"><img src="desktop/images/enveloppe.png"/><br/><span>Message</span></a></div>
+                                </div>
+                            </div> 
+
+                            <div class="bottom mobile">
+                                <div class="col-lg-4 col-md-4 col-xs-4 edit center">
+                                    <div class="link border"><p class="center"><a href="javascript:void(0)" ng-click="scrolToTop();editSponsor(sp.id);"><img src="desktop/images/edit.png"/><br/><span style="display: block;margin-top: 2px;">Éditer</span></a></div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-xs-4 appel center">
+                                    <div class="link border mobile" ><p class="center"><a href="tel:{{sp.phone}}" ng-click="ajoutPoint('call_parrain')"><img src="desktop/images/phone.png"/><br/><span>Appeler</span></a></div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-xs-4 msg center">
+                                    <div class="link mobile"><p class="center"><a  href="sms:/* {{sp.phone}} */"  ng-click="ajoutPoint('send_message')"><img src="desktop/images/enveloppe.png"/ style="margin: 6px 0 2px 0;"><br/><span>Message</span></a></div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+
+                    <div ng-show="nbr_parrains < 3" class="form-add center mobile" style="float: left; width: 100%;margin-bottom: 12px;">
+                        <a class="" id="plusForm" href="javascript:void(0)" ng-click="scrolToTop()" onclick="$('.form-contact-parrain').addClass('show');
+                                                     $('#plusForm').remove();">+</a>
+                    </div>                                    
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 desktop form-contact-parrain pad-bottom-20">
+                        <p class="m-size"><span style="font-size:1.3em;">Renseigner les contacts des personnes sur qui vous pouvez compter pour vous aider et que vous aimeriez contacter en cas de moments difficiles.</span></p>
+                        <p class="m-size pad-bottom-20" style="font-size:1.4em;">En renseignant ces contacts, vous reconnaissez avoir informé ces personnes du traitement de leurs données et obtenu leur accord préalable à l’envoi de messages dans le cadre du programme de coaching.</p> 
+                        <div ng-show="postLoding" class="text-center">
+                            <img ng-src="desktop/images/ajax-loader-p.gif" />
+                        </div>
+                        <form name="myform" class="center" novalidate id="formAddSp">
+
+                            <input type="hidden" id="idSp" name="id" ng-model="sponsor.id"/>
+                            <div class="pad-bottom-10 relative">
+                                <input type="text" autocomplete="off" id="nomSp" class="form-input" name="nom" ng-model="sponsor.nom" placeholder="Nom"/>
+                            </div>
+
+                            <div class="pad-bottom-10 relative">
+                                <input type="email" autocomplete="off" id="emailSp" class="form-input" name="email"  ng-model-options="{ updateOn: 'keyup' }" ng-model="sponsor.email" placeholder="Email"  />
+                                <p class="email" ng-show="ErrorEmail">
+                                    <span class="required red">Le format de l'email est invalide.</span>
+                                </p>
+                            </div>
+
+                            <div class="pad-bottom-10 relative">
+                                <input type="text" autocomplete="off" id="telSp" class="form-input" name="tel" ng-model-options="{ updateOn: 'keyup' }"  ng-model="sponsor.tel" required="" placeholder="Téléphone"  />
+                                
+                                <p class="champ" ng-show="myform.tel.$error.required" >
+                                    <span  class="required">champ obligatoire</span>
+                                </p>
+                                <p class="tel" ng-show="ErrorTel">
+                                    <span class="required red">Le format de téléphone est invalide.</span>
+                                </p>
+
+                            </div>
+
+                            <div ng-if="sponsorSavedSucess" class="pad-bottom-10 relative">
+                                <p>
+                                    <span class="msg-sucess-form">Contact ajouté avec succès!</span>
+                                </p>
+                            </div>
+                            <div ng-if="sponsorUpdatedSucess" class="pad-bottom-10 relative">
+                                <p>
+                                    <span class="msg-sucess-form">Contact mis à jour avec succès!</span>
+                                </p>
+                            </div>
+                            <div ng-if="sponsorSavedError" class="pad-bottom-10 relative">
+                                <p>
+                                    <span class="msg-error-form">Une erreur s'est produite pendant la sauvegarde, merci de réessayer.</span>
+                                </p>
+                            </div>
+                            <div class="desktop">
+                                <a style="text-align: center;display: inline-block !important;" class="type-bt-green-submit green bt-width dark mb-size" href="javascript:void(0)" ng-click="newSponsor()">Valider</a>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <div class="row mobile mobile-btn-style">
+                        <div class="col-xs-12" style="width: 100%;float: left;text-align: center;">
+                            <a class="type-bt-green-submit green bt-width dark mb-size" href="javascript:void(0)" ng-click="newSponsor()">Valider</a>
+                        </div>  
+                        <p class="green mobile m-size left center pad-top-20">(choisir un parrain pour vous<br/> aider vous rapporte 10 points)</p>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- wrapper end-->
+        </div>
+        <!--main content end-->  
+
+        <!--footer start-->
+        <ng-include  src="'/desktop/partials/usedpartials/footer_desktop.html'" ></ng-include>
+        <ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+        <!--footer end--> 
+    </div>
+</div>

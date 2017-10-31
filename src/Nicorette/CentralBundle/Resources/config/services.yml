@@ -1,0 +1,79 @@
+parameters:
+    nicorette.csv.import.class: Nicorette\CentralBundle\Services\ImportCsvService
+    nicorette.detect.mobile.class: Nicorette\CentralBundle\Services\DetectMobileService
+    nicorette.tools.class: Nicorette\CentralBundle\Services\ToolsService
+    nicorette.session.class: Nicorette\CentralBundle\Services\SessionService
+    nicorette.janrain_crm.class: Nicorette\CentralBundle\Services\JanrainCrmExchangeService
+    nicorette.diary-service.class: Nicorette\CentralBundle\Services\MyDiaryService
+    nicorette.action-plan-service.class: Nicorette\CentralBundle\Services\ActionPlanService
+    nicorette.User_tools_service.class: Nicorette\CentralBundle\Services\UserToolsService
+    nicorette.calendar.class: Nicorette\CentralBundle\Services\CalendarService
+    nicorette.economy.class: Nicorette\CentralBundle\Services\EconomyService
+    nicorette.zut-service.class: Nicorette\CentralBundle\Services\ZutService
+    nicorette.statistic.class: Nicorette\CentralBundle\Services\StatisticService
+    nicorette.export.class: Nicorette\CentralBundle\Services\ExportService
+    nicorette.mobile-connection-history-export.class: Nicorette\CentralBundle\Services\MobileConnectionHistory
+    nicorette.club-connection-history-export.class: Nicorette\CentralBundle\Services\ClubConnectionHistory
+    nicorette.coachingc-summary-export.class: Nicorette\CentralBundle\Services\CoachingSummary
+    nicorette.coaching-quiz-export.class: Nicorette\CentralBundle\Services\CoachingQuiz
+    nicorette.check-point.class: Nicorette\CentralBundle\Services\CheckPointService
+services:
+    nicorette.csv.import:
+        class: %nicorette.csv.import.class%
+        arguments: ['@service_container']
+    nicorette.detect.mobile:
+        class: %nicorette.detect.mobile.class%
+    nicorette.tools:
+        class: %nicorette.tools.class%
+        arguments: ['@service_container']
+    nicorette.session:
+        class: %nicorette.session.class%
+        arguments: ['@session.storage', '@session.attribute_bag', '@session.flash_bag', '@doctrine.orm.entity_manager', '@nicorette.tools']
+    janrain_crm_exchange_service:
+        class: %nicorette.janrain_crm.class%
+        arguments: ['@service_container']
+    nicorette.export_service:
+        class: %nicorette.export.class%
+        arguments: ['@service_container']
+    nicorette.diary_service:
+        class: %nicorette.diary-service.class%
+        arguments: ['@service_container']
+    nicorette.plan_service:
+        class: %nicorette.action-plan-service.class%
+        arguments: ['@service_container']
+    user_tools_service:
+        class: %nicorette.User_tools_service.class%
+        arguments: ['@service_container']
+    nicorette.calendar_service:
+        class: %nicorette.calendar.class%
+        arguments: ['@service_container']
+    nicorette.economy_service:
+        class: %nicorette.economy.class%
+        arguments: ['@service_container']
+    nicorette.zut_tools:
+        class: %nicorette.zut-service.class%
+        arguments: ['@service_container']
+    nicorette.statistic_service:
+        class: %nicorette.statistic.class%
+        arguments: ['@service_container']
+    user_listener:
+      class: Nicorette\CentralBundle\Listener\PatientListener
+      public: false
+      arguments: ["@service_container"]
+      tags:
+          -  { name: doctrine.event_subscriber }
+    mobileconnectionhistory.export_service:
+      class: %nicorette.mobile-connection-history-export.class%
+      arguments: ['@service_container','@nicorette.export_service']
+    clubconnectionhistory.export_service:
+      class: %nicorette.club-connection-history-export.class%
+      arguments: ['@service_container','@nicorette.export_service']
+    coachingsummary.export_service:
+      class: %nicorette.coachingc-summary-export.class%
+      arguments: ['@service_container','@nicorette.export_service']
+    coachingquiz.export_service:
+      class: %nicorette.coaching-quiz-export.class%
+      arguments: ['@service_container','@nicorette.export_service']
+    check_point_service:
+      class: %nicorette.check-point.class%
+      arguments: ['@service_container', '@nicorette.tools']

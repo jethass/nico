@@ -1,0 +1,335 @@
+<div ng-hide="loading">
+
+    <div id="container" >
+
+        <!--header start-->
+        <ng-include  src="'/desktop/partials/usedpartials/header_desktop_dashboard.html'" ></ng-include>
+        <!--header end-->
+
+        <!--main content start-->
+        <div id="main-content" class="over">
+
+            <!--menu sidebar desktop-->
+            <ng-include  src="'/desktop/partials/usedpartials/menu_desktop.html'" ></ng-include>
+            <!--fin menu sidebar desktop-->
+
+            <!-- wrapper start-->
+            <div class="wrapper with-side-bar">
+                
+                <div class="container-profil-1d" ng-show="etape1">
+                    <div class="row">
+                       
+                        <div class="col-lg-12" ng-repeat="question in questions">
+                              
+                               <div ng-if="$index==0" class="over pad-bottom-20">
+                                    <div class="content">
+                                       <p class="desktop"><span>{{question.name}}</span></p>
+                                       <p class="center mobile m-size cos-bg-md light-color pad-bottom-10"><span class="cos-bg-md light-color m-size">{{question.name}}</span></p>
+
+                                        <div class="custom-checkbox" id="ckone-{{choice.id}}" ng-repeat="choice in question.choices">
+                                            <input type="checkbox" checklist-model="$parent.$parent.answers[question.id]" checklist-value="choice" id="ckone{{choice.id}}" name="check{{choice.id}}" class="lightcheckbox" directive-checkbox />
+                                            <label class="label-check" for="ckone{{choice.id}}"></label>
+                                            <span class="txt-checkbox">{{choice.name}}</span>
+                                        </div>
+
+                                        <div style="clear:both;color:red;font-size:12px;">{{questionError[question.id]}}</div>
+                                    </div> 
+                                </div>
+                               
+                                <div ng-if="$index==1" class="over pad-bottom-20">
+                                    <p class="desktop"><span>{{question.name}}</span></p>
+                                    <p class="center mobile m-size cos-bg-md light-color pad-bottom-10"><span class="cos-bg-md light-color m-size">{{question.name}}</span></p>
+
+                                    <div class="radiobox desktop" ng-repeat="choice in question.choices">
+                                        <input ng-click="setYesOrNoValueR2(choice, question.id)" type="radio" name="choices-{{question.id}}" id="radio-{{choice.id}}" class="radio"  />
+                                        <label class="custom-radio" for="radio-{{choice.id}}"></label>
+                                        <label class="txt-radio" >{{choice.name}}</label>
+                                    </div>
+
+
+                                    <div class="mobile btn-radio">
+                                        <ul class="style_radio mg-auto">
+                                            <li ng-repeat="choice in question.choices" ng-click="setYesOrNoValueR2(choice, question.id)" ng-class="$index=0 ? 'yes active' :'yes disable' " directive-radiobox >
+                                                <input type="radio"  name="choices-m-{{question.id}}" class="hidden"  />
+                                                {{choice.name}}<span class="{{choice.name}}"></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div style="clear:both;color:red;font-size:12px;">{{questionError[question.id]}}</div>
+                                </div>
+                               
+                                <div ng-if="$index==2" class="over pad-bottom-20">
+                                    <p class="desktop"><span>{{question.name}}</span></p>
+                                    <p class="center mobile m-size cos-bg-md light-color pad-bottom-10"><span class="cos-bg-md light-color m-size">{{question.name}}</span></p>
+
+                                    <div class="radiobox desktop" ng-repeat="choice in question.choices">
+                                        <input ng-click="setYesOrNoValueR3(choice, question.id)" type="radio" name="choices-{{question.id}}" id="radio-{{choice.id}}" class="radio"  />
+                                        <label class="custom-radio" for="radio-{{choice.id}}"></label>
+                                        <label class="txt-radio" >{{choice.name}}</label>
+                                    </div>
+
+
+                                    <div class="mobile btn-radio">
+                                        <ul class="style_radio mg-auto">
+                                            <li ng-repeat="choice in question.choices" ng-click="setYesOrNoValueR3(choice, question.id)" ng-class="$index=0 ? 'yes active' :'yes disable' " directive-radiobox >
+                                                <input type="radio"  name="choices-m-{{question.id}}" class="hidden"  />
+                                                {{choice.name}}<span class="{{choice.name}}"></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div style="clear:both;color:red;font-size:12px;">{{questionError[question.id]}}</div>
+                                </div>
+                               
+                                <div ng-if="$index==3" class="over pad-bottom-20">
+                                    <div class="content" id="chek-q3">
+                                        <p class="desktop"><span>{{question.name}}</span></p>
+                                        <p class="center mobile m-size cos-bg-md light-color pad-bottom-10"><span class="cos-bg-md light-color m-size">{{question.name}}</span></p>
+
+                                        <div class="custom-checkbox" id="ck-{{choice.id}}" ng-repeat="choice in question.choices">
+                                            <input type="checkbox" checklist-model="$parent.$parent.answers[question.id]" checklist-value="choice" id="ck{{choice.id}}" name="check{{choice.id}}" class="lightcheckbox" ng-click="setReponseCheck(choice,question.id)" directive-checkbox />
+                                            <label class="label-check" for="ck{{choice.id}}"></label>
+                                            <span class="txt-checkbox">{{choice.name}}</span>
+                                        </div>
+                                        <div style="clear:both;color:red;font-size:12px;">{{questionError[question.id]}}</div>
+
+                                    </div> 
+                                </div>
+                        </div>
+                        
+                        <div class="over pad-top-20 desktop">
+                                <div>
+                                    <a class="type-data dark type-bt-green bt-width" style="cursor:pointer;" ng-click="submitReponses()" style="font-size: 1.7em ! important;">Valider</a>
+                                </div> 
+                        </div>
+                        <div class="center mobile pad-top-20"><a class="type-data type-bt-green mg-auto-mobile font-bold" ng-click="submitReponses()" style="font-size: 2em ! important;">Valider</a></div>
+
+                    </div>
+                </div>  
+                
+               <div class="container-profil-1d" ng-show="etape2">
+
+                    <div class="row">
+
+                        <div class="col-lg-12 over">
+                            <div class="content text-left">
+                                <p>
+                                  {{messageNotif}}      
+                                </p>
+                            </div> 
+                        </div>
+
+                        <div class="col-lg-12 over">
+                            <div class="col-lg-6">
+                                <div  class="over" style="padding-top:40px;margin-left: -15px;">
+                                    <p>
+                                        Si vous arrêtez le programme, les données renseignées dans votre programme de coaching seront supprimées. Vous conservez néanmoins vos accès au programme de coaching et au Club des Incroyables.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mg-auto over" style="width:331px;padding-top:40px;">
+                                    <a href="javascript:void(0)" class="type-bt-green right" style="width:331px;" data-toggle="modal" data-target="#AbondonProgrammeSansSup">Arrêter sans supprimer mon compte</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <hr>
+                        <div class="col-lg-12 over">
+                            <div class="col-lg-6">
+                                <div  class="over" style="padding-top:25px;margin-left: -15px;">
+                                    <p>
+                                        La suppression de votre compte engendre la perte totale des données renseignées et associées à votre profil aussi bien sur l'application de coaching que sur le site web le Club des Incroyables. Vous ne recevrez plus d'emails de coaching ni de communication de la part de NICORETTE<sup>®</sup>.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mg-auto over" style="width:331px;padding-top:25px;">
+                                    <a href="javascript:void(0)" class="type-bt-green right" style="width:331px;" data-toggle="modal" data-target="#AbondonProgrammeAvecSup" >Arrêter et supprimer mon compte</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>  
+                   
+                      <!-- Popup Abandon du programme sans suppression -->
+                      <div id="AbondonProgrammeSansSup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="AbondonProgrammeSansSup" aria-hidden="true">
+                                 <div class="modal-dialog">
+                                     <div class="modal-content">
+                                         <div class="pad-top-5">
+                                             <p class="text-center">Votre abandon a bien été pris en compte. Vous conserver vos identifiants de connexion.</p>
+                                         </div>
+                                         <div class="over">
+                                             <a class="right type-bt-green close cos-bg-lt" ng-click="AbonndonerSansSup()"  data-dismiss="modal" >Ok</a> 
+                                         </div>
+                                     </div>
+                                 </div>
+                       </div>
+
+                       <!-- Popup Abandon du programme avec suppression -->
+                       <div id="AbondonProgrammeAvecSup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="AbondonProgrammeAvecSup" aria-hidden="true">
+                           <div class="modal-dialog">
+                               <div class="modal-content">
+                                   <div class="pad-top-5">
+                                       <p class="text-center">Votre demande de suppression de compte a bien été prise en compte</p>
+                                   </div>
+                                   <div class="over">
+                                       <a class="right type-bt-green close cos-bg-lt" ng-click="AbonndonerAvecSup()"  data-dismiss="modal" >Ok</a> 
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+
+                </div>
+                
+                <div class="container-profil-1d" ng-show="etape3">
+
+                    <div class="row">
+
+                        <div class="col-lg-12 over">
+                            <div class="content text-left">
+                                <p><span>Comment évaluez-vous l'utilité du programme Nicorette "J'accomplis l'incroyable ?"</span></p>
+                            </div> 
+                             <div class="mg-auto" style="width:353px;margin-top: 15px;margin-bottom: 25px;">
+                                 <div class="gradiant-echelle" style="margin-bottom: -12px;width: 95%;position:relative;">
+                                                        <span style="color: #ff0400;width: 15%;position: absolute;left: -52px;position: absolute;text-align: left;top: 16px;">Inutile</span>                   
+                                                        <span class="item-1" style="color:#03cf24;width: 8%;">-5</span>
+                                                        <span class="item-2" style="color:#4be948;width: 8%;">-4</span>
+                                                        <span class="item-3" style="color:#85fb5b;width: 8%;">-3</span>
+                                                        <span class="item-4" style="color:#d1ff75;width: 8%;">-2</span>
+                                                        <span class="item-5" style="color:#f4ff5e;width: 8%;">-1</span>
+                                                        <span class="item-6" style="color:#fffdaa;width:8%;">0</span>
+                                                        <span class="item-7" style="color:#ffe700;width: 8.5%;">1</span>
+                                                        <span class="item-8" style="color:#ffcd00;width: 8%;">2</span>
+                                                        <span class="item-9" style="color:#ffc000;width:8% ;">3</span>
+                                                        <span class="item-10" style="color:#ffad00;width: 8%;">4</span>
+                                                        <span class="item-11" style="color:#ff0400;width: 8%;">5</span>
+                                                        <span style="color: #ff0400;width: 22%;position: absolute;right: -56px;position: absolute;text-align: right;top: 17px;">Très utile</span>
+                                 </div>
+                                 <input utile-slider-arrete-programme type="text" id="utile" name="utile"  value="" />
+                                 <div class="clear"></div>
+                               
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 over">
+                            <div class="content text-left pad-bottom-10">
+                                <p>
+                                    <span> Avant que vous partiez, donnez-nous votre avis, en notant les éléments du programme ci-dessous sur
+                                        une échelle de 1 à 10 en terme d'utilité.
+                                    </span>
+                                </p>
+                            </div>	  
+                        </div>
+                       
+                        <div class="col-lg-12 over">
+                            <div class="col-lg-6">
+                                <div class="mg-auto" style="width:353px;margin-top: 15px;margin-bottom: 15px;">
+                                    <input contain-slider-arrete-programme type="text" id="contain" name="contain"  value="" />
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mg-auto" style="width:353px;margin-top: 15px;margin-bottom: 15px;">
+                                    <input duration-slider-arrete-programme type="text" id="duration" name="duration"  value="" />
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 over">
+                            <div class="col-lg-6">
+                                <div class="mg-auto" style="width:353px;margin-top: 15px;margin-bottom: 15px;">
+                                    <input frequency-slider-arrete-programme type="text" id="frequency" name="frequency"  value="" />
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mg-auto" style="width:353px;margin-top: 15px;margin-bottom: 15px;">
+                                    <input personalization-slider-arrete-programme type="text" id="personalization" name="personalization"  value="" />
+                                    <div class="clear"></div>
+                                </div>   
+                            </div>
+                        </div>
+                        
+                        
+
+                        <div class="col-lg-12 over">
+                            <div class="col-lg-6">
+                                <div  class="over" style="padding-top:40px;margin-left: -15px;">
+                                    <p>
+                                        Si vous arrêtez le programme, les données renseignées dans votre programme de coaching seront supprimées. Vous conservez néanmoins vos accès au programme de coaching et au Club des Incroyables.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mg-auto over" style="width:331px;padding-top:40px;">
+                                    <a href="javascript:void(0)" class="type-bt-green right" style="width:331px;" data-toggle="modal" data-target="#AbondonProgrammeSansSupWithSlideVals">Arrêter sans supprimer mon compte</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <hr>
+                        <div class="col-lg-12 over">
+                            <div class="col-lg-6">
+                                <div  class="over" style="padding-top:25px;margin-left: -15px;">
+                                    <p>
+                                        La suppression de votre compte engendre la perte totale des données renseignées et associées à votre profil aussi bien sur l'application de coaching que sur le site web le Club des Incroyables. Vous ne recevrez plus d'emails de coaching ni de communication de la part de NICORETTE<sup>®</sup>.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mg-auto over" style="width:331px;padding-top:25px;">
+                                    <a href="javascript:void(0)" class="type-bt-green right" style="width:331px;" data-toggle="modal" data-target="#AbondonProgrammeAvecSupWithSlideVals" >Arrêter et supprimer mon compte</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>  
+                    
+                    <!-- Popup Abandon du programme sans suppression -->
+                         <div id="AbondonProgrammeSansSupWithSlideVals" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="AbondonProgrammeSansSupWithSlideVals" aria-hidden="true">
+                             <div class="modal-dialog">
+                                 <div class="modal-content">
+                                     <div class="pad-top-5">
+                                         <p class="text-center">Votre abandon a bien été pris en compte. Vous conserver vos identifiants de connexion.</p>
+                                     </div>
+                                     <div class="over">
+                                         <a class="right type-bt-green close cos-bg-lt" ng-click="AbonndonerSansSupWithSlideVals()"  data-dismiss="modal" >Ok</a> 
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+
+                     <!-- Popup Abandon du programme avec suppression -->
+                      <div id="AbondonProgrammeAvecSupWithSlideVals" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="AbondonProgrammeAvecSupWithSlideVals" aria-hidden="true">
+                         <div class="modal-dialog">
+                             <div class="modal-content">
+                                 <div class="pad-top-5">
+                                     <p class="text-center">Votre demande de suppression de compte a bien été prise en compte</p>
+                                 </div>
+                                 <div class="over">
+                                     <a class="right type-bt-green close cos-bg-lt" ng-click="AbonndonerAvecSupWithSlideVals()"  data-dismiss="modal" >Ok</a> 
+                                 </div>
+                             </div>
+                         </div>
+                      </div>
+
+                </div>
+                
+                
+                
+                
+                
+            </div>
+            <!-- wrapper end-->
+        </div>
+        <!--main content end-->  
+
+        <!--footer start-->
+        <ng-include  src="'/desktop/partials/usedpartials/footer_desktop.html'" ></ng-include>
+        <ng-include  src="'/desktop/partials/usedpartials/footer_mobile.html'" ></ng-include>
+        <!--footer end--> 
+    </div>
+</div>
